@@ -1,6 +1,6 @@
 SamplePlanner:
   # random sample points
-  sample_points: 10000 #1000 for informed RRT*, 3000 for others
+  sample_points: 10000 #1000 for informed RRT*, 10000 for others
   # max distance between sample points
   sample_max_d: 5.0 #30.0 #5.0
   # optimization radius
@@ -26,3 +26,13 @@ SamplePlanner:
   rewire_threads_num: 4
   # aggressive or gradual optimizing strategy
   t_distr_freedom: 1.0 # suggest from 0.2 to 3
+  # informed-rrt*:
+  # rewire / goal-connection radius
+  search_radius: 10.0
+  # phase-2 refinement iterations
+  informed_iterations: 1000
+  # early-stop cost for phase-2; 0.0 = run all informed_iterations, never stop early
+  informed_threshold_cost: 0.0
+  # NOTE: _rewire() rescans the whole tree after every accepted sample -> O(n^2).
+  # sample_points: 10000 above makes this planner crawl; drop it to ~1000 when
+  # running informed_rrt_star.

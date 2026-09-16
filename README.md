@@ -1,52 +1,77 @@
-RRT_Cut
-ROS Motion Planning TU
-This repository contains a ROS1 motion planning project with Docker support.
+# RRT_Cut
 
-The Docker environment is based on Ubuntu 20.04 and ROS Noetic, so this project can also be run on a host machine using Ubuntu 22.04 through Docker.
+ROS 1 motion-planning project with a Docker environment based on Ubuntu 20.04 and ROS Noetic. It can be developed from an Ubuntu 22.04 host through Docker.
 
-Repository structure
-ros_motion_planning_tu/
-├── 3rd/
-├── assets/
-├── docker/
-│   ├── Dockerfile
-│   ├── build.sh
-│   └── run.sh
-├── docs/
-├── scripts/
-├── src/
-├── .dockerignore
-├── .gitignore
-└── README.md
+## Prerequisites
+
+- Git
+- Docker Engine (recommended) or Docker Desktop for Linux
+- An X11 desktop session, for ROS GUI applications such as RViz
+
+Check that Docker is running before building:
 
 ```bash
-1. Clone repository
-git clone https://github.com/minhtu0912/ros_motion_planning_tu.git
-cd RRT_Cut
-
-2. Build Docker image
-chmod +x docker/build.sh
-./docker/build.sh
-
-3. Run Docker container
-chmod +x docker/run.sh
-./docker/run.sh
-
-This command opens the Docker container and mounts the project into:
-
-/root/ros_motion_planning_ws
-
-4. Build ROS1 workspace inside Docker
-
-Inside the Docker container, run:
-
-cd /root/ros_motion_planning_ws
-source /opt/ros/noetic/setup.bash
-catkin_make
-source devel/setup.bash
-
-5. Run Launch File 
-cd scripts/
-./build.sh 
-./main.sh
+docker info
 ```
+
+If this command cannot connect to the Docker daemon, start Docker first. With Docker Engine use `sudo systemctl start docker`; with Docker Desktop use `systemctl --user start docker-desktop`.
+
+## Run with Docker
+
+1. Clone the repository and enter it.
+
+   ```bash
+   git clone https://github.com/minhtu0912/ros_motion_planning_tu.git
+   cd RRT_Cut
+   ```
+
+2. Build the image.
+
+   ```bash
+   chmod +x docker/build.sh docker/run.sh
+   ./docker/build.sh
+   ```
+
+   This creates the `ros_motion_planning:noetic` image.
+
+3. Start the development container.
+
+   ```bash
+
+   systemctl --user start docker-desktop
+    docker desktop status
+    docker context use desktop-linux
+   ./docker/run.sh
+   ```
+
+   The script grants the container access to the host X11 display and mounts this repository at `/root/ros_motion_planning_ws`. The container is interactive and is removed when you exit it.
+
+4. Build the ROS workspace inside the container.
+
+   ```bash
+   cd /root/ros_motion_planning_ws
+   source /opt/ros/noetic/setup.bash
+   catkin_make
+   source devel/setup.bash
+   ```
+
+5. Run the project inside the container.
+
+   ```bash
+   cd scripts
+   ./build.sh
+   ./main.sh
+   ```
+
+## Docker Desktop and X11
+
+`docker/run.sh` mounts `/tmp/.X11-unix` so GUI applications in the container can use the host display. Docker Desktop runs containers in a VM and may reject this mount with a `mounts denied` error.
+
+In Docker Desktop, open **Settings → Resources → File Sharing**, add the following paths, then choose **Apply & restart**:
+
+```text
+/tmp/.X11-unix
+/home/<your-user>/RRT_Cut
+```
+
+Then retry `./docker/run.sh`. Docker Engine installed directly on Ubuntu is recommended for this project because it uses host networking, privileged mode, and X11 GUI forwarding.

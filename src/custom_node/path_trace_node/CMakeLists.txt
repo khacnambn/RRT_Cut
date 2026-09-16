@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.0.2)
 project(path_trace_node)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+# path_evaluator headers use the nested namespace rmp::path_evaluator (C++17)
+add_compile_options(-std=c++17)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -14,6 +15,10 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   actionlib_msgs
   visualization_msgs
+  tf2_ros
+  tf2_geometry_msgs
+  common
+  path_evaluator
 )
 
 find_package(yaml-cpp REQUIRED CONFIG)
@@ -110,7 +115,7 @@ find_package(yaml-cpp REQUIRED CONFIG)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES custom_node
- CATKIN_DEPENDS geometry_msgs nav_msgs roscpp std_msgs actionlib_msgs visualization_msgs
+ CATKIN_DEPENDS geometry_msgs nav_msgs roscpp std_msgs actionlib_msgs visualization_msgs tf2_ros tf2_geometry_msgs common path_evaluator
 #  DEPENDS system_lib
 )
 

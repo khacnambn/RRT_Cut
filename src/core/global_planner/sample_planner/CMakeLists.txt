@@ -46,6 +46,7 @@ add_library(${PROJECT_NAME}
   src/rrt_star.cpp
   src/rrt_connect.cpp
   src/informed_rrt.cpp
+  src/informed_rrt_star.cpp
   src/quick_informed_rrt.cpp
 )
 

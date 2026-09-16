@@ -24,6 +24,7 @@
 #include "rrt_star.h"
 #include "rrt_connect.h"
 #include "informed_rrt.h"
+#include "informed_rrt_star.h"
 #include "quick_informed_rrt.h"
 
 PLUGINLIB_EXPORT_CLASS(sample_planner::SamplePlanner, nav_core::BaseGlobalPlanner)
@@ -132,6 +133,23 @@ void SamplePlanner::initialize(std::string name, costmap_2d::Costmap2D* costmap,
       private_nh.param("t_distr_freedom", t_freedom, 1.0);         // freedom of t distribution
       g_planner_ = std::make_shared<global_planner::QuickInformedRRT>(
           costmap, sample_points, sample_max_d, optimization_r, prior_set_r, rewire_threads_n, step_ext_d, t_freedom);
+    }
+    else if (planner_name == "informed_rrt_star")
+    {
+      int informed_iterations;
+      double search_radius, informed_threshold_cost;
+      private_nh.param("search_radius", search_radius, 10.0);                     // rewire / goal-connection radius
+      private_nh.param("informed_iterations", informed_iterations, 1000);         // phase-2 refinement iterations
+      private_nh.param("informed_threshold_cost", informed_threshold_cost, 0.0);  // 0.0 = never early-stop
+      g_planner_ = std::make_shared<global_planner::InformedRRTStar>(
+          costmap, sample_points, sample_max_d, search_radius, informed_iterations, informed_threshold_cost);
+    }
+    else
+    {
+      // without this guard a misspelled name leaves g_planner_ as NULL and the
+      // setFactor() call right below segfaults with no diagnostic at all
+      ROS_ERROR("Unknown sample planner name: '%s'. SamplePlanner will stay uninitialized.", planner_name.c_str());
+      return;
     }
 
     // pass costmap information to planner (required)
@@ -251,9 +269,10 @@ bool SamplePlanner::makePlan(const geometry_msgs::PoseStamped& start, const geom
       //   ROS_WARN("Check ok !");
         if (_getPlanFromPath(path, plan))
         {
-          geometry_msgs::PoseStamped goalCopy = goal;
-          goalCopy.header.stamp = ros::Time::now();
-          plan.push_back(goalCopy); // add Goal
+          // RRT-Cut may deliberately return a route to an intermediate
+          // jump/sub-goal.  Do not fabricate an unchecked straight segment
+          // from that endpoint to the final goal: consumers and the evaluator
+          // must see the route that the planner actually produced.
           history_plan_ = plan;
         }
         // }else if(history_plan_.size() > 0){
@@ -300,9 +319,8 @@ bool SamplePlanner::makePlan(const geometry_msgs::PoseStamped& start, const geom
           if(path.size() > 5){
           if (_getPlanFromPath(path, plan))
           {
-            geometry_msgs::PoseStamped goalCopy = goal;
-            goalCopy.header.stamp = ros::Time::now();
-            plan.push_back(goalCopy); // add Goal
+            // The escape branch also plans only to n_sub_goal.  Keep that
+            // endpoint intact; a later replan is responsible for progress.
             history_plan_ = plan;
           }
           else
