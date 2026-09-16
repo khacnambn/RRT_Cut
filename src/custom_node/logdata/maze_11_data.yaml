@@ -1,17 +1,481 @@
-time(s): 37.70099999999999
-cost(m): 8.349147698813614
-nodes: 1920602
-smoothness_turning_angle: 37.99192688373235
-smoothness_norm: 4.550395831317116
-plan_smoothness_mean_curvature: 2.062250272477
-plan_smoothness_max_curvature: 8.791392869852848
-traj_smoothness_mean_curvature: 1195.552011806406
-traj_smoothness_max_curvature: 1343018.367462681
-tracking_rmse: 1.592836048394297
-tracking_max_error: 2.36900607693486
-tracking_mean_error: 1.42419548587309
-plan_points: 43
-traj_points: 1131
-replan_count: 76
+time(s): 17.19999999999999
+cost(m): 1.502459989829858
+nodes: 14444
+smoothness_turning_angle: 74.80998576078269
+smoothness_norm: 49.79166584612637
+traj_smoothness_mean_curvature: 25.24689361715314
+traj_smoothness_max_curvature: 281.4271123960372
+evaluation_spacing_m: 0.05
+plan_updates: 35
+plan_evaluated: 35
+plan_mean_detour_ratio: 1.081366748769289
+plan_mean_turn_density_rad_per_m: 1.306527622316388
+plan_mean_curvature_1_per_m: 1.406449876421275
+plan_max_curvature_1_per_m: 28.62639173167894
+active_tracking_episodes: 35
+active_tracking_points: 516
+active_tracking_rmse_m: 0.02774088892252481
+active_tracking_mean_error_m: 0.02176535119576665
+active_tracking_max_error_m: 0.1245023788104468
+active_tracking_backtrack_m: 0.02729955247499255
+plan_episodes:
+  - raw_plan_points: 3
+    resampled_plan_points: 10
+    executed_points: 15
+    length_m: 0.4263336549643995
+    detour_ratio: 1.205853655924871
+    turn_density_rad_per_m: 2.929737678116412
+    mean_curvature_1_per_m: 3.461092539294522
+    max_curvature_1_per_m: 14.39538541512803
+    tracking_rmse_m: 0.03084407603585513
+    tracking_mean_error_m: 0.02918572372140633
+    tracking_max_error_m: 0.04896266235667807
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 7
+    resampled_plan_points: 28
+    executed_points: 15
+    length_m: 1.294327902710894
+    detour_ratio: 1.121271279913309
+    turn_density_rad_per_m: 2.785414928504335
+    mean_curvature_1_per_m: 2.931421568825685
+    max_curvature_1_per_m: 21.77888602478949
+    tracking_rmse_m: 0.0342624803824747
+    tracking_mean_error_m: 0.03170047536422666
+    tracking_max_error_m: 0.05309663618147675
+    final_progress_ratio: 0.02157184233347302
+    backtrack_distance_m: 0
+  - raw_plan_points: 8
+    resampled_plan_points: 32
+    executed_points: 15
+    length_m: 1.513363728786925
+    detour_ratio: 1.314726374387967
+    turn_density_rad_per_m: 2.237777509991784
+    mean_curvature_1_per_m: 2.398576801239271
+    max_curvature_1_per_m: 18.97001960740559
+    tracking_rmse_m: 0.05326933086765841
+    tracking_mean_error_m: 0.04861662042550874
+    tracking_max_error_m: 0.08865961515367946
+    final_progress_ratio: 0.02826614962627915
+    backtrack_distance_m: 0
+  - raw_plan_points: 7
+    resampled_plan_points: 26
+    executed_points: 15
+    length_m: 1.231528427295384
+    detour_ratio: 1.161096118917746
+    turn_density_rad_per_m: 2.970178857445985
+    mean_curvature_1_per_m: 3.174521853371337
+    max_curvature_1_per_m: 18.37144737069337
+    tracking_rmse_m: 0.02272112170907971
+    tracking_mean_error_m: 0.01924917212200161
+    tracking_max_error_m: 0.03824451041854482
+    final_progress_ratio: 0.08950584530864916
+    backtrack_distance_m: 0
+  - raw_plan_points: 5
+    resampled_plan_points: 18
+    executed_points: 15
+    length_m: 0.8161645680153163
+    detour_ratio: 1.121088236669703
+    turn_density_rad_per_m: 2.713052639583148
+    mean_curvature_1_per_m: 2.881353194727663
+    max_curvature_1_per_m: 22.14297328964144
+    tracking_rmse_m: 0.01183534701090731
+    tracking_mean_error_m: 0.01011930972044544
+    tracking_max_error_m: 0.02212712958792956
+    final_progress_ratio: 0.1363187100524059
+    backtrack_distance_m: 0
+  - raw_plan_points: 6
+    resampled_plan_points: 22
+    executed_points: 15
+    length_m: 1.044377408912835
+    detour_ratio: 1.100870433258951
+    turn_density_rad_per_m: 1.060104047009807
+    mean_curvature_1_per_m: 1.125950234238796
+    max_curvature_1_per_m: 8.820802047734919
+    tracking_rmse_m: 0.08187316221909331
+    tracking_mean_error_m: 0.07608301440594152
+    tracking_max_error_m: 0.1245023788104468
+    final_progress_ratio: 0.02962477655629322
+    backtrack_distance_m: 0
+  - raw_plan_points: 4
+    resampled_plan_points: 15
+    executed_points: 15
+    length_m: 0.6507698750223503
+    detour_ratio: 1.066262893172437
+    turn_density_rad_per_m: 1.324846290153893
+    mean_curvature_1_per_m: 1.357319250062418
+    max_curvature_1_per_m: 8.103565242899746
+    tracking_rmse_m: 0.0288536555853115
+    tracking_mean_error_m: 0.02875782319100662
+    tracking_max_error_m: 0.0331575664203756
+    final_progress_ratio: 0.1275884332358562
+    backtrack_distance_m: 0
+  - raw_plan_points: 3
+    resampled_plan_points: 10
+    executed_points: 15
+    length_m: 0.4018844469589019
+    detour_ratio: 1.255276099816802
+    turn_density_rad_per_m: 3.299002172640973
+    mean_curvature_1_per_m: 3.345121001249891
+    max_curvature_1_per_m: 23.89719044858404
+    tracking_rmse_m: 0.005168638405164412
+    tracking_mean_error_m: 0.003852574944160153
+    tracking_max_error_m: 0.01105256161409485
+    final_progress_ratio: 0.231057950501267
+    backtrack_distance_m: 0
+  - raw_plan_points: 3
+    resampled_plan_points: 8
+    executed_points: 15
+    length_m: 0.3161645623200302
+    detour_ratio: 1.117810513280176
+    turn_density_rad_per_m: 3.50181155557029
+    mean_curvature_1_per_m: 3.993112745245133
+    max_curvature_1_per_m: 12.19862604599914
+    tracking_rmse_m: 0.01234277535124235
+    tracking_mean_error_m: 0.01061030141434408
+    tracking_max_error_m: 0.02355332862871504
+    final_progress_ratio: 0.2133384546556437
+    backtrack_distance_m: 0
+  - raw_plan_points: 3
+    resampled_plan_points: 10
+    executed_points: 15
+    length_m: 0.4296333886576399
+    detour_ratio: 1.005695678658991
+    turn_density_rad_per_m: 0.508966369111041
+    mean_curvature_1_per_m: 0.5468451181634008
+    max_curvature_1_per_m: 3.837829151637971
+    tracking_rmse_m: 0.01827536095563365
+    tracking_mean_error_m: 0.01712749662963769
+    tracking_max_error_m: 0.02832211505791696
+    final_progress_ratio: 0.1300683614596426
+    backtrack_distance_m: 0
+  - raw_plan_points: 2
+    resampled_plan_points: 5
+    executed_points: 15
+    length_m: 0.2000000000000002
+    detour_ratio: 1
+    turn_density_rad_per_m: 0
+    mean_curvature_1_per_m: 0
+    max_curvature_1_per_m: 0
+    tracking_rmse_m: 0.006502358322338394
+    tracking_mean_error_m: 0.006056489287566874
+    tracking_max_error_m: 0.008394415496648808
+    final_progress_ratio: 0.1316539260883175
+    backtrack_distance_m: 0
+  - raw_plan_points: 3
+    resampled_plan_points: 10
+    executed_points: 15
+    length_m: 0.4253398822708002
+    detour_ratio: 1.268118501502584
+    turn_density_rad_per_m: 3.17893392385929
+    mean_curvature_1_per_m: 3.412389956447265
+    max_curvature_1_per_m: 24.39816707609903
+    tracking_rmse_m: 0.02173585096386441
+    tracking_mean_error_m: 0.02166710574082027
+    tracking_max_error_m: 0.02491684291659568
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 3
+    resampled_plan_points: 10
+    executed_points: 15
+    length_m: 0.4061552872440861
+    detour_ratio: 1.007547250092855
+    turn_density_rad_per_m: 0.6031650228885104
+    mean_curvature_1_per_m: 0.6124466578171686
+    max_curvature_1_per_m: 4.899572973412273
+    tracking_rmse_m: 0.01756153763256516
+    tracking_mean_error_m: 0.01753704104405033
+    tracking_max_error_m: 0.01952475817657706
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 2
+    resampled_plan_points: 6
+    executed_points: 15
+    length_m: 0.2121320375169779
+    detour_ratio: 1
+    turn_density_rad_per_m: 1.046728290191716e-13
+    mean_curvature_1_per_m: 1.110223024625153e-13
+    max_curvature_1_per_m: 3.01980662698041e-13
+    tracking_rmse_m: 0.01667765869850684
+    tracking_mean_error_m: 0.01663784539145884
+    tracking_max_error_m: 0.01861369888954234
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 3
+    resampled_plan_points: 9
+    executed_points: 15
+    length_m: 0.3999999999999999
+    detour_ratio: 1
+    turn_density_rad_per_m: 0
+    mean_curvature_1_per_m: 0
+    max_curvature_1_per_m: 0
+    tracking_rmse_m: 0.02678702923749056
+    tracking_mean_error_m: 0.02616539050833116
+    tracking_max_error_m: 0.03660828781692978
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 2
+    resampled_plan_points: 6
+    executed_points: 15
+    length_m: 0.2121320375169779
+    detour_ratio: 1
+    turn_density_rad_per_m: 1.046728290191716e-13
+    mean_curvature_1_per_m: 1.110223024625153e-13
+    max_curvature_1_per_m: 3.042011087472913e-13
+    tracking_rmse_m: 0.02712187032992127
+    tracking_mean_error_m: 0.02707998785546262
+    tracking_max_error_m: 0.03053129622753838
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 4
+    resampled_plan_points: 14
+    executed_points: 15
+    length_m: 0.6161645667903786
+    detour_ratio: 1.144188858978817
+    turn_density_rad_per_m: 1.796839314472883
+    mean_curvature_1_per_m: 1.996556372622566
+    max_curvature_1_per_m: 12.19862604599914
+    tracking_rmse_m: 0.01448261869533181
+    tracking_mean_error_m: 0.01193970996662641
+    tracking_max_error_m: 0.030452098807693
+    final_progress_ratio: 0.0292564839482772
+    backtrack_distance_m: 0.007176217247766306
+  - raw_plan_points: 4
+    resampled_plan_points: 14
+    executed_points: 15
+    length_m: 0.6187284752031574
+    detour_ratio: 1.23745693196677
+    turn_density_rad_per_m: 2.538749047034141
+    mean_curvature_1_per_m: 2.653669647234493
+    max_curvature_1_per_m: 12.0551474337047
+    tracking_rmse_m: 0.03540355166520568
+    tracking_mean_error_m: 0.03527322860495769
+    tracking_max_error_m: 0.03782623049661157
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 3
+    resampled_plan_points: 10
+    executed_points: 15
+    length_m: 0.4065852411002245
+    detour_ratio: 1.394575850989487
+    turn_density_rad_per_m: 3.863387472069395
+    mean_curvature_1_per_m: 3.972081496819518
+    max_curvature_1_per_m: 28.62639173167894
+    tracking_rmse_m: 0.01718757133336635
+    tracking_mean_error_m: 0.01710414557503676
+    tracking_max_error_m: 0.01978190453432689
+    final_progress_ratio: 0.09641276205872562
+    backtrack_distance_m: 0
+  - raw_plan_points: 3
+    resampled_plan_points: 10
+    executed_points: 15
+    length_m: 0.4116714803852652
+    detour_ratio: 1.029178685627206
+    turn_density_rad_per_m: 1.190165822988761
+    mean_curvature_1_per_m: 1.226793839387593
+    max_curvature_1_per_m: 8.624828896235039
+    tracking_rmse_m: 0.0247602399052848
+    tracking_mean_error_m: 0.02316268677791708
+    tracking_max_error_m: 0.04179384783881025
+    final_progress_ratio: 0.02265307416746385
+    backtrack_distance_m: 0
+  - raw_plan_points: 4
+    resampled_plan_points: 11
+    executed_points: 15
+    length_m: 0.4576836612182723
+    detour_ratio: 1.13537341198213
+    turn_density_rad_per_m: 4.445087531375688
+    mean_curvature_1_per_m: 5.202442986000905
+    max_curvature_1_per_m: 20.60784710966702
+    tracking_rmse_m: 0.02081774261176822
+    tracking_mean_error_m: 0.02041863755227293
+    tracking_max_error_m: 0.02607245361094445
+    final_progress_ratio: 0.1473418048851228
+    backtrack_distance_m: 0
+  - raw_plan_points: 3
+    resampled_plan_points: 10
+    executed_points: 15
+    length_m: 0.4093642393295053
+    detour_ratio: 1.07504314411443
+    turn_density_rad_per_m: 1.918580295835923
+    mean_curvature_1_per_m: 1.990252229532508
+    max_curvature_1_per_m: 12.0551474337047
+    tracking_rmse_m: 0.05705895339359734
+    tracking_mean_error_m: 0.05467727479995857
+    tracking_max_error_m: 0.07895211445082215
+    final_progress_ratio: 0.06873061497652033
+    backtrack_distance_m: 0
+  - raw_plan_points: 3
+    resampled_plan_points: 10
+    executed_points: 15
+    length_m: 0.4121320396243204
+    detour_ratio: 1.082311743677725
+    turn_density_rad_per_m: 1.905695475928995
+    mean_curvature_1_per_m: 1.963495408493642
+    max_curvature_1_per_m: 15.70796242501194
+    tracking_rmse_m: 0.01423834879056589
+    tracking_mean_error_m: 0.01309493783418069
+    tracking_max_error_m: 0.02522542781702889
+    final_progress_ratio: 0.07155667527537611
+    backtrack_distance_m: 0
+  - raw_plan_points: 2
+    resampled_plan_points: 6
+    executed_points: 15
+    length_m: 0.2061552843528361
+    detour_ratio: 0.9999999999999999
+    turn_density_rad_per_m: 2.261856502036111e-14
+    mean_curvature_1_per_m: 2.331468351712828e-14
+    max_curvature_1_per_m: 7.105427357600999e-14
+    tracking_rmse_m: 0.008485376098710607
+    tracking_mean_error_m: 0.007237170847793588
+    tracking_max_error_m: 0.01821004472263931
+    final_progress_ratio: 0.1530350581318316
+    backtrack_distance_m: 0
+  - raw_plan_points: 3
+    resampled_plan_points: 7
+    executed_points: 15
+    length_m: 0.2559938676761042
+    detour_ratio: 1.00409054399215
+    turn_density_rad_per_m: 0.9569708264919218
+    mean_curvature_1_per_m: 0.9803027739704223
+    max_curvature_1_per_m: 4.300399289625266
+    tracking_rmse_m: 0.02088191320117485
+    tracking_mean_error_m: 0.02082075461308995
+    tracking_max_error_m: 0.02449806619458125
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 2
+    resampled_plan_points: 6
+    executed_points: 15
+    length_m: 0.2236068010819799
+    detour_ratio: 0.9999999999999999
+    turn_density_rad_per_m: 0
+    mean_curvature_1_per_m: 0
+    max_curvature_1_per_m: 0
+    tracking_rmse_m: 0.02913361885555262
+    tracking_mean_error_m: 0.02853133634629549
+    tracking_max_error_m: 0.03918778717104447
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 2
+    resampled_plan_points: 5
+    executed_points: 15
+    length_m: 0.2
+    detour_ratio: 1
+    turn_density_rad_per_m: 0
+    mean_curvature_1_per_m: 0
+    max_curvature_1_per_m: 0
+    tracking_rmse_m: 0.01521585955774333
+    tracking_mean_error_m: 0.0151219132136269
+    tracking_max_error_m: 0.01828885599413841
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 2
+    resampled_plan_points: 5
+    executed_points: 15
+    length_m: 0.2
+    detour_ratio: 1
+    turn_density_rad_per_m: 0
+    mean_curvature_1_per_m: 0
+    max_curvature_1_per_m: 0
+    tracking_rmse_m: 0.02091655414002877
+    tracking_mean_error_m: 0.02081531806280681
+    tracking_max_error_m: 0.02545109165061145
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 2
+    resampled_plan_points: 5
+    executed_points: 15
+    length_m: 0.2
+    detour_ratio: 1
+    turn_density_rad_per_m: 0
+    mean_curvature_1_per_m: 0
+    max_curvature_1_per_m: 0
+    tracking_rmse_m: 0.03375930694650815
+    tracking_mean_error_m: 0.03357368162583736
+    tracking_max_error_m: 0.03792734115602597
+    final_progress_ratio: 0
+    backtrack_distance_m: 0
+  - raw_plan_points: 2
+    resampled_plan_points: 6
+    executed_points: 15
+    length_m: 0.2121320375169779
+    detour_ratio: 1
+    turn_density_rad_per_m: 4.605604476843552e-14
+    mean_curvature_1_per_m: 4.884981308350689e-14
+    max_curvature_1_per_m: 7.993605777301137e-14
+    tracking_rmse_m: 0.02118520242318375
+    tracking_mean_error_m: 0.02107555771347954
+    tracking_max_error_m: 0.02462808301265483
+    final_progress_ratio: 0.03616154548587708
+    backtrack_distance_m: 0.0003029754236454464
+  - raw_plan_points: 2
+    resampled_plan_points: 6
+    executed_points: 15
+    length_m: 0.2061552843528361
+    detour_ratio: 1
+    turn_density_rad_per_m: 2.046441597080291e-14
+    mean_curvature_1_per_m: 2.109423746787797e-14
+    max_curvature_1_per_m: 7.105427357600999e-14
+    tracking_rmse_m: 0.010058036922919
+    tracking_mean_error_m: 0.01003823145072869
+    tracking_max_error_m: 0.01106473547677886
+    final_progress_ratio: 0.07493253781631841
+    backtrack_distance_m: 0.003516606312590605
+  - raw_plan_points: 2
+    resampled_plan_points: 5
+    executed_points: 15
+    length_m: 0.2
+    detour_ratio: 1
+    turn_density_rad_per_m: 0
+    mean_curvature_1_per_m: 0
+    max_curvature_1_per_m: 0
+    tracking_rmse_m: 0.009189170097190027
+    tracking_mean_error_m: 0.008690754289723672
+    tracking_max_error_m: 0.01342007966008902
+    final_progress_ratio: 0.1205336393716117
+    backtrack_distance_m: 0
+  - raw_plan_points: 2
+    resampled_plan_points: 6
+    executed_points: 15
+    length_m: 0.2236068010819799
+    detour_ratio: 0.9999999999999999
+    turn_density_rad_per_m: 2.979040939505558e-14
+    mean_curvature_1_per_m: 3.330669073875466e-14
+    max_curvature_1_per_m: 7.993605777301097e-14
+    tracking_rmse_m: 0.007061209132818792
+    tracking_mean_error_m: 0.005025799414243083
+    tracking_max_error_m: 0.01565074255830018
+    final_progress_ratio: 0.0677522744732368
+    backtrack_distance_m: 0.01407843658668982
+  - raw_plan_points: 2
+    resampled_plan_points: 6
+    executed_points: 15
+    length_m: 0.2121320375169779
+    detour_ratio: 1
+    turn_density_rad_per_m: 4.605604476843552e-14
+    mean_curvature_1_per_m: 4.884981308350689e-14
+    max_curvature_1_per_m: 7.993605777301137e-14
+    tracking_rmse_m: 0.005743931227968405
+    tracking_mean_error_m: 0.005233132385996331
+    tracking_max_error_m: 0.007985909651246686
+    final_progress_ratio: 0.1280442086634727
+    backtrack_distance_m: 0.001736897079666452
+  - raw_plan_points: 2
+    resampled_plan_points: 6
+    executed_points: 6
+    length_m: 0.2236068010819799
+    detour_ratio: 0.9999999999999999
+    turn_density_rad_per_m: 2.979040939505558e-14
+    mean_curvature_1_per_m: 3.330669073875466e-14
+    max_curvature_1_per_m: 7.993605777301097e-14
+    tracking_rmse_m: 0.01612740876321969
+    tracking_mean_error_m: 0.0161185957335816
+    tracking_max_error_m: 0.01703894432716763
+    final_progress_ratio: 0.1072500252240114
+    backtrack_distance_m: 0.0004884198246339171
+traj_raw_points: 516
+traj_points: 34
+replan_count: 35
 tf_dropped_points: 0
 eval_frame: map

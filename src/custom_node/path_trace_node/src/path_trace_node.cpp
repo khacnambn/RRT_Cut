@@ -1,4 +1,5 @@
 #include <ros/ros.h>
+#include <ros/package.h>
 #include <algorithm>
 #include <nav_msgs/Path.h>
 #include <geometry_msgs/PoseStamped.h>
@@ -65,6 +66,7 @@ int tf_drop_count = 0;                         // so diem odom bi bo vi thieu tf
 std::unique_ptr<tf2_ros::Buffer> tf_buffer;
 std::unique_ptr<tf2_ros::TransformListener> tf_listener;
 std::string output_file;
+std::string goal_file;
 
 double pointDistance(const Point3d& a, const Point3d& b)
 {
@@ -643,8 +645,20 @@ int main(int argc, char** argv)
     // Ten planner co the doi (SamplePlanner / GraphPlanner / ...) nen de thanh tham so.
     std::string plan_topic;
     private_nh.param<std::string>("plan_topic", plan_topic, "move_base/SamplePlanner/plan");
+
+    // Do not depend on the terminal's current directory or an old machine's
+    // absolute path.  Both files are addressed relative to this ROS package:
+    // path_trace_node -> ../../ is the workspace's src directory.
+    const std::string package_path = ros::package::getPath("path_trace_node");
+    if (package_path.empty()) {
+        ROS_FATAL("Khong tim thay package path_trace_node. Hay source devel/setup.bash truoc khi chay node.");
+        return 1;
+    }
+    const std::string src_path = package_path + "/../..";
     private_nh.param<std::string>("output_file", output_file,
-        "/home/roab_lab/ros_motion_planning-master/src/custom_node/logdata/maze_11_data.yaml");
+        src_path + "/custom_node/logdata/maze_11_data.yaml");
+    private_nh.param<std::string>("goal_file", goal_file,
+        src_path + "/user_config/goal_config.yaml");
 
     // Can tf de doi quy dao odom sang frame cua plan truoc khi tinh tracking error
     tf_buffer = std::make_unique<tf2_ros::Buffer>();
@@ -673,14 +687,14 @@ int main(int argc, char** argv)
     path.header.frame_id = "odom";  // Đặt frame_id phù hợp
 
     try {
-        YAML::Node config = YAML::LoadFile("/home/roab_lab/ros_motion_planning-master/src/user_config/goal_config.yaml");
+        YAML::Node config = YAML::LoadFile(goal_file);
         double x = config["goal"]["x"].as<double>();
         double y = config["goal"]["y"].as<double>();
         setNavGoal(0.0, 0.0);
         ros::Duration(1.0).sleep();
         setNavGoal(x, y);
     } catch (const std::exception& e) {
-        ROS_ERROR("Failed to load goal.yaml: %s", e.what());
+        ROS_ERROR("Failed to load goal file '%s': %s", goal_file.c_str(), e.what());
     }
     
     ros::spin();
