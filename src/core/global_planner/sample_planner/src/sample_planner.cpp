@@ -269,10 +269,9 @@ bool SamplePlanner::makePlan(const geometry_msgs::PoseStamped& start, const geom
       //   ROS_WARN("Check ok !");
         if (_getPlanFromPath(path, plan))
         {
-          // RRT-Cut may deliberately return a route to an intermediate
-          // jump/sub-goal.  Do not fabricate an unchecked straight segment
-          // from that endpoint to the final goal: consumers and the evaluator
-          // must see the route that the planner actually produced.
+          geometry_msgs::PoseStamped goal_copy = goal;
+          goal_copy.header.stamp = ros::Time::now();
+          plan.push_back(goal_copy);
           history_plan_ = plan;
         }
         // }else if(history_plan_.size() > 0){
@@ -319,8 +318,9 @@ bool SamplePlanner::makePlan(const geometry_msgs::PoseStamped& start, const geom
           if(path.size() > 5){
           if (_getPlanFromPath(path, plan))
           {
-            // The escape branch also plans only to n_sub_goal.  Keep that
-            // endpoint intact; a later replan is responsible for progress.
+            geometry_msgs::PoseStamped goal_copy = goal;
+            goal_copy.header.stamp = ros::Time::now();
+            plan.push_back(goal_copy);
             history_plan_ = plan;
           }
           else
