@@ -17,13 +17,13 @@ pedestrians:
   ped_property:
     - name: human_1
       pose: 4.5 1 0 0 0 0
-      velocity: 0.6
-      radius: 0.5
+      velocity: 0.25
+      radius: 0.2
       cycle: true
       ignore:
         model_1: ground_plane
         model_2: turtlebot3_waffle
       trajectory:
         goal_point_1: 4.5 1 0 0 0 0
-        goal_point_2: 6 -1 0 0 0 0
+        goal_point_2: 4.5 -1 0 0 0 0
     

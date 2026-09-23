@@ -1,6 +1,6 @@
 shutdown_costmaps: false
 
-planner_frequency: 2.0 #2.0
+planner_frequency: 5.0 #2.0
 planner_patience: 5.0  #5.0
 
 controller_frequency: 10.0
