@@ -1,0 +1,1280 @@
+xacro: in-order processing became default in ROS Melodic. You can drop the option.
+... logging to /tmp/ros_motion_planning_20261001_170411_01/73f2fc62-bd7f-11f1-9877-d9febe91b139/roslaunch-roablab-3450-2076711.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/roab_lab/ros_motion_planning-master/src/sim_env/launch/main.launch
+[1mstarted roslaunch server http://localhost:43265/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /amcl/gui_publish_rate: 50.0
+ * /amcl/initial_pose_a: 0.0
+ * /amcl/initial_pose_x: 0.0
+ * /amcl/initial_pose_y: -3.0
+ * /amcl/initial_pose_z: 0.0
+ * /amcl/kld_err: 0.02
+ * /amcl/laser_lambda_short: 0.1
+ * /amcl/laser_likelihood_max_dist: 2.0
+ * /amcl/laser_max_beams: 180
+ * /amcl/laser_max_range: 3.5
+ * /amcl/laser_model_type: likelihood_field
+ * /amcl/laser_sigma_hit: 0.2
+ * /amcl/laser_z_hit: 0.5
+ * /amcl/laser_z_max: 0.05
+ * /amcl/laser_z_rand: 0.5
+ * /amcl/laser_z_short: 0.05
+ * /amcl/max_particles: 3000
+ * /amcl/min_particles: 500
+ * /amcl/odom_alpha1: 0.1
+ * /amcl/odom_alpha2: 0.1
+ * /amcl/odom_alpha3: 0.1
+ * /amcl/odom_alpha4: 0.1
+ * /amcl/odom_model_type: diff
+ * /amcl/recovery_alpha_fast: 0.0
+ * /amcl/recovery_alpha_slow: 0.0
+ * /amcl/resample_interval: 1
+ * /amcl/transform_tolerance: 0.5
+ * /amcl/update_min_a: 0.2
+ * /amcl/update_min_d: 0.2
+ * /gazebo/enable_ros_network: True
+ * /move_base/DWAPlanner/acc_lim_theta: 3.2
+ * /move_base/DWAPlanner/acc_lim_x: 2.5
+ * /move_base/DWAPlanner/acc_lim_y: 0.0
+ * /move_base/DWAPlanner/controller_frequency: 10.0
+ * /move_base/DWAPlanner/forward_point_distance: 0.325
+ * /move_base/DWAPlanner/goal_distance_bias: 20.0
+ * /move_base/DWAPlanner/latch_xy_goal_tolerance: False
+ * /move_base/DWAPlanner/max_scaling_factor: 0.2
+ * /move_base/DWAPlanner/max_vel_theta: 1.82
+ * /move_base/DWAPlanner/max_vel_trans: 0.26
+ * /move_base/DWAPlanner/max_vel_x: 0.46
+ * /move_base/DWAPlanner/max_vel_y: 0.0
+ * /move_base/DWAPlanner/min_vel_theta: 0.9
+ * /move_base/DWAPlanner/min_vel_trans: 0.13
+ * /move_base/DWAPlanner/min_vel_x: 0.0
+ * /move_base/DWAPlanner/min_vel_y: 0.0
+ * /move_base/DWAPlanner/occdist_scale: 0.3
+ * /move_base/DWAPlanner/oscillation_reset_dist: 0.05
+ * /move_base/DWAPlanner/path_distance_bias: 32.0
+ * /move_base/DWAPlanner/publish_cost_grid_pc: True
+ * /move_base/DWAPlanner/publish_traj_pc: True
+ * /move_base/DWAPlanner/scaling_speed: 0.25
+ * /move_base/DWAPlanner/sim_time: 2.0
+ * /move_base/DWAPlanner/stop_time_buffer: 0.2
+ * /move_base/DWAPlanner/vth_samples: 40
+ * /move_base/DWAPlanner/vx_samples: 20
+ * /move_base/DWAPlanner/vy_samples: 0
+ * /move_base/DWAPlanner/xy_goal_tolerance: 0.2
+ * /move_base/DWAPlanner/yaw_goal_tolerance: 0.5
+ * /move_base/SamplePlanner/adaptive_min_step: 1.0
+ * /move_base/SamplePlanner/attractive_gain: 1.0
+ * /move_base/SamplePlanner/convert_offset: 0.0
+ * /move_base/SamplePlanner/danger_distance: 1.5
+ * /move_base/SamplePlanner/default_tolerance: 0.0
+ * /move_base/SamplePlanner/expand_zone: True
+ * /move_base/SamplePlanner/goal_bias_probability: 0.2
+ * /move_base/SamplePlanner/informed_iterations: 3000
+ * /move_base/SamplePlanner/informed_sample_points: 1000
+ * /move_base/SamplePlanner/informed_threshold_cost: 0.0
+ * /move_base/SamplePlanner/near_distance: 3.5
+ * /move_base/SamplePlanner/number_node_k: 5
+ * /move_base/SamplePlanner/obstacle_factor: 0.5
+ * /move_base/SamplePlanner/obstacle_influence_distance: 3.5
+ * /move_base/SamplePlanner/optimization_r: 10.0
+ * /move_base/SamplePlanner/outline_map: True
+ * /move_base/SamplePlanner/planner_name: rrt_cut
+ * /move_base/SamplePlanner/prior_circle_set_r: 15.0
+ * /move_base/SamplePlanner/repulsive_gain: 1.0
+ * /move_base/SamplePlanner/rewire_threads_num: 4
+ * /move_base/SamplePlanner/rrt_cut_max_segments: 60
+ * /move_base/SamplePlanner/rrt_cut_progress_distance: 0.08
+ * /move_base/SamplePlanner/rrt_cut_stuck_timeout: 3.0
+ * /move_base/SamplePlanner/rrt_cut_sub_goal_tolerance_cells: 10.0
+ * /move_base/SamplePlanner/sample_max_d: 5.0
+ * /move_base/SamplePlanner/sample_points: 10000
+ * /move_base/SamplePlanner/search_radius: 10.0
+ * /move_base/SamplePlanner/step_extend_d: 30.0
+ * /move_base/SamplePlanner/t_distr_freedom: 1.0
+ * /move_base/base_global_planner: sample_planner/Sa...
+ * /move_base/base_local_planner: dwa_planner/DWAPl...
+ * /move_base/conservative_reset_dist: 3.0
+ * /move_base/controller_frequency: 10.0
+ * /move_base/controller_patience: 15.0
+ * /move_base/global_costmap/cost_scaling_factor: 2.0
+ * /move_base/global_costmap/footprint: [[-0.205, -0.155]...
+ * /move_base/global_costmap/global_frame: map
+ * /move_base/global_costmap/inflation_layer/cost_scaling_factor: 2.0
+ * /move_base/global_costmap/inflation_layer/enabled: True
+ * /move_base/global_costmap/inflation_layer/inflation_radius: 0.4
+ * /move_base/global_costmap/inflation_radius: 0.4
+ * /move_base/global_costmap/map_type: costmap
+ * /move_base/global_costmap/observation_sources: scan
+ * /move_base/global_costmap/obstacle_layer/observation_sources: scan
+ * /move_base/global_costmap/obstacle_layer/scan/clearing: True
+ * /move_base/global_costmap/obstacle_layer/scan/data_type: LaserScan
+ * /move_base/global_costmap/obstacle_layer/scan/expected_update_rate: 1.5
+ * /move_base/global_costmap/obstacle_layer/scan/inf_is_valid: True
+ * /move_base/global_costmap/obstacle_layer/scan/marking: True
+ * /move_base/global_costmap/obstacle_layer/scan/max_obstacle_height: 0.8
+ * /move_base/global_costmap/obstacle_layer/scan/min_obstacle_height: 0.0
+ * /move_base/global_costmap/obstacle_layer/scan/observation_persistence: 0.0
+ * /move_base/global_costmap/obstacle_layer/scan/obstacle_range: 2.5
+ * /move_base/global_costmap/obstacle_layer/scan/raytrace_range: 3.0
+ * /move_base/global_costmap/obstacle_layer/scan/sensor_frame: base_footprint
+ * /move_base/global_costmap/obstacle_layer/scan/topic: scan
+ * /move_base/global_costmap/obstacle_range: 3.0
+ * /move_base/global_costmap/plugins: [{'name': 'static...
+ * /move_base/global_costmap/publish_frequency: 1.0
+ * /move_base/global_costmap/raytrace_range: 3.5
+ * /move_base/global_costmap/robot_base_frame: base_footprint
+ * /move_base/global_costmap/scan/clearing: True
+ * /move_base/global_costmap/scan/data_type: LaserScan
+ * /move_base/global_costmap/scan/inf_is_valid: True
+ * /move_base/global_costmap/scan/marking: True
+ * /move_base/global_costmap/scan/sensor_frame: base_scan
+ * /move_base/global_costmap/scan/topic: scan
+ * /move_base/global_costmap/static_map/clear_time: 20
+ * /move_base/global_costmap/static_map/enabled: True
+ * /move_base/global_costmap/static_map/publish_static_map: True
+ * /move_base/global_costmap/transform_tolerance: 0.5
+ * /move_base/global_costmap/update_frequency: 1.0
+ * /move_base/local_costmap/cost_scaling_factor: 3.0
+ * /move_base/local_costmap/footprint: [[-0.205, -0.155]...
+ * /move_base/local_costmap/global_frame: odom
+ * /move_base/local_costmap/height: 3
+ * /move_base/local_costmap/inflation_radius: 15.0
+ * /move_base/local_costmap/map_type: costmap
+ * /move_base/local_costmap/observation_sources: scan
+ * /move_base/local_costmap/obstacle_range: 3.0
+ * /move_base/local_costmap/publish_frequency: 10.0
+ * /move_base/local_costmap/raytrace_range: 3.5
+ * /move_base/local_costmap/resolution: 0.05
+ * /move_base/local_costmap/robot_base_frame: base_footprint
+ * /move_base/local_costmap/rolling_window: True
+ * /move_base/local_costmap/scan/clearing: True
+ * /move_base/local_costmap/scan/data_type: LaserScan
+ * /move_base/local_costmap/scan/inf_is_valid: True
+ * /move_base/local_costmap/scan/marking: True
+ * /move_base/local_costmap/scan/sensor_frame: base_scan
+ * /move_base/local_costmap/scan/topic: scan
+ * /move_base/local_costmap/static_map: False
+ * /move_base/local_costmap/transform_tolerance: 0.7
+ * /move_base/local_costmap/update_frequency: 10.0
+ * /move_base/local_costmap/width: 3
+ * /move_base/oscillation_distance: 0.2
+ * /move_base/oscillation_timeout: 10.0
+ * /move_base/planner_frequency: 2.0
+ * /move_base/planner_patience: 5.0
+ * /move_base/shutdown_costmaps: False
+ * /robot_description: <?xml version="1....
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /use_sim_time: True
+
+NODES
+  /
+    amcl (amcl/amcl)
+    gazebo (gazebo_ros/gzserver)
+    gazebo_gui (gazebo_ros/gzclient)
+    joint_state_publisher (joint_state_publisher/joint_state_publisher)
+    map_server (map_server/map_server)
+    move_base (move_base/move_base)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+    rviz (rviz/rviz)
+    urdf_spawner (gazebo_ros/spawn_model)
+
+auto-starting new master
+[1mprocess[master]: started with pid [2076759][0m
+[0m[INFO] [1790849054.126685546]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[INFO] [1790849054.127720343]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[INFO] [1790849054.266472055]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[INFO] [1790849054.267318400]: waitForService: Service [/gazebo_gui/set_physics_properties] has not been advertised, waiting...[0m
+[0m[INFO] [1790849054.641328090]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[ERROR] [1790849054.672690, 181.064000]: Spawn service failed. Exiting.
+[INFO] [1790849054.031387, 0.000000]: Loading model XML from ros parameter robot_description
+[INFO] [1790849054.034390, 0.000000]: Waiting for service /gazebo/spawn_urdf_model
+[INFO] [1790849054.638780, 0.000000]: Calling service /gazebo/spawn_urdf_model
+[INFO] [1790849054.671310, 181.064000]: Spawn status: SpawnModel: Entity pushed to spawn queue, but spawn service timed out waiting for entity to appear in simulation under the name turtlebot3_waffle
+[0m[INFO] [1790849054.677582665, 181.064000000]: Physics dynamic reconfigure ready.[0m
+../src/intel/isl/isl.c:2105: FINISHME: ../src/intel/isl/isl.c:isl_surf_supports_ccs: CCS for 3D textures is disabled, but a workaround is available.
+../src/intel/isl/isl.c:2105: FINISHME: ../src/intel/isl/isl.c:isl_surf_supports_ccs: CCS for 3D textures is disabled, but a workaround is available.
+[0m[INFO] [1790849056.406534214, 181.064000000]: Camera Plugin: Using the 'robotNamespace' param: '/'[0m
+[0m[INFO] [1790849056.408414606, 181.064000000]: Camera Plugin (ns = /)  <tf_prefix_>, set to ""[0m
+[0m[INFO] [1790849056.638263183, 181.064000000]: Laser Plugin: Using the 'robotNamespace' param: '/'[0m
+[0m[INFO] [1790849056.638333087, 181.064000000]: Starting Laser Plugin (ns = /)[0m
+[0m[INFO] [1790849056.639863631, 181.064000000]: Laser Plugin (ns = /)  <tf_prefix_>, set to ""[0m
+[0m[INFO] [1790849056.686195562, 181.064000000]: Starting plugin DiffDrive(ns = //)[0m
+[0m[INFO] [1790849056.686270815, 181.064000000]: DiffDrive(ns = //): <rosDebugLevel> = na[0m
+[0m[INFO] [1790849056.687045768, 181.064000000]: DiffDrive(ns = //): <tf_prefix> = [0m
+[0m[INFO] [1790849056.688482648, 181.064000000]: DiffDrive(ns = //): Try to subscribe to cmd_vel[0m
+[0m[INFO] [1790849056.691067609, 181.064000000]: DiffDrive(ns = //): Subscribe to cmd_vel[0m
+[0m[INFO] [1790849056.692417752, 181.064000000]: DiffDrive(ns = //): Advertise odom on odom [0m
+[33m[WARN] [1790849056.698949996, 181.066000000]: Timed out waiting for transform from base_footprint to map to become available before running costmap, tf error: canTransform: target_frame map does not exist. canTransform: source_frame base_footprint does not exist.. canTransform returned after 181.066 timeout was 0.1.[0m
+[33m[WARN] [1790849056.760287558, 181.123000000]: WARNING: package://spencer_tracking_rviz_plugin/media/animated_walking_man.mesh is an older format ([MeshSerializer_v1.41]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.[0m
+[33m[WARN] [1790849056.760455097, 181.123000000]: Can't assign material male_base_lambert1 to SubEntity of mesh_person_visual0 because this Material does not exist. Have you forgotten to define it in a .material script?[0m
+[33m[WARN] [1790849057.693963646, 181.966000000]: global_costmap: Pre-Hydro parameter "static_map" unused since "plugins" is provided[0m
+[33m[WARN] [1790849057.694309300, 181.967000000]: global_costmap: Pre-Hydro parameter "map_type" unused since "plugins" is provided[0m
+[0m[INFO] [1790849057.694831225, 181.967000000]: global_costmap: Using plugin "static_map"[0m
+[0m[INFO] [1790849057.698114284, 181.970000000]: Requesting the map...[0m
+[0m[INFO] [1790849057.927664073, 182.171000000]: Resizing costmap to 384 X 384 at 0.050000 m/pix[0m
+[0m[INFO] [1790849058.036010445, 182.271000000]: Received a 384 X 384 map at 0.050000 m/pix[0m
+[0m[INFO] [1790849058.039016909, 182.274000000]: global_costmap: Using plugin "obstacle_layer"[0m
+[0m[INFO] [1790849058.045335415, 182.279000000]:     Subscribed to Topics: scan[0m
+[0m[INFO] [1790849058.053306832, 182.287000000]: global_costmap: Using plugin "voronoi_layer"[0m
+[0m[INFO] [1790849058.055359266, 182.289000000]: global_costmap: Using plugin "inflation_layer"[0m
+[33m[WARN] [1790849058.083244944, 182.315000000]: Planner name initial: rrt_cut[0m
+[0m[INFO] [1790849058.083285094, 182.316000000]: Using global sample planner: rrt_cut[0m
+[33m[WARN] [1790849058.088231763, 182.320000000]: local_costmap: Parameter "plugins" not provided, loading pre-Hydro parameters[0m
+[0m[INFO] [1790849058.098301273, 182.328000000]: local_costmap: Using plugin "obstacle_layer"[0m
+[0m[INFO] [1790849058.099655534, 182.329000000]:     Subscribed to Topics: scan[0m
+[0m[INFO] [1790849058.111575433, 182.338000000]: local_costmap: Using plugin "inflation_layer"[0m
+[0m[INFO] [1790849058.142205771, 182.365000000]: Created local_planner dwa_planner/DWAPlanner[0m
+[0m[INFO] [1790849058.144213535, 182.367000000]: Sim period is set to 0.10[0m
+[0m[INFO] [1790849058.146046311, 182.369000000]: Using local planner: DWAPlanner[0m
+[0m[INFO] [1790849058.248618400, 182.463000000]: Recovery behavior will clear layer 'obstacles'[0m
+[0m[INFO] [1790849058.255252266, 182.467000000]: Recovery behavior will clear layer 'obstacles'[0m
+[0m[INFO] [1790849058.287667727, 182.498000000]: odom received![0m
+Start Node: (200, 141)
+Jump Node: (204, 164)
+Goal Node: (198, 195)
+[0m[INFO] [1790849076.297869833, 199.267000000]: Got new plan[0m
+Start Node: (201, 141)
+Jump Node: (198, 152)
+Goal Node: (198, 195)
+[0m[INFO] [1790849076.838646426, 199.767000000]: Got new plan[0m
+Start Node: (202, 141)
+Jump Node: (197, 164)
+Goal Node: (198, 195)
+[0m[INFO] [1790849077.372038534, 200.267000000]: Got new plan[0m
+Start Node: (203, 142)
+Jump Node: (198, 152)
+Goal Node: (198, 195)
+[0m[INFO] [1790849077.905527728, 200.767000000]: Got new plan[0m
+[33m[WARN] [1790849078.232577837, 201.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849078.232957258, 201.074000000]: Stuck count: 1[0m
+Start Node: (204, 144)
+Jump Node: (207, 162)
+Goal Node: (198, 195)
+[0m[INFO] [1790849078.332527106, 201.167000000]: Got new plan[0m
+[33m[WARN] [1790849078.338321038, 201.173000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849078.338571460, 201.173000000]: Stuck count: 2[0m
+Start Node: (204, 144)
+Jump Node: (199, 161)
+Goal Node: (198, 195)
+[0m[INFO] [1790849078.439296366, 201.267000000]: Got new plan[0m
+[33m[WARN] [1790849078.444527565, 201.273000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849078.444767938, 201.273000000]: Stuck count: 3[0m
+Start Node: (204, 144)
+Jump Node: (198, 164)
+Goal Node: (198, 195)
+[0m[INFO] [1790849078.545696260, 201.368000000]: Got new plan[0m
+[33m[WARN] [1790849078.553840677, 201.375000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849078.554086303, 201.375000000]: Stuck count: 4[0m
+Start Node: (204, 144)
+Jump Node: (196, 161)
+Goal Node: (198, 195)
+[0m[INFO] [1790849078.652998682, 201.467000000]: Got new plan[0m
+[33m[WARN] [1790849078.659715205, 201.474000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849078.659879101, 201.474000000]: Stuck count: 5[0m
+Start Node: (204, 144)
+Jump Node: (201, 155)
+Goal Node: (198, 195)
+[0m[INFO] [1790849078.758437329, 201.567000000]: Got new plan[0m
+[33m[WARN] [1790849078.766044014, 201.574000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849078.766167302, 201.574000000]: Stuck .... start escape[0m
+Start escape function 
+[0m[INFO] [1790849078.766270603, 201.574000000]: Stuck count: 6[0m
+Sub_goal found 
+[0m[INFO] [1790849078.854886194, 201.657000000]: Sub-goal (186, 231) kept until the robot reaches it[0m
+Start Node: (204, 144)
+Jump Node: (194, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849078.865678702, 201.667000000]: Got new plan[0m
+[33m[WARN] [1790849078.874884158, 201.675000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849078.875156588, 201.675000000]: Stuck count: 7[0m
+Start Node: (204, 144)
+Jump Node: (187, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849078.972818043, 201.767000000]: Got new plan[0m
+[33m[WARN] [1790849078.979422698, 201.773000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849078.979594329, 201.774000000]: Stuck count: 8[0m
+Start Node: (204, 144)
+Jump Node: (188, 148)
+Goal Node: (186, 231)
+[33m[WARN] [1790849078.988191031, 201.782000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849079.079107944, 201.867000000]: Got new plan[0m
+[33m[WARN] [1790849079.087578413, 201.875000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849079.087868485, 201.875000000]: Stuck count: 9[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849079.185232769, 201.967000000]: Got new plan[0m
+[33m[WARN] [1790849079.192796867, 201.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849079.193007538, 201.974000000]: Stuck count: 10[0m
+Start Node: (204, 144)
+Jump Node: (189, 152)
+Goal Node: (186, 231)
+[0m[INFO] [1790849079.292664533, 202.067000000]: Got new plan[0m
+[33m[WARN] [1790849079.299320087, 202.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849079.299496466, 202.074000000]: Stuck count: 11[0m
+Start Node: (204, 144)
+Jump Node: (189, 153)
+Goal Node: (186, 231)
+[0m[INFO] [1790849079.398889146, 202.167000000]: Got new plan[0m
+[33m[WARN] [1790849079.406407735, 202.174000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849079.406702874, 202.174000000]: Stuck count: 12[0m
+Start Node: (204, 144)
+Jump Node: (187, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849079.506098218, 202.267000000]: Got new plan[0m
+[33m[WARN] [1790849079.513304586, 202.274000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849079.513591145, 202.274000000]: Stuck count: 13[0m
+Start Node: (204, 144)
+Jump Node: (186, 162)
+Goal Node: (186, 231)
+[0m[INFO] [1790849079.613408884, 202.367000000]: Got new plan[0m
+[33m[WARN] [1790849079.619674711, 202.373000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849079.619879934, 202.374000000]: Stuck count: 14[0m
+Start Node: (204, 144)
+Jump Node: (186, 150)
+Goal Node: (186, 231)
+[0m[INFO] [1790849079.718263799, 202.467000000]: Got new plan[0m
+[33m[WARN] [1790849079.725330087, 202.474000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849079.725514990, 202.474000000]: Stuck count: 15[0m
+Start Node: (204, 144)
+Jump Node: (189, 150)
+Goal Node: (186, 231)
+[33m[WARN] [1790849079.731311120, 202.479000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849079.824736882, 202.567000000]: Got new plan[0m
+[33m[WARN] [1790849079.834197643, 202.575000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849079.834571431, 202.576000000]: Stuck count: 16[0m
+Start Node: (204, 144)
+Jump Node: (189, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849079.932229881, 202.667000000]: Got new plan[0m
+[33m[WARN] [1790849079.939892422, 202.674000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849079.940123383, 202.674000000]: Stuck count: 17[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849080.038599981, 202.767000000]: Got new plan[0m
+[33m[WARN] [1790849080.046332171, 202.774000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849080.046522774, 202.774000000]: Stuck count: 18[0m
+Start Node: (204, 144)
+Jump Node: (186, 159)
+Goal Node: (186, 231)
+[0m[INFO] [1790849080.145850488, 202.867000000]: Got new plan[0m
+[33m[WARN] [1790849080.152497278, 202.874000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849080.153174155, 202.874000000]: Stuck count: 19[0m
+Start Node: (204, 144)
+Jump Node: (186, 161)
+Goal Node: (186, 231)
+[0m[INFO] [1790849080.252922977, 202.967000000]: Got new plan[0m
+[33m[WARN] [1790849080.259569028, 202.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849080.259830765, 202.974000000]: Stuck count: 20[0m
+Start Node: (204, 144)
+Jump Node: (196, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849080.359564848, 203.067000000]: Got new plan[0m
+[33m[WARN] [1790849080.366588508, 203.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849080.366857278, 203.074000000]: Stuck count: 21[0m
+Start Node: (204, 144)
+Jump Node: (187, 161)
+Goal Node: (186, 231)
+[0m[INFO] [1790849080.465329970, 203.167000000]: Got new plan[0m
+[33m[WARN] [1790849080.476238894, 203.177000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849080.476434575, 203.177000000]: Stuck count: 22[0m
+Start Node: (204, 144)
+Jump Node: (185, 161)
+Goal Node: (186, 231)
+[0m[INFO] [1790849080.574303905, 203.267000000]: Got new plan[0m
+[33m[WARN] [1790849080.580937416, 203.274000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849080.581116285, 203.274000000]: Stuck count: 23[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849080.680713417, 203.367000000]: Got new plan[0m
+[33m[WARN] [1790849080.687599329, 203.374000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849080.687824690, 203.374000000]: Stuck count: 24[0m
+Start Node: (204, 144)
+Jump Node: (194, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849080.786438405, 203.467000000]: Got new plan[0m
+[33m[WARN] [1790849080.796894359, 203.477000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849080.797107581, 203.477000000]: Stuck count: 25[0m
+Start Node: (204, 144)
+Jump Node: (185, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849080.893310595, 203.567000000]: Got new plan[0m
+[33m[WARN] [1790849080.900834561, 203.574000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849080.901022247, 203.574000000]: Stuck count: 26[0m
+Start Node: (204, 144)
+Jump Node: (186, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849080.999258767, 203.667000000]: Got new plan[0m
+[33m[WARN] [1790849081.006852792, 203.674000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849081.007090478, 203.674000000]: Stuck count: 27[0m
+Start Node: (204, 144)
+Jump Node: (189, 145)
+Goal Node: (186, 231)
+[33m[WARN] [1790849081.013356135, 203.680000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849081.106677083, 203.768000000]: Got new plan[0m
+[33m[WARN] [1790849081.114021090, 203.774000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849081.114388071, 203.775000000]: Stuck count: 28[0m
+Start Node: (204, 144)
+Jump Node: (188, 160)
+Goal Node: (186, 231)
+[0m[INFO] [1790849081.214259670, 203.867000000]: Got new plan[0m
+[33m[WARN] [1790849081.221015318, 203.873000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849081.221220881, 203.874000000]: Stuck count: 29[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849081.319675671, 203.967000000]: Got new plan[0m
+[33m[WARN] [1790849081.326492743, 203.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849081.326709023, 203.974000000]: Stuck count: 30[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849081.426026054, 204.067000000]: Got new plan[0m
+[33m[WARN] [1790849081.433047475, 204.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849081.433305504, 204.074000000]: Stuck count: 31[0m
+Start Node: (204, 144)
+Jump Node: (186, 155)
+Goal Node: (186, 231)
+[0m[INFO] [1790849081.532834405, 204.167000000]: Got new plan[0m
+[33m[WARN] [1790849081.541267191, 204.175000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849081.541486053, 204.175000000]: Stuck count: 32[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849081.639862074, 204.268000000]: Got new plan[0m
+[33m[WARN] [1790849081.646475775, 204.274000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849081.646658483, 204.274000000]: Stuck count: 33[0m
+Start Node: (204, 144)
+Jump Node: (185, 156)
+Goal Node: (186, 231)
+[0m[INFO] [1790849081.745282521, 204.367000000]: Got new plan[0m
+[33m[WARN] [1790849081.752679503, 204.374000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849081.752926189, 204.374000000]: Stuck count: 34[0m
+Start Node: (204, 144)
+Jump Node: (186, 151)
+Goal Node: (186, 231)
+[0m[INFO] [1790849081.852494060, 204.467000000]: Got new plan[0m
+[33m[WARN] [1790849081.859753320, 204.474000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849081.859911753, 204.474000000]: Stuck count: 35[0m
+Start Node: (204, 144)
+Jump Node: (190, 162)
+Goal Node: (186, 231)
+[0m[INFO] [1790849081.958553493, 204.567000000]: Got new plan[0m
+[33m[WARN] [1790849081.965758305, 204.574000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849081.965976351, 204.574000000]: Stuck count: 36[0m
+Start Node: (204, 144)
+Jump Node: (207, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849082.065660570, 204.667000000]: Got new plan[0m
+[33m[WARN] [1790849082.072747730, 204.674000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849082.072975425, 204.674000000]: Stuck count: 37[0m
+Start Node: (204, 144)
+Jump Node: (187, 160)
+Goal Node: (186, 231)
+[0m[INFO] [1790849082.174787372, 204.768000000]: Got new plan[0m
+[33m[WARN] [1790849082.181837642, 204.774000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849082.182045575, 204.774000000]: Stuck count: 38[0m
+Start Node: (204, 144)
+Jump Node: (188, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849082.280481363, 204.867000000]: Got new plan[0m
+[33m[WARN] [1790849082.287697029, 204.874000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849082.287932232, 204.874000000]: Stuck count: 39[0m
+Start Node: (204, 144)
+Jump Node: (201, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849082.386484989, 204.967000000]: Got new plan[0m
+[33m[WARN] [1790849082.393585148, 204.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849082.393861710, 204.974000000]: Stuck count: 40[0m
+Start Node: (204, 144)
+Jump Node: (185, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849082.493516695, 205.068000000]: Got new plan[0m
+[33m[WARN] [1790849082.500174657, 205.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849082.500517813, 205.074000000]: Stuck count: 41[0m
+Start Node: (204, 144)
+Jump Node: (188, 145)
+Goal Node: (186, 231)
+[33m[WARN] [1790849082.507060343, 205.080000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849082.601197163, 205.167000000]: Got new plan[0m
+[33m[WARN] [1790849082.610528256, 205.176000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849082.610809127, 205.176000000]: Stuck count: 42[0m
+Start Node: (204, 144)
+Jump Node: (188, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849082.707215397, 205.267000000]: Got new plan[0m
+[33m[WARN] [1790849082.715932669, 205.275000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849082.716133475, 205.275000000]: Stuck count: 43[0m
+Start Node: (204, 144)
+Jump Node: (189, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849082.814904933, 205.367000000]: Got new plan[0m
+[33m[WARN] [1790849082.821594442, 205.374000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849082.823599033, 205.375000000]: Stuck count: 44[0m
+Start Node: (204, 144)
+Jump Node: (187, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849082.920888685, 205.468000000]: Got new plan[0m
+[33m[WARN] [1790849082.929394570, 205.475000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849082.929644599, 205.476000000]: Stuck count: 45[0m
+Start Node: (204, 144)
+Jump Node: (188, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849083.026832110, 205.567000000]: Got new plan[0m
+[33m[WARN] [1790849083.034751374, 205.574000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849083.035223551, 205.575000000]: Stuck count: 46[0m
+Start Node: (204, 144)
+Jump Node: (186, 161)
+Goal Node: (186, 231)
+[0m[INFO] [1790849083.133229357, 205.667000000]: Got new plan[0m
+[33m[WARN] [1790849083.140228027, 205.674000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849083.140486040, 205.674000000]: Stuck count: 47[0m
+Start Node: (204, 144)
+Jump Node: (186, 147)
+Goal Node: (186, 231)
+[0m[INFO] [1790849083.239012636, 205.767000000]: Got new plan[0m
+[33m[WARN] [1790849083.246431341, 205.774000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849083.246647010, 205.774000000]: Stuck count: 48[0m
+Start Node: (204, 144)
+Jump Node: (192, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849083.346226760, 205.867000000]: Got new plan[0m
+[33m[WARN] [1790849083.353240096, 205.874000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849083.353525785, 205.874000000]: Stuck count: 49[0m
+Start Node: (204, 144)
+Jump Node: (185, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849083.454185251, 205.967000000]: Got new plan[0m
+[33m[WARN] [1790849083.462867012, 205.975000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849083.463099337, 205.975000000]: Stuck count: 50[0m
+Start Node: (204, 144)
+Jump Node: (186, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849083.560921051, 206.067000000]: Got new plan[0m
+[33m[WARN] [1790849083.567946667, 206.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849083.568185316, 206.074000000]: Stuck count: 51[0m
+Start Node: (204, 144)
+Jump Node: (187, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849083.665954431, 206.167000000]: Got new plan[0m
+[33m[WARN] [1790849083.672988835, 206.174000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849083.673489401, 206.174000000]: Stuck count: 52[0m
+Start Node: (204, 144)
+Jump Node: (186, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849083.774030433, 206.267000000]: Got new plan[0m
+[33m[WARN] [1790849083.781917081, 206.275000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849083.782105999, 206.275000000]: Stuck count: 53[0m
+Start Node: (204, 144)
+Jump Node: (188, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849083.879220027, 206.367000000]: Got new plan[0m
+[33m[WARN] [1790849083.886033307, 206.374000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849083.886226917, 206.374000000]: Stuck count: 54[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849083.985563063, 206.467000000]: Got new plan[0m
+[33m[WARN] [1790849083.995746272, 206.476000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849083.996007504, 206.476000000]: Stuck count: 55[0m
+Start Node: (204, 144)
+Jump Node: (188, 156)
+Goal Node: (186, 231)
+[0m[INFO] [1790849084.092834314, 206.567000000]: Got new plan[0m
+[33m[WARN] [1790849084.100521461, 206.574000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849084.100734637, 206.574000000]: Stuck count: 56[0m
+Start Node: (204, 144)
+Jump Node: (186, 154)
+Goal Node: (186, 231)
+[0m[INFO] [1790849084.199327920, 206.667000000]: Got new plan[0m
+[33m[WARN] [1790849084.206787771, 206.674000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849084.206989864, 206.674000000]: Stuck count: 57[0m
+Start Node: (204, 144)
+Jump Node: (187, 160)
+Goal Node: (186, 231)
+[0m[INFO] [1790849084.305478027, 206.767000000]: Got new plan[0m
+[33m[WARN] [1790849084.312766257, 206.774000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849084.313112868, 206.774000000]: Stuck count: 58[0m
+Start Node: (204, 144)
+Jump Node: (186, 162)
+Goal Node: (186, 231)
+[0m[INFO] [1790849084.413942840, 206.868000000]: Got new plan[0m
+[33m[WARN] [1790849084.420870890, 206.875000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849084.421048389, 206.875000000]: Stuck count: 59[0m
+Start Node: (204, 144)
+Jump Node: (185, 158)
+Goal Node: (186, 231)
+[0m[INFO] [1790849084.519584853, 206.967000000]: Got new plan[0m
+[33m[WARN] [1790849084.526712107, 206.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849084.527010106, 206.974000000]: Stuck count: 60[0m
+Start Node: (204, 144)
+Jump Node: (201, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849084.626405771, 207.067000000]: Got new plan[0m
+[33m[WARN] [1790849084.633766000, 207.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849084.634068289, 207.074000000]: Stuck count: 61[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849084.733832763, 207.167000000]: Got new plan[0m
+[33m[WARN] [1790849084.742338725, 207.175000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849084.742519542, 207.175000000]: Stuck count: 62[0m
+Start Node: (204, 144)
+Jump Node: (187, 151)
+Goal Node: (186, 231)
+[0m[INFO] [1790849084.841156783, 207.267000000]: Got new plan[0m
+[33m[WARN] [1790849084.847720235, 207.273000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849084.848179822, 207.274000000]: Stuck count: 63[0m
+Start Node: (204, 144)
+Jump Node: (185, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849084.949576578, 207.367000000]: Got new plan[0m
+[33m[WARN] [1790849084.957040739, 207.374000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849084.957237929, 207.374000000]: Stuck count: 64[0m
+Start Node: (204, 144)
+Jump Node: (187, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849085.058014002, 207.467000000]: Got new plan[0m
+[33m[WARN] [1790849085.065800913, 207.474000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849085.066396828, 207.474000000]: Stuck count: 65[0m
+Start Node: (204, 144)
+Jump Node: (187, 159)
+Goal Node: (186, 231)
+[0m[INFO] [1790849085.167649320, 207.567000000]: Got new plan[0m
+[33m[WARN] [1790849085.176197483, 207.574000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849085.176643720, 207.574000000]: Stuck count: 66[0m
+Start Node: (204, 144)
+Jump Node: (192, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849085.278269537, 207.667000000]: Got new plan[0m
+[33m[WARN] [1790849085.284958004, 207.674000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849085.285126243, 207.674000000]: Stuck count: 67[0m
+Start Node: (204, 144)
+Jump Node: (189, 162)
+Goal Node: (186, 231)
+[0m[INFO] [1790849085.385905041, 207.767000000]: Got new plan[0m
+[33m[WARN] [1790849085.393126054, 207.774000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849085.393302951, 207.774000000]: Stuck count: 68[0m
+Start Node: (204, 144)
+Jump Node: (187, 159)
+Goal Node: (186, 231)
+[0m[INFO] [1790849085.492838133, 207.868000000]: Got new plan[0m
+[33m[WARN] [1790849085.501383789, 207.875000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849085.501716395, 207.875000000]: Stuck count: 69[0m
+Start Node: (204, 144)
+Jump Node: (185, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849085.600285602, 207.967000000]: Got new plan[0m
+[33m[WARN] [1790849085.607372414, 207.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849085.607639409, 207.974000000]: Stuck count: 70[0m
+Start Node: (204, 144)
+Jump Node: (194, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849085.710581331, 208.067000000]: Got new plan[0m
+[33m[WARN] [1790849085.718208264, 208.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849085.718470102, 208.075000000]: Stuck count: 71[0m
+Start Node: (204, 144)
+Jump Node: (198, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849085.821370230, 208.167000000]: Got new plan[0m
+[33m[WARN] [1790849085.827619315, 208.173000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849085.827829928, 208.173000000]: Stuck count: 72[0m
+Start Node: (204, 144)
+Jump Node: (189, 162)
+Goal Node: (186, 231)
+[0m[INFO] [1790849085.930900015, 208.267000000]: Got new plan[0m
+[33m[WARN] [1790849085.938986470, 208.275000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849085.939242112, 208.275000000]: Stuck count: 73[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849086.036921848, 208.367000000]: Got new plan[0m
+[33m[WARN] [1790849086.046130439, 208.375000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849086.046396201, 208.376000000]: Stuck count: 74[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849086.143284789, 208.467000000]: Got new plan[0m
+[33m[WARN] [1790849086.153148002, 208.476000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849086.153677850, 208.477000000]: Stuck count: 75[0m
+Start Node: (204, 144)
+Jump Node: (191, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849086.249571046, 208.567000000]: Got new plan[0m
+[33m[WARN] [1790849086.256416271, 208.573000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849086.256665119, 208.574000000]: Stuck count: 76[0m
+Start Node: (204, 144)
+Jump Node: (186, 154)
+Goal Node: (186, 231)
+[0m[INFO] [1790849086.358339658, 208.667000000]: Got new plan[0m
+[33m[WARN] [1790849086.366078108, 208.674000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849086.366375129, 208.674000000]: Stuck count: 77[0m
+Start Node: (204, 144)
+Jump Node: (186, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849086.466125280, 208.767000000]: Got new plan[0m
+[33m[WARN] [1790849086.472862609, 208.774000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849086.473172445, 208.774000000]: Stuck count: 78[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849086.573664665, 208.867000000]: Got new plan[0m
+[33m[WARN] [1790849086.581208703, 208.875000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849086.581416176, 208.875000000]: Stuck count: 79[0m
+Start Node: (204, 144)
+Jump Node: (187, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849086.681161627, 208.968000000]: Got new plan[0m
+[33m[WARN] [1790849086.689069887, 208.975000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849086.689278337, 208.975000000]: Stuck count: 80[0m
+Start Node: (204, 144)
+Jump Node: (187, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849086.786780242, 209.067000000]: Got new plan[0m
+[33m[WARN] [1790849086.794264851, 209.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849086.794533946, 209.074000000]: Stuck count: 81[0m
+Start Node: (204, 144)
+Jump Node: (185, 157)
+Goal Node: (186, 231)
+[0m[INFO] [1790849086.893859519, 209.167000000]: Got new plan[0m
+[33m[WARN] [1790849086.900765529, 209.174000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849086.900985767, 209.174000000]: Stuck count: 82[0m
+Start Node: (204, 144)
+Jump Node: (185, 155)
+Goal Node: (186, 231)
+[0m[INFO] [1790849086.999763902, 209.267000000]: Got new plan[0m
+[33m[WARN] [1790849087.011055260, 209.277000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849087.011258135, 209.277000000]: Stuck count: 83[0m
+Start Node: (204, 144)
+Jump Node: (185, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849087.107703924, 209.367000000]: Got new plan[0m
+[33m[WARN] [1790849087.115019930, 209.374000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849087.115251639, 209.374000000]: Stuck count: 84[0m
+Start Node: (204, 144)
+Jump Node: (193, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849087.215885731, 209.468000000]: Got new plan[0m
+[33m[WARN] [1790849087.224322691, 209.475000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849087.224588380, 209.475000000]: Stuck count: 85[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849087.322868968, 209.567000000]: Got new plan[0m
+[33m[WARN] [1790849087.332128149, 209.576000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849087.332456962, 209.576000000]: Stuck count: 86[0m
+Start Node: (204, 144)
+Jump Node: (187, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849087.430972652, 209.667000000]: Got new plan[0m
+[33m[WARN] [1790849087.439471717, 209.675000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849087.439672833, 209.675000000]: Stuck count: 87[0m
+Start Node: (204, 144)
+Jump Node: (185, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849087.538554835, 209.767000000]: Got new plan[0m
+[33m[WARN] [1790849087.547919563, 209.775000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849087.548142130, 209.775000000]: Stuck count: 88[0m
+Start Node: (204, 144)
+Jump Node: (188, 159)
+Goal Node: (186, 231)
+[0m[INFO] [1790849087.648032758, 209.867000000]: Got new plan[0m
+[33m[WARN] [1790849087.656354829, 209.874000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849087.656604490, 209.875000000]: Stuck count: 89[0m
+Start Node: (204, 144)
+Jump Node: (187, 147)
+Goal Node: (186, 231)
+[0m[INFO] [1790849087.758585932, 209.967000000]: Got new plan[0m
+[33m[WARN] [1790849087.765430050, 209.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849087.765663855, 209.974000000]: Stuck count: 90[0m
+Start Node: (204, 144)
+Jump Node: (196, 144)
+Goal Node: (186, 231)
+[33m[WARN] [1790849087.776271147, 209.984000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849087.866202889, 210.067000000]: Got new plan[0m
+[33m[WARN] [1790849087.873982308, 210.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849087.874200914, 210.074000000]: Stuck count: 91[0m
+Start Node: (204, 144)
+Jump Node: (193, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849087.973611034, 210.167000000]: Got new plan[0m
+[33m[WARN] [1790849087.984490537, 210.177000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849087.984721818, 210.177000000]: Stuck count: 92[0m
+Start Node: (204, 144)
+Jump Node: (185, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849088.079988912, 210.267000000]: Got new plan[0m
+[33m[WARN] [1790849088.087109455, 210.274000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849088.087393638, 210.274000000]: Stuck count: 93[0m
+Start Node: (204, 144)
+Jump Node: (188, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849088.188127136, 210.368000000]: Got new plan[0m
+[33m[WARN] [1790849088.196243489, 210.376000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849088.196429444, 210.376000000]: Stuck count: 94[0m
+Start Node: (204, 144)
+Jump Node: (188, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849088.293745038, 210.467000000]: Got new plan[0m
+[33m[WARN] [1790849088.301499361, 210.474000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849088.301698535, 210.474000000]: Stuck count: 95[0m
+Start Node: (204, 144)
+Jump Node: (188, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849088.401277496, 210.567000000]: Got new plan[0m
+[33m[WARN] [1790849088.410403170, 210.573000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849088.411680515, 210.576000000]: Stuck count: 96[0m
+Start Node: (204, 144)
+Jump Node: (189, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849088.509455491, 210.667000000]: Got new plan[0m
+[33m[WARN] [1790849088.516780482, 210.674000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849088.516992006, 210.674000000]: Stuck count: 97[0m
+Start Node: (204, 144)
+Jump Node: (186, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849088.615328019, 210.767000000]: Got new plan[0m
+[33m[WARN] [1790849088.622735662, 210.774000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849088.623008497, 210.774000000]: Stuck count: 98[0m
+Start Node: (204, 144)
+Jump Node: (188, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849088.722757213, 210.867000000]: Got new plan[0m
+[33m[WARN] [1790849088.730723976, 210.875000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849088.730960776, 210.875000000]: Stuck count: 99[0m
+Start Node: (204, 144)
+Jump Node: (189, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849088.828098768, 210.967000000]: Got new plan[0m
+[33m[WARN] [1790849088.835387450, 210.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849088.835564038, 210.974000000]: Stuck count: 100[0m
+Start Node: (204, 144)
+Jump Node: (190, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849088.935062091, 211.067000000]: Got new plan[0m
+[33m[WARN] [1790849088.942751209, 211.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849088.943001390, 211.074000000]: Stuck count: 101[0m
+Start Node: (204, 144)
+Jump Node: (186, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849089.041728756, 211.167000000]: Got new plan[0m
+[33m[WARN] [1790849089.049544455, 211.174000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849089.049788319, 211.174000000]: Stuck count: 102[0m
+Start Node: (204, 144)
+Jump Node: (186, 148)
+Goal Node: (186, 231)
+[0m[INFO] [1790849089.148419263, 211.267000000]: Got new plan[0m
+[33m[WARN] [1790849089.156332720, 211.274000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849089.156536457, 211.274000000]: Stuck count: 103[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849089.254162834, 211.367000000]: Got new plan[0m
+[33m[WARN] [1790849089.262801956, 211.374000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849089.263017920, 211.374000000]: Stuck count: 104[0m
+Start Node: (204, 144)
+Jump Node: (195, 151)
+Goal Node: (186, 231)
+[33m[WARN] [1790849089.272378175, 211.383000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849089.361400514, 211.467000000]: Got new plan[0m
+[33m[WARN] [1790849089.369861106, 211.473000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849089.370115290, 211.475000000]: Stuck count: 105[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849089.468666547, 211.567000000]: Got new plan[0m
+[33m[WARN] [1790849089.476210313, 211.574000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849089.476417748, 211.574000000]: Stuck count: 106[0m
+Start Node: (204, 144)
+Jump Node: (193, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849089.574502819, 211.667000000]: Got new plan[0m
+[33m[WARN] [1790849089.581930356, 211.674000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849089.582167652, 211.674000000]: Stuck count: 107[0m
+Start Node: (204, 144)
+Jump Node: (188, 148)
+Goal Node: (186, 231)
+[33m[WARN] [1790849089.587172841, 211.679000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849089.680775452, 211.767000000]: Got new plan[0m
+[33m[WARN] [1790849089.687936210, 211.774000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849089.688173296, 211.774000000]: Stuck count: 108[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849089.788099406, 211.867000000]: Got new plan[0m
+[33m[WARN] [1790849089.795492923, 211.874000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849089.795724940, 211.874000000]: Stuck count: 109[0m
+Start Node: (204, 144)
+Jump Node: (185, 147)
+Goal Node: (186, 231)
+[0m[INFO] [1790849089.894202930, 211.967000000]: Got new plan[0m
+[33m[WARN] [1790849089.901584501, 211.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849089.901789742, 211.974000000]: Stuck count: 110[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849090.002483344, 212.067000000]: Got new plan[0m
+[33m[WARN] [1790849090.011303723, 212.075000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849090.011938250, 212.076000000]: Stuck count: 111[0m
+Start Node: (204, 144)
+Jump Node: (186, 162)
+Goal Node: (186, 231)
+[0m[INFO] [1790849090.108962919, 212.167000000]: Got new plan[0m
+[33m[WARN] [1790849090.116006955, 212.174000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849090.116211788, 212.174000000]: Stuck count: 112[0m
+Start Node: (204, 144)
+Jump Node: (192, 147)
+Goal Node: (186, 231)
+[33m[WARN] [1790849090.125735790, 212.183000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849090.214881389, 212.267000000]: Got new plan[0m
+[33m[WARN] [1790849090.222247999, 212.274000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849090.222518621, 212.274000000]: Stuck count: 113[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849090.322321178, 212.367000000]: Got new plan[0m
+[33m[WARN] [1790849090.329622552, 212.374000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849090.329824627, 212.374000000]: Stuck count: 114[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849090.428641104, 212.467000000]: Got new plan[0m
+[33m[WARN] [1790849090.436031679, 212.475000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849090.436229468, 212.475000000]: Stuck count: 115[0m
+Start Node: (204, 144)
+Jump Node: (192, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849090.536021491, 212.567000000]: Got new plan[0m
+[33m[WARN] [1790849090.543557349, 212.575000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849090.543762930, 212.575000000]: Stuck count: 116[0m
+Start Node: (204, 144)
+Jump Node: (184, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849090.643266602, 212.667000000]: Got new plan[0m
+[33m[WARN] [1790849090.652736478, 212.676000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849090.652987066, 212.676000000]: Stuck count: 117[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849090.749298463, 212.767000000]: Got new plan[0m
+[33m[WARN] [1790849090.756558253, 212.774000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849090.756732259, 212.774000000]: Stuck count: 118[0m
+Start Node: (204, 144)
+Jump Node: (185, 159)
+Goal Node: (186, 231)
+[0m[INFO] [1790849090.855531585, 212.867000000]: Got new plan[0m
+[33m[WARN] [1790849090.863063095, 212.874000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849090.863262784, 212.874000000]: Stuck count: 119[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849090.961662895, 212.967000000]: Got new plan[0m
+[33m[WARN] [1790849090.968691073, 212.973000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849090.968971021, 212.974000000]: Stuck count: 120[0m
+Start Node: (204, 144)
+Jump Node: (188, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849091.070428635, 213.067000000]: Got new plan[0m
+[33m[WARN] [1790849091.077369043, 213.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849091.077572677, 213.074000000]: Stuck count: 121[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849091.177303623, 213.168000000]: Got new plan[0m
+[33m[WARN] [1790849091.184667746, 213.174000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849091.184919511, 213.175000000]: Stuck count: 122[0m
+Start Node: (204, 144)
+Jump Node: (187, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849091.285109367, 213.267000000]: Got new plan[0m
+[33m[WARN] [1790849091.292746295, 213.274000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849091.292939430, 213.274000000]: Stuck count: 123[0m
+Start Node: (204, 144)
+Jump Node: (195, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849091.393467643, 213.367000000]: Got new plan[0m
+[33m[WARN] [1790849091.401090791, 213.374000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849091.401375130, 213.374000000]: Stuck count: 124[0m
+Start Node: (204, 144)
+Jump Node: (188, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849091.500789992, 213.467000000]: Got new plan[0m
+[33m[WARN] [1790849091.509821003, 213.475000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849091.511488056, 213.477000000]: Stuck count: 125[0m
+Start Node: (204, 144)
+Jump Node: (186, 161)
+Goal Node: (186, 231)
+[0m[INFO] [1790849091.611612628, 213.567000000]: Got new plan[0m
+[33m[WARN] [1790849091.618997241, 213.575000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849091.619190285, 213.575000000]: Stuck count: 126[0m
+Start Node: (204, 144)
+Jump Node: (185, 150)
+Goal Node: (186, 231)
+[0m[INFO] [1790849091.717765123, 213.667000000]: Got new plan[0m
+[33m[WARN] [1790849091.727439876, 213.676000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849091.727801080, 213.676000000]: Stuck count: 127[0m
+Start Node: (204, 144)
+Jump Node: (197, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849091.826203451, 213.767000000]: Got new plan[0m
+[33m[WARN] [1790849091.834714471, 213.775000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849091.834892486, 213.775000000]: Stuck count: 128[0m
+Start Node: (204, 144)
+Jump Node: (187, 160)
+Goal Node: (186, 231)
+[0m[INFO] [1790849091.933624694, 213.867000000]: Got new plan[0m
+[33m[WARN] [1790849091.942576606, 213.875000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849091.942858811, 213.876000000]: Stuck count: 129[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849092.039467940, 213.967000000]: Got new plan[0m
+[33m[WARN] [1790849092.046734095, 213.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849092.046962013, 213.974000000]: Stuck count: 130[0m
+Start Node: (204, 144)
+Jump Node: (194, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849092.146475187, 214.067000000]: Got new plan[0m
+[33m[WARN] [1790849092.153755521, 214.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849092.154001909, 214.074000000]: Stuck count: 131[0m
+Start Node: (204, 144)
+Jump Node: (185, 151)
+Goal Node: (186, 231)
+[0m[INFO] [1790849092.254617443, 214.167000000]: Got new plan[0m
+[33m[WARN] [1790849092.261488167, 214.174000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849092.261682486, 214.174000000]: Stuck count: 132[0m
+Start Node: (204, 144)
+Jump Node: (200, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849092.360979792, 214.267000000]: Got new plan[0m
+[33m[WARN] [1790849092.368942410, 214.275000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849092.369199198, 214.275000000]: Stuck count: 133[0m
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849092.467807348, 214.367000000]: Got new plan[0m
+[33m[WARN] [1790849092.475665148, 214.374000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849092.476008858, 214.374000000]: Stuck count: 134[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849092.574444014, 214.467000000]: Got new plan[0m
+[33m[WARN] [1790849092.583666880, 214.476000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849092.583901924, 214.476000000]: Stuck count: 135[0m
+Start Node: (204, 144)
+Jump Node: (188, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849092.681260760, 214.567000000]: Got new plan[0m
+[33m[WARN] [1790849092.688688001, 214.574000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849092.688970699, 214.574000000]: Stuck count: 136[0m
+Start Node: (204, 144)
+Jump Node: (185, 162)
+Goal Node: (186, 231)
+[0m[INFO] [1790849092.786307282, 214.667000000]: Got new plan[0m
+[33m[WARN] [1790849092.797387306, 214.677000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849092.797876818, 214.678000000]: Stuck count: 137[0m
+Start Node: (204, 144)
+Jump Node: (187, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849092.894647516, 214.767000000]: Got new plan[0m
+[33m[WARN] [1790849092.902019979, 214.775000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849092.902191589, 214.775000000]: Stuck count: 138[0m
+Start Node: (204, 144)
+Jump Node: (187, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849092.999504865, 214.867000000]: Got new plan[0m
+[33m[WARN] [1790849093.007172507, 214.874000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849093.007416025, 214.874000000]: Stuck count: 139[0m
+Start Node: (204, 144)
+Jump Node: (197, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849093.105764233, 214.967000000]: Got new plan[0m
+[33m[WARN] [1790849093.113300586, 214.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849093.113645601, 214.974000000]: Stuck count: 140[0m
+Start Node: (204, 144)
+Jump Node: (188, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849093.214270985, 215.067000000]: Got new plan[0m
+[33m[WARN] [1790849093.221393008, 215.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849093.221582549, 215.074000000]: Stuck count: 141[0m
+Start Node: (204, 144)
+Jump Node: (187, 154)
+Goal Node: (186, 231)
+[0m[INFO] [1790849093.321429715, 215.167000000]: Got new plan[0m
+[33m[WARN] [1790849093.329553731, 215.176000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849093.329746942, 215.176000000]: Stuck count: 142[0m
+Start Node: (204, 144)
+Jump Node: (194, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849093.428413137, 215.267000000]: Got new plan[0m
+[33m[WARN] [1790849093.435475224, 215.274000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849093.435673402, 215.274000000]: Stuck count: 143[0m
+Start Node: (204, 144)
+Jump Node: (188, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849093.535584423, 215.367000000]: Got new plan[0m
+[33m[WARN] [1790849093.543291725, 215.375000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849093.543491053, 215.375000000]: Stuck count: 144[0m
+Start Node: (204, 144)
+Jump Node: (187, 154)
+Goal Node: (186, 231)
+[0m[INFO] [1790849093.641300060, 215.467000000]: Got new plan[0m
+[33m[WARN] [1790849093.648519862, 215.474000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849093.648792239, 215.474000000]: Stuck count: 145[0m
+Start Node: (204, 144)
+Jump Node: (187, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849093.748055528, 215.568000000]: Got new plan[0m
+[33m[WARN] [1790849093.756520531, 215.574000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849093.756884118, 215.575000000]: Stuck count: 146[0m
+Start Node: (204, 144)
+Jump Node: (187, 162)
+Goal Node: (186, 231)
+[0m[INFO] [1790849093.855389227, 215.667000000]: Got new plan[0m
+[33m[WARN] [1790849093.863501928, 215.675000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849093.863669528, 215.675000000]: Stuck count: 147[0m
+Start Node: (204, 144)
+Jump Node: (188, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849093.962583932, 215.768000000]: Got new plan[0m
+[33m[WARN] [1790849093.970052249, 215.775000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849093.970287543, 215.775000000]: Stuck count: 148[0m
+Start Node: (204, 144)
+Jump Node: (186, 159)
+Goal Node: (186, 231)
+[0m[INFO] [1790849094.068909970, 215.867000000]: Got new plan[0m
+[33m[WARN] [1790849094.076674514, 215.874000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849094.076981832, 215.874000000]: Stuck count: 149[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849094.176279290, 215.967000000]: Got new plan[0m
+[33m[WARN] [1790849094.183783910, 215.974000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849094.184026678, 215.974000000]: Stuck count: 150[0m
+Start Node: (204, 144)
+Jump Node: (187, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849094.287051465, 216.067000000]: Got new plan[0m
+[33m[WARN] [1790849094.295224168, 216.074000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849094.295504903, 216.074000000]: Stuck count: 151[0m
+[33m[WARN] [1790849094.398593007, 216.167000000]: Clearing both costmaps outside a square (3.00m) large centered on the robot.[0m
+Start Node: (204, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849094.620858938, 216.367000000]: Got new plan[0m
+[33m[WARN] [1790849094.628041258, 216.374000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849094.628262176, 216.375000000]: Stuck count: 152[0m
+[33m[WARN] [1790849094.729520797, 216.467000000]: Rotate recovery behavior started.[0m
+Start Node: (204, 144)
+Jump Node: (204, 163)
+Goal Node: (186, 231)
+Start Node: (204, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+Start Node: (204, 144)
+Jump Node: (199, 163)
+Goal Node: (186, 231)
+Start Node: (204, 144)
+Jump Node: (187, 164)
+Goal Node: (186, 231)
+Start Node: (204, 144)
+Jump Node: (199, 164)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (187, 163)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (187, 148)
+Goal Node: (186, 231)
+[33m[WARN] [1790849098.846667815, 220.274000000]: Short path! Using history path.[0m
+Start Node: (203, 144)
+Jump Node: (185, 150)
+Goal Node: (186, 231)
+Start Node: (202, 144)
+Jump Node: (197, 163)
+Goal Node: (186, 231)
+Start Node: (202, 144)
+Jump Node: (186, 162)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (186, 159)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (187, 150)
+Goal Node: (186, 231)
+[0m[INFO] [1790849101.674852356, 222.917000000]: Got new plan[0m
+Start Node: (202, 144)
+Jump Node: (186, 162)
+Goal Node: (186, 231)
+[0m[INFO] [1790849101.783014062, 223.017000000]: Got new plan[0m
+[33m[WARN] [1790849101.792488117, 223.026000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849101.792700471, 223.026000000]: Stuck count: 153[0m
+[33m[WARN] [1790849101.891380462, 223.117000000]: Clearing both costmaps outside a square (1.84m) large centered on the robot.[0m
+Start Node: (202, 144)
+Jump Node: (196, 163)
+Goal Node: (186, 231)
+[0m[INFO] [1790849102.109555701, 223.317000000]: Got new plan[0m
+[33m[WARN] [1790849102.116921297, 223.324000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849102.117128386, 223.325000000]: Stuck count: 154[0m
+[33m[WARN] [1790849102.215775043, 223.417000000]: Rotate recovery behavior started.[0m
+Start Node: (203, 144)
+Jump Node: (190, 164)
+Goal Node: (186, 231)
+Start Node: (202, 144)
+Jump Node: (186, 156)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (188, 162)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (191, 145)
+Goal Node: (186, 231)
+[33m[WARN] [1790849104.176755916, 225.227000000]: Short path! Using history path.[0m
+Start Node: (203, 144)
+Jump Node: (188, 163)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (186, 164)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (185, 163)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (189, 164)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (187, 163)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (189, 163)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (196, 163)
+Goal Node: (186, 231)
+Start Node: (202, 144)
+Jump Node: (194, 164)
+Goal Node: (186, 231)
+Start Node: (203, 144)
+Jump Node: (192, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849109.150694459, 229.867000000]: Got new plan[0m
+Start Node: (203, 144)
+Jump Node: (185, 164)
+Goal Node: (186, 231)
+[0m[INFO] [1790849109.257869839, 229.967000000]: Got new plan[0m
+[33m[WARN] [1790849109.269420814, 229.977000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849109.269669051, 229.978000000]: Stuck count: 155[0m
+[31m[ERROR] [1790849109.365081139, 230.067000000]: Aborting because a valid control could not be found. Even after executing all recovery behaviors[0m

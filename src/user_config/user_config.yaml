@@ -1,15 +1,15 @@
-map: "map_s_trap"
-world: "map_s_trap"
+map: "maze_19" # pedestrians are not in the static map; only maps/maze_19 exists
+world: "maze_19_with_pedestrians"
 rviz_file: "path_trace.rviz" #sim_env.rviz
 
 robots_config:
   - robot1_type: "turtlebot3_waffle"
-    robot1_global_planner: "informed_rrt_star" #RRT->RRT_astar->RRT_connect->RRT_star->RRT_cut->CG_RRT_paper
+    robot1_global_planner: "rrt_cut" #RRT->RRT_astar->RRT_astar_node_limit->RRT_astar_confidence->RRT_connect->RRT_star->RRT_cut
     robot1_local_planner: "dwa"
-    robot1_x_pos: "3.160"
-    robot1_y_pos: "-3.545"
+    robot1_x_pos: "0.0"
+    robot1_y_pos: "-3.0"
     robot1_z_pos: "0.0"
-    robot1_yaw: "2.526"
+    robot1_yaw: "0.0"
 
 # * global planner
 #   * graph_planner
@@ -29,8 +29,9 @@ robots_config:
 #     * rrt
 #     * rrt_star
 #     * rrt_astar
+#     * rrt_astar_node_limit
+#     * rrt_astar_confidence
 #     * rrt_cut
-#     * cg_rrt_paper
 #     * informed_rrt
 #     * informed_rrt_star
 #     * quick_informed_rrt

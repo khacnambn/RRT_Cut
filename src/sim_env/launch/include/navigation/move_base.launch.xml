@@ -71,8 +71,9 @@
     <param name="base_global_planner" value="sample_planner/SamplePlanner"
       if="$(eval arg('global_planner')=='rrt'
               or arg('global_planner')=='rrt_astar'
+              or arg('global_planner')=='rrt_astar_node_limit'
+              or arg('global_planner')=='rrt_astar_confidence'
               or arg('global_planner')=='rrt_cut'
-              or arg('global_planner')=='cg_rrt_paper'
               or arg('global_planner')=='rrt_star'
               or arg('global_planner')=='informed_rrt'
               or arg('global_planner')=='informed_rrt_star'
@@ -81,8 +82,9 @@
     <param name="SamplePlanner/planner_name" value="$(arg global_planner)"
       if="$(eval arg('global_planner')=='rrt'
               or arg('global_planner')=='rrt_astar'
+              or arg('global_planner')=='rrt_astar_node_limit'
+              or arg('global_planner')=='rrt_astar_confidence'
               or arg('global_planner')=='rrt_cut'
-              or arg('global_planner')=='cg_rrt_paper'
               or arg('global_planner')=='rrt_star'
               or arg('global_planner')=='informed_rrt'
               or arg('global_planner')=='informed_rrt_star'
@@ -91,8 +93,9 @@
     <rosparam file="$(find sim_env)/config/planner/sample_planner_params.yaml" command="load"
       if="$(eval arg('global_planner')=='rrt'
               or arg('global_planner')=='rrt_astar'
+              or arg('global_planner')=='rrt_astar_node_limit'
+              or arg('global_planner')=='rrt_astar_confidence'
               or arg('global_planner')=='rrt_cut'
-              or arg('global_planner')=='cg_rrt_paper'
               or arg('global_planner')=='rrt_star'
               or arg('global_planner')=='informed_rrt'
               or arg('global_planner')=='informed_rrt_star'

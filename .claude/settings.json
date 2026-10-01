@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(rg:*)",
+      "Bash(find:*)",
+      "Bash(awk:*)",
+      "Bash(sed:*)",
+      "Bash(diff:*)",
+      "Bash(echo:*)",
+      "Bash(printf:*)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(timeout:*)",
+      "Bash(source:*)",
+      "Bash(which:*)",
+      "Bash(python3:*)",
+      "Bash(make:*)",
+      "Bash(cmake:*)",
+      "Bash(catkin_make:*)",
+      "Bash(g++:*)",
+      "Bash(gcc:*)",
+      "Bash(rosparam:*)",
+      "Bash(rostopic:*)",
+      "Bash(rosnode:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(git stash list:*)",
+      "Bash(/tmp/claude-1000/:*)",
+      "Read",
+      "Edit(src/**)",
+      "Edit(scripts/**)",
+      "Edit(.claude/**)"
+    ],
+    "deny": [
+      "Bash(git push:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean:*)",
+      "Bash(rm -rf:*)"
+    ]
+  }
+}

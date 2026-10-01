@@ -22,6 +22,10 @@ if ! [[ "${trial_count}" =~ ^[1-9][0-9]*$ ]]; then
 fi
 
 map_name="$(awk -F'"' '/^map:[[:space:]]*"/ { print $2; exit }' "${user_config}")"
+# Name results after the world: e.g. maze_19_with_pedestrians shares the
+# maze_19 map, and its trials must not be mistaken for static maze_19 ones.
+world_name="$(awk -F'"' '/^world:[[:space:]]*"/ { print $2; exit }' "${user_config}")"
+scene_name="${world_name:-${map_name}}"
 planner_name="$(awk -F'"' '/robot1_global_planner:[[:space:]]*"/ { print $2; exit }' "${user_config}")"
 
 if [[ -z "${map_name}" || -z "${planner_name}" ]]; then
@@ -30,7 +34,7 @@ if [[ -z "${map_name}" || -z "${planner_name}" ]]; then
 fi
 
 case "${planner_name}" in
-  rrt|rrt_star|rrt_astar|rrt_cut|informed_rrt|informed_rrt_star|quick_informed_rrt|rrt_connect)
+  rrt|rrt_star|rrt_astar|rrt_astar_node_limit|rrt_astar_confidence|rrt_cut|informed_rrt|informed_rrt_star|quick_informed_rrt|rrt_connect)
     plan_topic="/move_base/SamplePlanner/plan"
     ;;
   a_star|jps|gbfs|dijkstra|d_star|lpa_star|voronoi|d_star_lite|theta_star|lazy_theta_star|s_theta_star|hybrid_a_star)
@@ -46,7 +50,7 @@ case "${planner_name}" in
 esac
 
 run_tag="$(date +%Y%m%d_%H%M%S)"
-result_dir="${workspace_dir}/benchmark_results/${map_name}_${planner_name}_${run_tag}"
+result_dir="${workspace_dir}/benchmark_results/${scene_name}_${planner_name}_${run_tag}"
 mkdir -p "${result_dir}"
 
 source /opt/ros/noetic/setup.bash
@@ -165,6 +169,7 @@ record_result() {
 }
 
 echo "Map: ${map_name}"
+echo "World: ${world_name}"
 echo "Planner: ${planner_name}"
 echo "Trials: ${trial_count}"
 echo "Plan topic: ${plan_topic}"

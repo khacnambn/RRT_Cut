@@ -1,0 +1,22 @@
+RRT_CUT
+
+1,  TONG QUAN
+   time                 37.2000 s
+   cost                 7.8435 m
+   nodes                2788
+   plan_updates         86
+   replan_count         86
+
+ PLAN (resample 0.0500 m)
+   detour ratio         1.3095
+   turn density         2.5013 rad/m
+   curvature mean/max   2.6939 / 39.0773 1/m
+   robot mean/max       1.7380 / 12.2388
+
+ BAM PLAN ACTIVE (m)
+   rmse                 0.0621
+   mean / max           0.0414 / 0.2675
+   backtrack            0.0177
+
+   (episodes 86, active tracking 86, traj 157 diem, tf bo 0, frame map)
+

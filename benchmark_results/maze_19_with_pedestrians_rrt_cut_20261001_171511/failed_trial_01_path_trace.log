@@ -1,0 +1,96 @@
+[0m[INFO] [1790849721.956463061]: path_trace_node: lang nghe plan tren '/move_base/SamplePlanner/plan', ghi log ra '/tmp/ros_motion_planning_20261001_171511_01/result.yaml'[0m
+[0m[INFO] [1790849721.957076175]: NavGoal set at (x: 0.000000, y: 0.000000)[0m
+[0m[INFO] [1790849723.300030188, 6.692000000]: NavGoal set at (x: 0.017558, y: 0.359899)[0m
+[0m[INFO] [1790849723.300202037, 6.693000000]: New goal received![0m
+[0m[INFO] [1790849723.300225123, 6.693000000]: Path and total distance reset for new goal.[0m
+[0m[INFO] [1790849723.300503624, 6.693000000]: New goal received![0m
+[0m[INFO] [1790849723.300518689, 6.693000000]: Path and total distance reset for new goal.[0m
+[0m[INFO] [1790849723.314013087, 6.703000000]: path_trace_node: bat plan #1 (6 raw, 22 resampled, frame 'map')[0m
+[0m[INFO] [1790849723.863713411, 7.202000000]: path_trace_node: bat plan #2 (2 raw, 5 resampled, frame 'map')[0m
+[0m[INFO] [1790849724.421485660, 7.705000000]: path_trace_node: bat plan #3 (7 raw, 25 resampled, frame 'map')[0m
+[0m[INFO] [1790849724.959679517, 8.199000000]: path_trace_node: bat plan #4 (5 raw, 18 resampled, frame 'map')[0m
+[0m[INFO] [1790849725.403726689, 8.606000000]: path_trace_node: bat plan #5 (4 raw, 13 resampled, frame 'map')[0m
+[0m[INFO] [1790849725.512764153, 8.707000000]: path_trace_node: bat plan #6 (5 raw, 17 resampled, frame 'map')[0m
+[0m[INFO] [1790849725.622891619, 8.808000000]: path_trace_node: bat plan #7 (6 raw, 23 resampled, frame 'map')[0m
+[0m[INFO] [1790849725.736490099, 8.913000000]: path_trace_node: bat plan #8 (7 raw, 26 resampled, frame 'map')[0m
+[0m[INFO] [1790849725.834037636, 9.005000000]: path_trace_node: bat plan #9 (5 raw, 18 resampled, frame 'map')[0m
+[0m[INFO] [1790849726.063094050, 9.216000000]: path_trace_node: bat plan #10 (18 raw, 71 resampled, frame 'map')[0m
+[0m[INFO] [1790849726.484289414, 9.612000000]: path_trace_node: bat plan #11 (9 raw, 34 resampled, frame 'map')[0m
+[0m[INFO] [1790849726.586723407, 9.707000000]: path_trace_node: bat plan #12 (8 raw, 31 resampled, frame 'map')[0m
+[0m[INFO] [1790849727.117688336, 10.205000000]: path_trace_node: bat plan #13 (8 raw, 28 resampled, frame 'map')[0m
+[0m[INFO] [1790849727.652880164, 10.706000000]: path_trace_node: bat plan #14 (20 raw, 80 resampled, frame 'map')[0m
+[0m[INFO] [1790849728.184873823, 11.206000000]: path_trace_node: bat plan #15 (6 raw, 22 resampled, frame 'map')[0m
+[0m[INFO] [1790849728.717800873, 11.705000000]: path_trace_node: bat plan #16 (6 raw, 21 resampled, frame 'map')[0m
+[0m[INFO] [1790849729.254362931, 12.208000000]: path_trace_node: bat plan #17 (6 raw, 21 resampled, frame 'map')[0m
+[0m[INFO] [1790849729.782398789, 12.704000000]: path_trace_node: bat plan #18 (22 raw, 90 resampled, frame 'map')[0m
+[0m[INFO] [1790849730.316041690, 13.203000000]: path_trace_node: bat plan #19 (22 raw, 90 resampled, frame 'map')[0m
+[0m[INFO] [1790849730.851748349, 13.705000000]: path_trace_node: bat plan #20 (22 raw, 90 resampled, frame 'map')[0m
+[0m[INFO] [1790849731.383765521, 14.205000000]: path_trace_node: bat plan #21 (24 raw, 99 resampled, frame 'map')[0m
+[0m[INFO] [1790849731.917338894, 14.704000000]: path_trace_node: bat plan #22 (24 raw, 99 resampled, frame 'map')[0m
+[0m[INFO] [1790849732.462077812, 15.206000000]: path_trace_node: bat plan #23 (24 raw, 99 resampled, frame 'map')[0m
+[0m[INFO] [1790849732.997016662, 15.704000000]: path_trace_node: bat plan #24 (23 raw, 95 resampled, frame 'map')[0m
+[0m[INFO] [1790849733.537447135, 16.202000000]: path_trace_node: bat plan #25 (17 raw, 69 resampled, frame 'map')[0m
+[0m[INFO] [1790849734.071408515, 16.703000000]: path_trace_node: bat plan #26 (23 raw, 96 resampled, frame 'map')[0m
+[0m[INFO] [1790849734.603812773, 17.203000000]: path_trace_node: bat plan #27 (23 raw, 93 resampled, frame 'map')[0m
+[0m[INFO] [1790849735.139171727, 17.704000000]: path_trace_node: bat plan #28 (21 raw, 86 resampled, frame 'map')[0m
+[0m[INFO] [1790849735.670655939, 18.203000000]: path_trace_node: bat plan #29 (23 raw, 93 resampled, frame 'map')[0m
+[0m[INFO] [1790849736.207276425, 18.705000000]: path_trace_node: bat plan #30 (22 raw, 89 resampled, frame 'map')[0m
+[0m[INFO] [1790849736.751191321, 19.209000000]: path_trace_node: bat plan #31 (13 raw, 52 resampled, frame 'map')[0m
+[0m[INFO] [1790849737.283312198, 19.704000000]: path_trace_node: bat plan #32 (20 raw, 79 resampled, frame 'map')[0m
+[0m[INFO] [1790849737.814907833, 20.203000000]: path_trace_node: bat plan #33 (19 raw, 76 resampled, frame 'map')[0m
+[0m[INFO] [1790849738.349175969, 20.705000000]: path_trace_node: bat plan #34 (20 raw, 79 resampled, frame 'map')[0m
+[0m[INFO] [1790849738.887985416, 21.204000000]: path_trace_node: bat plan #35 (17 raw, 70 resampled, frame 'map')[0m
+[0m[INFO] [1790849739.437492549, 21.715000000]: path_trace_node: bat plan #36 (9 raw, 35 resampled, frame 'map')[0m
+[0m[INFO] [1790849740.006897488, 22.248000000]: path_trace_node: bat plan #37 (9 raw, 36 resampled, frame 'map')[0m
+[0m[INFO] [1790849740.598196589, 22.801000000]: path_trace_node: bat plan #38 (21 raw, 86 resampled, frame 'map')[0m
+[0m[INFO] [1790849741.029830286, 23.207000000]: path_trace_node: bat plan #39 (14 raw, 57 resampled, frame 'map')[0m
+[0m[INFO] [1790849741.560900351, 23.706000000]: path_trace_node: bat plan #40 (24 raw, 131 resampled, frame 'map')[0m
+[0m[INFO] [1790849742.100070935, 24.211000000]: path_trace_node: bat plan #41 (25 raw, 133 resampled, frame 'map')[0m
+[0m[INFO] [1790849742.655673103, 24.729000000]: path_trace_node: bat plan #42 (2 raw, 5 resampled, frame 'map')[0m
+[0m[INFO] [1790849743.195024281, 25.230000000]: path_trace_node: bat plan #43 (6 raw, 23 resampled, frame 'map')[0m
+[0m[INFO] [1790849743.707075079, 25.706000000]: path_trace_node: bat plan #44 (24 raw, 134 resampled, frame 'map')[0m
+[0m[INFO] [1790849744.241551744, 26.209000000]: path_trace_node: bat plan #45 (12 raw, 47 resampled, frame 'map')[0m
+[0m[INFO] [1790849744.772199151, 26.706000000]: path_trace_node: bat plan #46 (23 raw, 124 resampled, frame 'map')[0m
+[0m[INFO] [1790849745.302963743, 27.204000000]: path_trace_node: bat plan #47 (22 raw, 119 resampled, frame 'map')[0m
+[0m[INFO] [1790849745.847932574, 27.713000000]: path_trace_node: bat plan #48 (22 raw, 119 resampled, frame 'map')[0m
+[0m[INFO] [1790849746.372895612, 28.207000000]: path_trace_node: bat plan #49 (22 raw, 124 resampled, frame 'map')[0m
+[0m[INFO] [1790849746.909217998, 28.709000000]: path_trace_node: bat plan #50 (22 raw, 124 resampled, frame 'map')[0m
+[0m[INFO] [1790849747.436793880, 29.204000000]: path_trace_node: bat plan #51 (24 raw, 126 resampled, frame 'map')[0m
+[0m[INFO] [1790849747.974382776, 29.708000000]: path_trace_node: bat plan #52 (21 raw, 113 resampled, frame 'map')[0m
+[0m[INFO] [1790849748.503243073, 30.204000000]: path_trace_node: bat plan #53 (20 raw, 111 resampled, frame 'map')[0m
+[0m[INFO] [1790849749.040314387, 30.707000000]: path_trace_node: bat plan #54 (10 raw, 63 resampled, frame 'map')[0m
+[0m[INFO] [1790849749.569107942, 31.202000000]: path_trace_node: bat plan #55 (16 raw, 95 resampled, frame 'map')[0m
+[0m[INFO] [1790849750.102663856, 31.702000000]: path_trace_node: bat plan #56 (17 raw, 96 resampled, frame 'map')[0m
+[0m[INFO] [1790849750.634529623, 32.202000000]: path_trace_node: bat plan #57 (17 raw, 95 resampled, frame 'map')[0m
+[0m[INFO] [1790849751.214595707, 32.744000000]: path_trace_node: bat plan #58 (16 raw, 60 resampled, frame 'map')[0m
+[0m[INFO] [1790849751.708799534, 33.209000000]: path_trace_node: bat plan #59 (10 raw, 62 resampled, frame 'map')[0m
+[0m[INFO] [1790849752.237998340, 33.705000000]: path_trace_node: bat plan #60 (14 raw, 56 resampled, frame 'map')[0m
+[0m[INFO] [1790849752.769913723, 34.203000000]: path_trace_node: bat plan #61 (14 raw, 54 resampled, frame 'map')[0m
+[0m[INFO] [1790849753.306431545, 34.706000000]: path_trace_node: bat plan #62 (16 raw, 95 resampled, frame 'map')[0m
+[0m[INFO] [1790849753.835165904, 35.202000000]: path_trace_node: bat plan #63 (13 raw, 81 resampled, frame 'map')[0m
+[0m[INFO] [1790849753.938713317, 35.299000000]: path_trace_node: bat plan #64 (13 raw, 82 resampled, frame 'map')[0m
+[0m[INFO] [1790849754.047671434, 35.397000000]: path_trace_node: bat plan #65 (12 raw, 77 resampled, frame 'map')[0m
+[33m[WARN] [1790849780.600042008, 59.822000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 0.034000000s into the future.  Requested time 59.722000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849786.076293660, 64.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 4.734000000s into the future.  Requested time 64.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849791.720653841, 69.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 9.734000000s into the future.  Requested time 69.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849796.848155709, 74.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 14.734000000s into the future.  Requested time 74.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849802.001709896, 79.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 19.734000000s into the future.  Requested time 79.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849807.186977907, 84.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 24.734000000s into the future.  Requested time 84.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849812.399418005, 89.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 29.734000000s into the future.  Requested time 89.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849817.591763093, 94.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 34.734000000s into the future.  Requested time 94.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849822.787122254, 99.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 39.734000000s into the future.  Requested time 99.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849827.960473687, 104.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 44.734000000s into the future.  Requested time 104.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849833.141749496, 109.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 49.734000000s into the future.  Requested time 109.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849838.308169509, 114.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 54.734000000s into the future.  Requested time 114.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849843.460554084, 119.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 59.734000000s into the future.  Requested time 119.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849848.618353435, 124.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 64.734000000s into the future.  Requested time 124.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849853.768094196, 129.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 69.734000000s into the future.  Requested time 129.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849858.921384899, 134.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 74.734000000s into the future.  Requested time 134.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849864.068282190, 139.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 79.734000000s into the future.  Requested time 139.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849869.220633995, 144.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 84.734000000s into the future.  Requested time 144.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849874.378929199, 149.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 89.734000000s into the future.  Requested time 149.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849879.535217675, 154.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 94.734000000s into the future.  Requested time 154.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849884.688335092, 159.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 99.734000000s into the future.  Requested time 159.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849889.834000548, 164.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 104.734000000s into the future.  Requested time 164.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849894.984117882, 169.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 109.734000000s into the future.  Requested time 169.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m
+[33m[WARN] [1790849900.141055942, 174.825000000]: path_trace_node: bo qua diem odom, chua co tf 'odom' -> 'map': Lookup would require extrapolation 114.734000000s into the future.  Requested time 174.422000000 but the latest data is at time 59.688000000, when looking up transform from frame [odom] to frame [map][0m

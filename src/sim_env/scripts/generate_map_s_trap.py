@@ -81,30 +81,34 @@ S_TOP_SURFACE = (S_BEZIER[0][1] + S_SHIFT_Y + S_PASSAGE_HALF_GAP +
 # does not move the trap away from the intended location.
 U_BASE_RADIUS = 1.25
 U_BASE_ARM_LEN = 1.00
-U_SCALE = 0.80
+U_SCALE = 1.05  # 150% of the previous 0.70
 U_RADIUS = U_BASE_RADIUS * U_SCALE
-U_ARM_LEN = U_BASE_ARM_LEN * U_SCALE
+U_ARM_LEN = 0.675  # independently shortened vertical arms; 150% of the previous 0.45 m
 U_ARC_SEGMENTS = 30
 # Additional free space between the bottom of the U and the upper S wall.
 U_EXTRA_LOWER_CLEARANCE = 0.30
+# Extra band above the U mouth so DWA can turn and align with the opening.
+U_TOP_TURN_CLEARANCE = 0.60
 # Preserve the pre-scale bounding-box centre of the U. The old placement was
 # derived from the S-wall clearance, so compute that reference centre first and
 # then recover the arc centre after scaling the radius and arms.
 _U_REFERENCE_BOTTOM_Y = (S_TOP_SURFACE + 2.0 * PASSAGE_HALF_FREE +
                          0.5 * WALL_THICK + U_EXTRA_LOWER_CLEARANCE)
+U_CENTER_X = -2.00
 U_CENTER_Y = (_U_REFERENCE_BOTTOM_Y + U_BASE_RADIUS +
               0.5 * (U_BASE_ARM_LEN - U_BASE_RADIUS))
 U_ARC_Y = U_CENTER_Y + 0.5 * (U_RADIUS - U_ARM_LEN)
 U_MOUTH_Y = U_ARC_Y + U_ARM_LEN
 # Vertical arms, so the trap's highest point is simply the top of the arm box.
 U_APEX_Y = U_MOUTH_Y
-# Put the goal as deep in the bowl as the clearance rule allows.  Inside a
-# circular bowl the clearance is U_RADIUS - |y - U_ARC_Y| - WALL_THICK / 2.
-GOAL = (0.0, U_ARC_Y - (U_RADIUS - 0.5 * WALL_THICK - PASSAGE_HALF_FREE))
+# Keep the benchmark goal inside the bowl but close enough to the mouth for
+# DWA to enter without having to turn again in the tight lower arc.
+GOAL = (U_CENTER_X, U_CENTER_Y + 0.225)
 
-# Raise the ceiling until the band the robot crosses above the trap arms is
-# exactly as wide as every other passage on this map.
-ROOM_TOP_Y = U_APEX_Y + 2.0 * PASSAGE_HALF_FREE + 0.5 * WALL_THICK
+# Keep the standard passage width above the trap arms, then add a turning
+# band so DWA can round an arm and align with the downward-facing entrance.
+ROOM_TOP_Y = (U_APEX_Y + 2.0 * PASSAGE_HALF_FREE + 0.5 * WALL_THICK +
+              U_TOP_TURN_CLEARANCE)
 ROOM_CENTER_Y = 0.5 * (ROOM_TOP_Y + ROOM_BOTTOM_Y)
 ROOM_LEN_X = 2.0 * ROOM_HALF_X + WALL_THICK
 ROOM_LEN_Y = (ROOM_TOP_Y - ROOM_BOTTOM_Y) + WALL_THICK
@@ -209,11 +213,11 @@ def build_boxes():
     # widest points up to the mouth.
     arm_cy = U_ARC_Y + U_ARM_LEN / 2.0
     u_walls = [
-        *arc_segments(0.0, U_ARC_Y, U_RADIUS, 180.0, 360.0, U_ARC_SEGMENTS,
+        *arc_segments(U_CENTER_X, U_ARC_Y, U_RADIUS, 180.0, 360.0, U_ARC_SEGMENTS,
                       "Goal_U_bottom"),
-        (-U_RADIUS, arm_cy, U_ARM_LEN, WALL_THICK, math.pi / 2.0,
+        (U_CENTER_X - U_RADIUS, arm_cy, U_ARM_LEN, WALL_THICK, math.pi / 2.0,
          "Goal_U_left"),
-        (U_RADIUS, arm_cy, U_ARM_LEN, WALL_THICK, math.pi / 2.0,
+        (U_CENTER_X + U_RADIUS, arm_cy, U_ARM_LEN, WALL_THICK, math.pi / 2.0,
          "Goal_U_right"),
     ]
     return outer, s_walls, u_walls

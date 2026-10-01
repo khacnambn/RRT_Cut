@@ -22,7 +22,6 @@
 #include "rrt.h"
 #include "rrt_astar.h"
 #include "rrt_cut.h"
-#include "cg_rrt_paper.h"
 #include "rrt_star.h"
 #include "rrt_connect.h"
 #include "informed_rrt.h"
@@ -93,7 +92,7 @@ void SamplePlanner::initialize(std::string name, costmap_2d::Costmap2D* costmap,
     {
       g_planner_ = std::make_shared<global_planner::RRT>(costmap, sample_points, sample_max_d);
     }
-    else if (planner_name == "rrt_astar")
+    else if (planner_name == "rrt_astar" || planner_name == "rrt_astar_confidence")
     { 
       // int k_nodes;
       private_nh.param("number_node_k", k_nodes, 5);  // optimization number of node
@@ -101,35 +100,11 @@ void SamplePlanner::initialize(std::string name, costmap_2d::Costmap2D* costmap,
       ROS_WARN("Planner name initial: %s", planner_name.c_str());
 
     }
-    else if (planner_name == "rrt_cut")
+    else if (planner_name == "rrt_astar_node_limit" || planner_name == "rrt_cut")
     { 
       // int k_nodes;
       private_nh.param("number_node_k", k_nodes, 5);  // optimization number of node
       g_planner_ = std::make_shared<global_planner::RRTCut>(costmap, sample_points, sample_max_d, k_nodes);
-      ROS_WARN("Planner name initial: %s", planner_name.c_str());
-    }
-    else if (planner_name == "cg_rrt_paper")
-    {
-      // Faithful reimplementation of JIST-D-26-00274. Table 1 is quoted in
-      // metres; CGRRTPaper converts to costmap cells itself, so these values
-      // are deliberately kept separate from the cell-based `sample_max_d` that
-      // the RRT-Cut baseline uses.
-      int cg_n_max, cg_k, cg_n_lim, cg_layers, cg_max_cuts, cg_max_failures;
-      double cg_d_max, cg_eps, cg_c_max, cg_c_min;
-      private_nh.param("cg_rrt_paper_n_max", cg_n_max, 10000);   // Table 1 nmax
-      private_nh.param("cg_rrt_paper_d_max", cg_d_max, 5.0);     // Table 1 dmax [m]
-      private_nh.param("cg_rrt_paper_eps", cg_eps, 0.5);         // Table 1 epsilon [m]
-      private_nh.param("cg_rrt_paper_k", cg_k, 5);               // Table 1 k
-      private_nh.param("cg_rrt_paper_n_lim", cg_n_lim, 50);      // Table 1 nlim
-      private_nh.param("cg_rrt_paper_c_max", cg_c_max, 20.0);    // Table 1 cmax [m]
-      private_nh.param("cg_rrt_paper_c_min", cg_c_min, 0.25);    // not in Table 1
-      private_nh.param("cg_rrt_paper_layers", cg_layers, 4);     // Section 3.1 L
-      // execution adapter, no counterpart in the manuscript
-      private_nh.param("cg_rrt_paper_max_cut_segments", cg_max_cuts, 60);
-      private_nh.param("cg_rrt_paper_max_phase_failures", cg_max_failures, 3);
-      g_planner_ = std::make_shared<global_planner::CGRRTPaper>(costmap, cg_n_max, cg_d_max, cg_eps, cg_k, cg_n_lim,
-                                                                cg_c_max, cg_c_min, cg_layers, cg_max_cuts,
-                                                                cg_max_failures);
       ROS_WARN("Planner name initial: %s", planner_name.c_str());
     }
     else if (planner_name == "rrt_star")
@@ -205,11 +180,14 @@ void SamplePlanner::initialize(std::string name, costmap_2d::Costmap2D* costmap,
     // register planning service
     make_plan_srv_ = private_nh.advertiseService("make_plan", &SamplePlanner::makePlanService, this);
 
-    if (planner_name == "rrt_cut") {
+    if (planner_name == "rrt_cut" || planner_name == "rrt_astar_confidence") {
       local_sub_ = private_nh.subscribe<rosgraph_msgs::Log>("/rosout_agg", 100, &SamplePlanner::localPlanCallback, this);
+      // Algorithm 1, line 7 (qinit == qsub_goal) within the epsilon of Table 1
+      private_nh.param("rrt_cut_sub_goal_tolerance_cells", sub_goal_tolerance_cells_, 10.0);
     }
     // Marker only; nothing the local planner subscribes to is published here.
-    if (planner_name == "rrt_cut" || planner_name == "informed_rrt_star" || planner_name == "cg_rrt_paper") {
+    if (planner_name == "rrt_cut" || planner_name == "rrt_astar_confidence" ||
+        planner_name == "informed_rrt_star") {
       sub_goal_pub_ = private_nh.advertise<visualization_msgs::Marker>("sub_goal", 1);
     }
 
@@ -295,7 +273,7 @@ bool SamplePlanner::makePlan(const geometry_msgs::PoseStamped& start, const geom
   std::vector<Node> path;
   std::vector<Node> expand;
 
-  if (planner_name == "rrt_cut")
+  if (planner_name == "rrt_cut" || planner_name == "rrt_astar_confidence")
   { 
     // Node sub_goal = n_goal, old_sub_goal = n_goal;
     // std::cout << "Address of costmap_ in global planner: " << g_planner_->getCostMap() << std::endl;
@@ -304,7 +282,28 @@ bool SamplePlanner::makePlan(const geometry_msgs::PoseStamped& start, const geom
             ROS_WARN("goal found");
             stuck_count = 0;
           }
-    if(stuck_count < 5){
+
+    // Algorithm 1, lines 7-10: the kept sub-goal is left only once the robot
+    // reaches it; after that the planner heads for qgoal again (line 12).
+    if (has_sub_goal_)
+    {
+      if (std::hypot(goal.pose.position.x - sub_goal_owner_.pose.position.x,
+                     goal.pose.position.y - sub_goal_owner_.pose.position.y) > 1e-3)
+        releaseSubGoal("new goal");
+      else if (std::hypot(static_cast<double>(n_start.x() - sub_goal_node_.x()),
+                          static_cast<double>(n_start.y() - sub_goal_node_.y())) <= sub_goal_tolerance_cells_)
+      {
+        releaseSubGoal("reached");
+        stuck_count = 0;
+      }
+      // [impl] the costmap is updated by the sensors between cycles; a
+      // sub-goal that has become an obstacle can never be reached.
+      else if (g_planner_->getCostMap()->getCost(sub_goal_node_.x(), sub_goal_node_.y()) >=
+               costmap_2d::LETHAL_OBSTACLE * factor_)
+        releaseSubGoal("blocked by an obstacle");
+    }
+
+    if(stuck_count < 5 && !has_sub_goal_){
     
     bool sub_path_found = g_planner_->plan(n_start, n_goal, path, expand);
     if(sub_path_found){
@@ -345,8 +344,27 @@ bool SamplePlanner::makePlan(const geometry_msgs::PoseStamped& start, const geom
       // escape trap 
       Node n_sub_goal;
       geometry_msgs::PoseStamped sub_goal;
-      ROS_INFO("Stuck .... start escape");
-      bool escape_found = rrt_cut_planner.escape(n_start, n_goal, n_sub_goal);
+      bool escape_found;
+      if (has_sub_goal_)
+      {
+        // Algorithm 1, line 8: keep planning to the sub-goal generated earlier
+        n_sub_goal = sub_goal_node_;
+        escape_found = true;
+      }
+      else
+      {
+        ROS_INFO("Stuck .... start escape");
+        escape_found = rrt_cut_planner.escape(n_start, n_goal, n_sub_goal);
+        // escape() hands back qgoal itself when it has no sub-goal to offer;
+        // only a real sub-goal is kept (Algorithm 1, line 6)
+        if (escape_found && (n_sub_goal.x() != n_goal.x() || n_sub_goal.y() != n_goal.y()))
+        {
+          has_sub_goal_ = true;
+          sub_goal_node_ = n_sub_goal;
+          sub_goal_owner_ = goal;
+          ROS_INFO("Sub-goal (%d, %d) kept until the robot reaches it", n_sub_goal.x(), n_sub_goal.y());
+        }
+      }
       g_planner_->map2World(n_sub_goal.x(), n_sub_goal.y(), sub_goal.pose.position.x, sub_goal.pose.position.y);
       publishSubGoal(sub_goal);
       
@@ -397,67 +415,6 @@ bool SamplePlanner::makePlan(const geometry_msgs::PoseStamped& start, const geom
 
   }
 
-  // CG-RRT (paper). The planner hands back a route that already ends on the
-  // phase target with every edge collision checked, so nothing is appended to
-  // it here: the local planner gets the same kind of complete, verified plan as
-  // it does from RRT, RRT* and RRT-Connect, which is what keeps a shared DWA
-  // baseline fair.
-  else if (planner_name == "cg_rrt_paper")
-  {
-    auto cg_planner = std::static_pointer_cast<global_planner::CGRRTPaper>(g_planner_);
-    const bool route_found = cg_planner->plan(n_start, n_goal, path, expand);
-
-    // the yellow marker tracks the latched sub-goal, also when planning failed,
-    // and disappears as soon as the sub-goal phase is over
-    Node n_sub_goal;
-    if (cg_planner->subGoal(n_sub_goal))
-    {
-      geometry_msgs::PoseStamped sub_goal;
-      sub_goal.header.frame_id = frame_id_;
-      sub_goal.header.stamp = ros::Time::now();
-      g_planner_->map2World(n_sub_goal.x(), n_sub_goal.y(), sub_goal.pose.position.x, sub_goal.pose.position.y);
-      sub_goal.pose.orientation.w = 1.0;
-      publishSubGoal(sub_goal);
-    }
-    else
-      clearSubGoal();
-
-    // a plan built for the sub-goal phase says nothing about where the robot
-    // goes in the goal phase, so it is never reused across a phase change
-    const unsigned int phase = cg_planner->phaseId();
-
-    if (route_found)
-    {
-      if (_getPlanFromPath(path, plan))
-      {
-        history_plan_ = plan;
-        cg_history_phase_ = phase;
-        cg_has_history_ = true;
-      }
-      else
-        ROS_ERROR("Failed to get a plan from path when a legal path was found. This shouldn't happen.");
-    }
-    else if (cg_has_history_ && cg_history_phase_ == phase && !history_plan_.empty())
-    {
-      plan = history_plan_;
-      ROS_WARN("CG-RRT (paper): no route this cycle, reusing the verified route of this phase.");
-    }
-    else
-    {
-      history_plan_.clear();
-      cg_has_history_ = false;
-      ROS_ERROR("CG-RRT (paper): failed to build a complete route to the current phase target.");
-    }
-
-    // publish expand zone
-    if (is_expand_)
-      _publishExpand(expand);
-
-    // every edge was verified inside the planner, so the whole plan is shown
-    publishPlan(plan);
-    return !plan.empty();
-  }
-
   // ORTHER PLANNER
   else{
 
@@ -465,14 +422,17 @@ bool SamplePlanner::makePlan(const geometry_msgs::PoseStamped& start, const geom
   // ROS_INFO("Planninggg. %d", path_found);
   if (path_found)
   {
+    bool plan_built;
     if (planner_name == "informed_rrt_star")
     {
+      auto informed = std::static_pointer_cast<global_planner::InformedRRTStar>(g_planner_);
+
       // `path` is the densified polyline, so the sub-goal cannot be read out of
       // it. The planner keeps the key-node sequence of Sec. 3.6 and advances it
       // only when the robot arrives, so ask it directly. Same yellow marker as
       // RRTCut.
       Node sub_goal_node;
-      if (std::static_pointer_cast<global_planner::InformedRRTStar>(g_planner_)->subGoal(sub_goal_node))
+      if (informed->subGoal(sub_goal_node))
       {
         geometry_msgs::PoseStamped sub_goal;
         sub_goal.header.frame_id = frame_id_;
@@ -482,10 +442,17 @@ bool SamplePlanner::makePlan(const geometry_msgs::PoseStamped& start, const geom
         sub_goal.pose.orientation.w = 1.0;
         publishSubGoal(sub_goal);
       }
+
+      // `path` rounds every point to a cell, which turns each slanted segment
+      // into a one-cell staircase and inflates the measured plan curvature.
+      // Publish the same key-node polyline with straight segments instead.
+      plan_built = _getPlanFromKeyNodes(informed->keyNodes(), plan);
     }
+    else
+      plan_built = _getPlanFromPath(path, plan);
 
     // ROS_INFO("path size. %ld", path.size());
-    if (_getPlanFromPath(path, plan))
+    if (plan_built)
     {
       geometry_msgs::PoseStamped goalCopy = goal;
       goalCopy.header.stamp = ros::Time::now();
@@ -677,6 +644,58 @@ bool SamplePlanner::_getPlanFromPath(std::vector<Node> path, std::vector<geometr
 }
 
 /**
+ * @brief  calculate plan by interpolating key nodes in world coordinates
+ * @param  key_nodes key nodes ordered start -> goal
+ * @param  plan      plan sampled at the costmap resolution
+ * @return bool true if successful else false
+ */
+bool SamplePlanner::_getPlanFromKeyNodes(const std::vector<Node>& key_nodes,
+                                         std::vector<geometry_msgs::PoseStamped>& plan)
+{
+  if (!initialized_)
+  {
+    ROS_ERROR("This planner has not been initialized yet, but it is being used, please call initialize() before use");
+    return false;
+  }
+  plan.clear();
+  if (key_nodes.empty())
+    return false;
+
+  // Dense enough for the local planner, which only keeps the plan inside its
+  // rolling window; key nodes alone can be metres apart.
+  const double step = g_planner_->getCostMap()->getResolution();
+
+  geometry_msgs::PoseStamped pose;
+  pose.header.stamp = ros::Time::now();
+  pose.header.frame_id = frame_id_;
+  pose.pose.orientation.w = 1.0;
+
+  double x0, y0;
+  g_planner_->map2World(key_nodes.front().x(), key_nodes.front().y(), x0, y0);
+  pose.pose.position.x = x0;
+  pose.pose.position.y = y0;
+  plan.push_back(pose);
+
+  for (std::size_t i = 1; i < key_nodes.size(); ++i)
+  {
+    double x1, y1;
+    g_planner_->map2World(key_nodes[i].x(), key_nodes[i].y(), x1, y1);
+    const int steps = std::max(1, static_cast<int>(std::ceil(std::hypot(x1 - x0, y1 - y0) / step)));
+    for (int s = 1; s <= steps; ++s)
+    {
+      const double ratio = static_cast<double>(s) / steps;
+      pose.pose.position.x = x0 + ratio * (x1 - x0);
+      pose.pose.position.y = y0 + ratio * (y1 - y0);
+      plan.push_back(pose);
+    }
+    x0 = x1;
+    y0 = y1;
+  }
+
+  return true;
+}
+
+/**
  *  @brief Publishes a Marker msg with two points in Rviz
  *  @param line_msg Pointer to existing marker object.
  *  @param line_pub Pointer to existing marker Publisher.
@@ -776,6 +795,17 @@ void SamplePlanner::clearSubGoal()
     marker.id = 0;
     marker.action = visualization_msgs::Marker::DELETE;
     sub_goal_pub_.publish(marker);
+}
+
+/**
+ * @brief  stop following the kept sub-goal and remove its marker
+ * @param  reason why it is released, for the log
+ */
+void SamplePlanner::releaseSubGoal(const char* reason)
+{
+  ROS_INFO("Sub-goal (%d, %d) released: %s", sub_goal_node_.x(), sub_goal_node_.y(), reason);
+  has_sub_goal_ = false;
+  clearSubGoal();
 }
 
 

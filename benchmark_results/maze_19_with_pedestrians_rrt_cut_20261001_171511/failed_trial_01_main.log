@@ -1,0 +1,505 @@
+xacro: in-order processing became default in ROS Melodic. You can drop the option.
+... logging to /tmp/ros_motion_planning_20261001_171511_01/fce5a726-bd80-11f1-9877-d9febe91b139/roslaunch-roablab-3450-2085826.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/roab_lab/ros_motion_planning-master/src/sim_env/launch/main.launch
+[1mstarted roslaunch server http://localhost:35287/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /amcl/gui_publish_rate: 50.0
+ * /amcl/initial_pose_a: 0.0
+ * /amcl/initial_pose_x: 0.0
+ * /amcl/initial_pose_y: -3.0
+ * /amcl/initial_pose_z: 0.0
+ * /amcl/kld_err: 0.02
+ * /amcl/laser_lambda_short: 0.1
+ * /amcl/laser_likelihood_max_dist: 2.0
+ * /amcl/laser_max_beams: 180
+ * /amcl/laser_max_range: 3.5
+ * /amcl/laser_model_type: likelihood_field
+ * /amcl/laser_sigma_hit: 0.2
+ * /amcl/laser_z_hit: 0.5
+ * /amcl/laser_z_max: 0.05
+ * /amcl/laser_z_rand: 0.5
+ * /amcl/laser_z_short: 0.05
+ * /amcl/max_particles: 3000
+ * /amcl/min_particles: 500
+ * /amcl/odom_alpha1: 0.1
+ * /amcl/odom_alpha2: 0.1
+ * /amcl/odom_alpha3: 0.1
+ * /amcl/odom_alpha4: 0.1
+ * /amcl/odom_model_type: diff
+ * /amcl/recovery_alpha_fast: 0.0
+ * /amcl/recovery_alpha_slow: 0.0
+ * /amcl/resample_interval: 1
+ * /amcl/transform_tolerance: 0.5
+ * /amcl/update_min_a: 0.2
+ * /amcl/update_min_d: 0.2
+ * /gazebo/enable_ros_network: True
+ * /move_base/DWAPlanner/acc_lim_theta: 3.2
+ * /move_base/DWAPlanner/acc_lim_x: 2.5
+ * /move_base/DWAPlanner/acc_lim_y: 0.0
+ * /move_base/DWAPlanner/controller_frequency: 10.0
+ * /move_base/DWAPlanner/forward_point_distance: 0.325
+ * /move_base/DWAPlanner/goal_distance_bias: 20.0
+ * /move_base/DWAPlanner/latch_xy_goal_tolerance: False
+ * /move_base/DWAPlanner/max_scaling_factor: 0.2
+ * /move_base/DWAPlanner/max_vel_theta: 1.82
+ * /move_base/DWAPlanner/max_vel_trans: 0.26
+ * /move_base/DWAPlanner/max_vel_x: 0.46
+ * /move_base/DWAPlanner/max_vel_y: 0.0
+ * /move_base/DWAPlanner/min_vel_theta: 0.9
+ * /move_base/DWAPlanner/min_vel_trans: 0.13
+ * /move_base/DWAPlanner/min_vel_x: 0.0
+ * /move_base/DWAPlanner/min_vel_y: 0.0
+ * /move_base/DWAPlanner/occdist_scale: 0.3
+ * /move_base/DWAPlanner/oscillation_reset_dist: 0.05
+ * /move_base/DWAPlanner/path_distance_bias: 32.0
+ * /move_base/DWAPlanner/publish_cost_grid_pc: True
+ * /move_base/DWAPlanner/publish_traj_pc: True
+ * /move_base/DWAPlanner/scaling_speed: 0.25
+ * /move_base/DWAPlanner/sim_time: 2.0
+ * /move_base/DWAPlanner/stop_time_buffer: 0.2
+ * /move_base/DWAPlanner/vth_samples: 40
+ * /move_base/DWAPlanner/vx_samples: 20
+ * /move_base/DWAPlanner/vy_samples: 0
+ * /move_base/DWAPlanner/xy_goal_tolerance: 0.2
+ * /move_base/DWAPlanner/yaw_goal_tolerance: 0.5
+ * /move_base/SamplePlanner/adaptive_min_step: 1.0
+ * /move_base/SamplePlanner/attractive_gain: 1.0
+ * /move_base/SamplePlanner/convert_offset: 0.0
+ * /move_base/SamplePlanner/danger_distance: 1.5
+ * /move_base/SamplePlanner/default_tolerance: 0.0
+ * /move_base/SamplePlanner/expand_zone: True
+ * /move_base/SamplePlanner/goal_bias_probability: 0.2
+ * /move_base/SamplePlanner/informed_iterations: 3000
+ * /move_base/SamplePlanner/informed_sample_points: 1000
+ * /move_base/SamplePlanner/informed_threshold_cost: 0.0
+ * /move_base/SamplePlanner/near_distance: 3.5
+ * /move_base/SamplePlanner/number_node_k: 5
+ * /move_base/SamplePlanner/obstacle_factor: 0.5
+ * /move_base/SamplePlanner/obstacle_influence_distance: 3.5
+ * /move_base/SamplePlanner/optimization_r: 10.0
+ * /move_base/SamplePlanner/outline_map: True
+ * /move_base/SamplePlanner/planner_name: rrt_cut
+ * /move_base/SamplePlanner/prior_circle_set_r: 15.0
+ * /move_base/SamplePlanner/repulsive_gain: 1.0
+ * /move_base/SamplePlanner/rewire_threads_num: 4
+ * /move_base/SamplePlanner/rrt_cut_max_segments: 60
+ * /move_base/SamplePlanner/rrt_cut_progress_distance: 0.08
+ * /move_base/SamplePlanner/rrt_cut_stuck_timeout: 3.0
+ * /move_base/SamplePlanner/rrt_cut_sub_goal_tolerance_cells: 10.0
+ * /move_base/SamplePlanner/sample_max_d: 5.0
+ * /move_base/SamplePlanner/sample_points: 10000
+ * /move_base/SamplePlanner/search_radius: 10.0
+ * /move_base/SamplePlanner/step_extend_d: 30.0
+ * /move_base/SamplePlanner/t_distr_freedom: 1.0
+ * /move_base/base_global_planner: sample_planner/Sa...
+ * /move_base/base_local_planner: dwa_planner/DWAPl...
+ * /move_base/conservative_reset_dist: 3.0
+ * /move_base/controller_frequency: 10.0
+ * /move_base/controller_patience: 15.0
+ * /move_base/global_costmap/cost_scaling_factor: 2.0
+ * /move_base/global_costmap/footprint: [[-0.205, -0.155]...
+ * /move_base/global_costmap/global_frame: map
+ * /move_base/global_costmap/inflation_layer/cost_scaling_factor: 2.0
+ * /move_base/global_costmap/inflation_layer/enabled: True
+ * /move_base/global_costmap/inflation_layer/inflation_radius: 0.4
+ * /move_base/global_costmap/inflation_radius: 0.4
+ * /move_base/global_costmap/map_type: costmap
+ * /move_base/global_costmap/observation_sources: scan
+ * /move_base/global_costmap/obstacle_layer/observation_sources: scan
+ * /move_base/global_costmap/obstacle_layer/scan/clearing: True
+ * /move_base/global_costmap/obstacle_layer/scan/data_type: LaserScan
+ * /move_base/global_costmap/obstacle_layer/scan/expected_update_rate: 1.5
+ * /move_base/global_costmap/obstacle_layer/scan/inf_is_valid: True
+ * /move_base/global_costmap/obstacle_layer/scan/marking: True
+ * /move_base/global_costmap/obstacle_layer/scan/max_obstacle_height: 0.8
+ * /move_base/global_costmap/obstacle_layer/scan/min_obstacle_height: 0.0
+ * /move_base/global_costmap/obstacle_layer/scan/observation_persistence: 0.0
+ * /move_base/global_costmap/obstacle_layer/scan/obstacle_range: 2.5
+ * /move_base/global_costmap/obstacle_layer/scan/raytrace_range: 3.0
+ * /move_base/global_costmap/obstacle_layer/scan/sensor_frame: base_footprint
+ * /move_base/global_costmap/obstacle_layer/scan/topic: scan
+ * /move_base/global_costmap/obstacle_range: 3.0
+ * /move_base/global_costmap/plugins: [{'name': 'static...
+ * /move_base/global_costmap/publish_frequency: 1.0
+ * /move_base/global_costmap/raytrace_range: 3.5
+ * /move_base/global_costmap/robot_base_frame: base_footprint
+ * /move_base/global_costmap/scan/clearing: True
+ * /move_base/global_costmap/scan/data_type: LaserScan
+ * /move_base/global_costmap/scan/inf_is_valid: True
+ * /move_base/global_costmap/scan/marking: True
+ * /move_base/global_costmap/scan/sensor_frame: base_scan
+ * /move_base/global_costmap/scan/topic: scan
+ * /move_base/global_costmap/static_map/clear_time: 20
+ * /move_base/global_costmap/static_map/enabled: True
+ * /move_base/global_costmap/static_map/publish_static_map: True
+ * /move_base/global_costmap/transform_tolerance: 0.5
+ * /move_base/global_costmap/update_frequency: 1.0
+ * /move_base/local_costmap/cost_scaling_factor: 3.0
+ * /move_base/local_costmap/footprint: [[-0.205, -0.155]...
+ * /move_base/local_costmap/global_frame: odom
+ * /move_base/local_costmap/height: 3
+ * /move_base/local_costmap/inflation_radius: 15.0
+ * /move_base/local_costmap/map_type: costmap
+ * /move_base/local_costmap/observation_sources: scan
+ * /move_base/local_costmap/obstacle_range: 3.0
+ * /move_base/local_costmap/publish_frequency: 10.0
+ * /move_base/local_costmap/raytrace_range: 3.5
+ * /move_base/local_costmap/resolution: 0.05
+ * /move_base/local_costmap/robot_base_frame: base_footprint
+ * /move_base/local_costmap/rolling_window: True
+ * /move_base/local_costmap/scan/clearing: True
+ * /move_base/local_costmap/scan/data_type: LaserScan
+ * /move_base/local_costmap/scan/inf_is_valid: True
+ * /move_base/local_costmap/scan/marking: True
+ * /move_base/local_costmap/scan/sensor_frame: base_scan
+ * /move_base/local_costmap/scan/topic: scan
+ * /move_base/local_costmap/static_map: False
+ * /move_base/local_costmap/transform_tolerance: 0.7
+ * /move_base/local_costmap/update_frequency: 10.0
+ * /move_base/local_costmap/width: 3
+ * /move_base/oscillation_distance: 0.2
+ * /move_base/oscillation_timeout: 10.0
+ * /move_base/planner_frequency: 2.0
+ * /move_base/planner_patience: 5.0
+ * /move_base/shutdown_costmaps: False
+ * /robot_description: <?xml version="1....
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /use_sim_time: True
+
+NODES
+  /
+    amcl (amcl/amcl)
+    gazebo (gazebo_ros/gzserver)
+    gazebo_gui (gazebo_ros/gzclient)
+    joint_state_publisher (joint_state_publisher/joint_state_publisher)
+    map_server (map_server/map_server)
+    move_base (move_base/move_base)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+    rviz (rviz/rviz)
+    urdf_spawner (gazebo_ros/spawn_model)
+
+auto-starting new master
+[1mprocess[master]: started with pid [2085895][0m
+[0m[INFO] [1790849713.595247932]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[INFO] [1790849713.596063016]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...[0m
+[0m[INFO] [1790849713.645727850]: Finished loading Gazebo ROS API Plugin.[0m
+[0m[INFO] [1790849713.646934432]: waitForService: Service [/gazebo_gui/set_physics_properties] has not been advertised, waiting...[0m
+[0m[INFO] [1790849714.129784809]: waitForService: Service [/gazebo/set_physics_properties] is now available.[0m
+[0m[INFO] [1790849714.167980376]: Physics dynamic reconfigure ready.[0m
+../src/intel/isl/isl.c:2105: FINISHME: ../src/intel/isl/isl.c:isl_surf_supports_ccs: CCS for 3D textures is disabled, but a workaround is available.
+[33m[WARN] [1790849714.463981189, 0.262000000]: WARNING: package://spencer_tracking_rviz_plugin/media/animated_walking_man.mesh is an older format ([MeshSerializer_v1.41]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.[0m
+[33m[WARN] [1790849714.464246800, 0.263000000]: Can't assign material male_base_lambert1 to SubEntity of mesh_person_visual0 because this Material does not exist. Have you forgotten to define it in a .material script?[0m
+../src/intel/isl/isl.c:2105: FINISHME: ../src/intel/isl/isl.c:isl_surf_supports_ccs: CCS for 3D textures is disabled, but a workaround is available.
+[0m[INFO] [1790849715.845566050, 0.388000000]: Camera Plugin: Using the 'robotNamespace' param: '/'[0m
+[0m[INFO] [1790849715.847375811, 0.388000000]: Camera Plugin (ns = /)  <tf_prefix_>, set to ""[0m
+[INFO] [1790849713.477712, 0.000000]: Loading model XML from ros parameter robot_description
+[INFO] [1790849713.483274, 0.000000]: Waiting for service /gazebo/spawn_urdf_model
+[INFO] [1790849714.389014, 0.189000]: Calling service /gazebo/spawn_urdf_model
+[INFO] [1790849715.928292, 0.388000]: Spawn status: SpawnModel: Successfully spawned entity
+[0m[INFO] [1790849716.124440044, 0.388000000]: Laser Plugin: Using the 'robotNamespace' param: '/'[0m
+[0m[INFO] [1790849716.124499350, 0.388000000]: Starting Laser Plugin (ns = /)[0m
+[0m[INFO] [1790849716.125432816, 0.388000000]: Laser Plugin (ns = /)  <tf_prefix_>, set to ""[0m
+[0m[INFO] [1790849716.133536640, 0.388000000]: Starting plugin DiffDrive(ns = //)[0m
+[0m[INFO] [1790849716.133594925, 0.388000000]: DiffDrive(ns = //): <rosDebugLevel> = na[0m
+[0m[INFO] [1790849716.134127646, 0.388000000]: DiffDrive(ns = //): <tf_prefix> = [0m
+[0m[INFO] [1790849716.134763771, 0.388000000]: DiffDrive(ns = //): Try to subscribe to cmd_vel[0m
+[0m[INFO] [1790849716.136400535, 0.388000000]: DiffDrive(ns = //): Subscribe to cmd_vel[0m
+[0m[INFO] [1790849716.136903263, 0.388000000]: DiffDrive(ns = //): Advertise odom on odom [0m
+[33m[WARN] [1790849717.145248055, 1.290000000]: global_costmap: Pre-Hydro parameter "static_map" unused since "plugins" is provided[0m
+[33m[WARN] [1790849717.145907803, 1.290000000]: global_costmap: Pre-Hydro parameter "map_type" unused since "plugins" is provided[0m
+[0m[INFO] [1790849717.146325809, 1.291000000]: global_costmap: Using plugin "static_map"[0m
+[0m[INFO] [1790849717.154107908, 1.297000000]: Requesting the map...[0m
+[0m[INFO] [1790849717.383872719, 1.499000000]: Resizing costmap to 384 X 384 at 0.050000 m/pix[0m
+[0m[INFO] [1790849717.494322288, 1.599000000]: Received a 384 X 384 map at 0.050000 m/pix[0m
+[0m[INFO] [1790849717.497129972, 1.601000000]: global_costmap: Using plugin "obstacle_layer"[0m
+[0m[INFO] [1790849717.499175755, 1.603000000]:     Subscribed to Topics: scan[0m
+[0m[INFO] [1790849717.513087139, 1.615000000]: global_costmap: Using plugin "voronoi_layer"[0m
+[0m[INFO] [1790849717.514794817, 1.617000000]: global_costmap: Using plugin "inflation_layer"[0m
+[33m[WARN] [1790849717.541986263, 1.640000000]: Planner name initial: rrt_cut[0m
+[0m[INFO] [1790849717.542023805, 1.641000000]: Using global sample planner: rrt_cut[0m
+[33m[WARN] [1790849717.546515332, 1.645000000]: local_costmap: Parameter "plugins" not provided, loading pre-Hydro parameters[0m
+[0m[INFO] [1790849717.559165489, 1.655000000]: local_costmap: Using plugin "obstacle_layer"[0m
+[0m[INFO] [1790849717.561420799, 1.657000000]:     Subscribed to Topics: scan[0m
+[0m[INFO] [1790849717.573325871, 1.667000000]: local_costmap: Using plugin "inflation_layer"[0m
+[0m[INFO] [1790849717.602717949, 1.692000000]: Created local_planner dwa_planner/DWAPlanner[0m
+[0m[INFO] [1790849717.604575726, 1.695000000]: Sim period is set to 0.10[0m
+[0m[INFO] [1790849717.607033703, 1.697000000]: Using local planner: DWAPlanner[0m
+[0m[INFO] [1790849717.716856550, 1.794000000]: Recovery behavior will clear layer 'obstacles'[0m
+[0m[INFO] [1790849717.722229994, 1.799000000]: Recovery behavior will clear layer 'obstacles'[0m
+[0m[INFO] [1790849717.821361431, 1.888000000]: odom received![0m
+Start Node: (200, 141)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[0m[INFO] [1790849723.411822553, 6.793000000]: Got new plan[0m
+Start Node: (201, 141)
+Jump Node: (201, 145)
+Goal Node: (200, 207)
+[0m[INFO] [1790849723.964060665, 7.293000000]: Got new plan[0m
+Start Node: (202, 141)
+Jump Node: (202, 163)
+Goal Node: (200, 207)
+[0m[INFO] [1790849724.520370350, 7.793000000]: Got new plan[0m
+Start Node: (204, 143)
+Jump Node: (203, 157)
+Goal Node: (200, 207)
+[0m[INFO] [1790849725.061977801, 8.293000000]: Got new plan[0m
+[33m[WARN] [1790849725.397112653, 8.600000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849725.397591717, 8.600000000]: Stuck count: 1[0m
+Start Node: (205, 144)
+Jump Node: (201, 154)
+Goal Node: (200, 207)
+[0m[INFO] [1790849725.497955413, 8.693000000]: Got new plan[0m
+[33m[WARN] [1790849725.503623405, 8.699000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849725.503921009, 8.699000000]: Stuck count: 2[0m
+Start Node: (205, 144)
+Jump Node: (197, 154)
+Goal Node: (200, 207)
+[0m[INFO] [1790849725.607658971, 8.794000000]: Got new plan[0m
+[33m[WARN] [1790849725.613481059, 8.799000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849725.614007171, 8.800000000]: Stuck count: 3[0m
+Start Node: (205, 145)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[0m[INFO] [1790849725.715409578, 8.893000000]: Got new plan[0m
+[33m[WARN] [1790849725.721389265, 8.899000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849725.721616346, 8.899000000]: Stuck count: 4[0m
+Start Node: (205, 145)
+Jump Node: (199, 164)
+Goal Node: (200, 207)
+[0m[INFO] [1790849725.822327393, 8.993000000]: Got new plan[0m
+[33m[WARN] [1790849725.830008929, 9.001000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849725.830184451, 9.001000000]: Stuck count: 5[0m
+Start Node: (205, 145)
+Jump Node: (197, 157)
+Goal Node: (200, 207)
+[0m[INFO] [1790849725.929874277, 9.093000000]: Got new plan[0m
+[33m[WARN] [1790849725.938524777, 9.101000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849725.938649189, 9.101000000]: Stuck .... start escape[0m
+Start escape function 
+[0m[INFO] [1790849725.938725665, 9.101000000]: Stuck count: 6[0m
+Sub_goal found 
+[0m[INFO] [1790849726.052740520, 9.206000000]: Sub-goal (222, 236) kept until the robot reaches it[0m
+Start Node: (204, 145)
+Jump Node: (231, 194)
+Goal Node: (222, 236)
+[0m[INFO] [1790849726.146040946, 9.293000000]: Got new plan[0m
+Start Node: (205, 145)
+Jump Node: (221, 163)
+Goal Node: (222, 236)
+[0m[INFO] [1790849726.572466470, 9.694000000]: Got new plan[0m
+[33m[WARN] [1790849726.578299194, 9.699000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849726.578695557, 9.699000000]: Stuck count: 7[0m
+Start Node: (205, 146)
+Jump Node: (221, 164)
+Goal Node: (222, 236)
+[0m[INFO] [1790849726.679011980, 9.794000000]: Got new plan[0m
+Start Node: (205, 147)
+Jump Node: (221, 164)
+Goal Node: (222, 236)
+[0m[INFO] [1790849727.212212490, 10.293000000]: Got new plan[0m
+Start Node: (206, 149)
+Jump Node: (231, 205)
+Goal Node: (222, 236)
+[0m[INFO] [1790849727.745560270, 10.794000000]: Got new plan[0m
+Start Node: (207, 151)
+Jump Node: (220, 164)
+Goal Node: (222, 236)
+[0m[INFO] [1790849728.279557082, 11.293000000]: Got new plan[0m
+Start Node: (209, 153)
+Jump Node: (221, 163)
+Goal Node: (222, 236)
+[0m[INFO] [1790849728.811492104, 11.793000000]: Got new plan[0m
+Start Node: (210, 155)
+Jump Node: (210, 164)
+Goal Node: (222, 236)
+[33m[WARN] [1790849729.254100464, 12.208000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849729.345688677, 12.293000000]: Got new plan[0m
+Start Node: (212, 156)
+Jump Node: (235, 218)
+Goal Node: (222, 236)
+[0m[INFO] [1790849729.878286722, 12.793000000]: Got new plan[0m
+Start Node: (213, 158)
+Jump Node: (221, 159)
+Goal Node: (222, 236)
+[33m[WARN] [1790849730.315810397, 13.203000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849730.411968398, 13.293000000]: Got new plan[0m
+Start Node: (215, 159)
+Jump Node: (219, 164)
+Goal Node: (222, 236)
+[33m[WARN] [1790849730.851478140, 13.705000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849730.946372809, 13.793000000]: Got new plan[0m
+Start Node: (216, 160)
+Jump Node: (233, 229)
+Goal Node: (222, 236)
+[0m[INFO] [1790849731.480483757, 14.293000000]: Got new plan[0m
+Start Node: (218, 161)
+Jump Node: (221, 164)
+Goal Node: (222, 236)
+[33m[WARN] [1790849731.917145998, 14.704000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849732.015178119, 14.793000000]: Got new plan[0m
+Start Node: (220, 162)
+Jump Node: (223, 165)
+Goal Node: (222, 236)
+[33m[WARN] [1790849732.461742355, 15.205000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849732.555224974, 15.293000000]: Got new plan[0m
+Start Node: (222, 163)
+Jump Node: (231, 235)
+Goal Node: (222, 236)
+[0m[INFO] [1790849733.093771605, 15.793000000]: Got new plan[0m
+Start Node: (224, 163)
+Jump Node: (231, 212)
+Goal Node: (222, 236)
+[0m[INFO] [1790849733.634228531, 16.293000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849734.166518281, 16.793000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849734.699671594, 17.293000000]: Got new plan[0m
+Start Node: (228, 167)
+Jump Node: (232, 233)
+Goal Node: (222, 236)
+[0m[INFO] [1790849735.234029699, 17.793000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849735.767598993, 18.293000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849736.306907532, 18.793000000]: Got new plan[0m
+Start Node: (233, 173)
+Jump Node: (232, 218)
+Goal Node: (222, 236)
+[0m[INFO] [1790849736.841343157, 19.294000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849737.378931755, 19.793000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849737.910215552, 20.293000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849738.443564299, 20.793000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849738.984526485, 21.293000000]: Got new plan[0m
+Start Node: (236, 184)
+Jump Node: (231, 215)
+Goal Node: (222, 236)
+[0m[INFO] [1790849739.522046306, 21.793000000]: Got new plan[0m
+Start Node: (236, 186)
+Jump Node: (234, 215)
+Goal Node: (222, 236)
+[0m[INFO] [1790849740.055230243, 22.293000000]: Got new plan[0m
+[0m[INFO] [1790849740.487709128, 22.699000000]: Sub-goal (222, 236) released: blocked by an obstacle[0m
+[0m[INFO] [1790849740.487778260, 22.699000000]: Stuck .... start escape[0m
+Start escape function 
+Sub_goal found 
+[0m[INFO] [1790849740.588005491, 22.792000000]: Sub-goal (183, 237) kept until the robot reaches it[0m
+Start Node: (236, 188)
+Jump Node: (216, 241)
+Goal Node: (183, 237)
+[0m[INFO] [1790849740.696159881, 22.893000000]: Got new plan[0m
+Start Node: (236, 190)
+Jump Node: (233, 237)
+Goal Node: (183, 237)
+[0m[INFO] [1790849741.121402727, 23.293000000]: Got new plan[0m
+Start Node: (236, 192)
+Jump Node: (192, 242)
+Goal Node: (183, 237)
+[0m[INFO] [1790849741.655833703, 23.793000000]: Got new plan[0m
+Start Node: (236, 194)
+Jump Node: (204, 243)
+Goal Node: (183, 237)
+[0m[INFO] [1790849742.189507888, 24.293000000]: Got new plan[0m
+Start Node: (236, 197)
+Jump Node: (231, 210)
+Goal Node: (183, 237)
+[33m[WARN] [1790849742.655446544, 24.729000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849742.725131092, 24.793000000]: Got new plan[0m
+Start Node: (236, 199)
+Jump Node: (231, 216)
+Goal Node: (183, 237)
+[0m[INFO] [1790849743.264388515, 25.293000000]: Got new plan[0m
+Start Node: (236, 201)
+Jump Node: (193, 245)
+Goal Node: (183, 237)
+[0m[INFO] [1790849743.799792964, 25.793000000]: Got new plan[0m
+Start Node: (236, 204)
+Jump Node: (224, 237)
+Goal Node: (183, 237)
+[0m[INFO] [1790849744.331578342, 26.293000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849744.865660193, 26.793000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849745.398655428, 27.293000000]: Got new plan[0m
+Start Node: (237, 211)
+Jump Node: (231, 216)
+Goal Node: (183, 237)
+[33m[WARN] [1790849745.847659921, 27.713000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849745.933690607, 27.793000000]: Got new plan[0m
+Start Node: (237, 213)
+Jump Node: (188, 244)
+Goal Node: (183, 237)
+[0m[INFO] [1790849746.465013323, 28.293000000]: Got new plan[0m
+Start Node: (237, 216)
+Jump Node: (233, 227)
+Goal Node: (183, 237)
+[33m[WARN] [1790849746.908957944, 28.709000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849746.999559761, 28.793000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849747.533148959, 29.293000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849748.065743475, 29.793000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849748.598578031, 30.293000000]: Got new plan[0m
+Start Node: (236, 225)
+Jump Node: (208, 234)
+Goal Node: (183, 237)
+[0m[INFO] [1790849749.132386007, 30.793000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849749.665736295, 31.293000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849750.199074028, 31.793000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849750.731299224, 32.293000000]: Got new plan[0m
+Start Node: (231, 232)
+Jump Node: (223, 231)
+Goal Node: (183, 237)
+[33m[WARN] [1790849751.214191036, 32.744000000]: Short path! Using history path.[0m
+[0m[INFO] [1790849751.267146383, 32.793000000]: Got new plan[0m
+Start Node: (229, 233)
+Jump Node: (202, 234)
+Goal Node: (183, 237)
+[0m[INFO] [1790849751.799859224, 33.293000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849752.332277967, 33.793000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849752.866010118, 34.293000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849753.399584867, 34.793000000]: Got new plan[0m
+Goal found 
+[0m[INFO] [1790849753.932808334, 35.293000000]: Got new plan[0m
+[33m[WARN] [1790849753.934436428, 35.295000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849753.934668857, 35.295000000]: Stuck count: 8[0m
+Goal found 
+[0m[INFO] [1790849754.044113409, 35.393000000]: Got new plan[0m
+[33m[WARN] [1790849754.046078947, 35.395000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849754.046269057, 35.395000000]: Stuck count: 9[0m
+Goal found 
+[0m[INFO] [1790849754.152157101, 35.493000000]: Got new plan[0m
+[33m[WARN] [1790849762.015531570, 42.597000000]: DWA planner failed to produce path.[0m
+[0m[INFO] [1790849762.015745439, 42.597000000]: Stuck count: 10[0m
+[33m[WARN] [1790849779.980580045, 59.315000000]: Shutdown request received.[0m
+[33m[WARN] [1790849779.980639582, 59.316000000]: Reason given for shutdown: [[/map_server] Reason: new node registered with same name][0m
+[33m[WARN] [1790849779.982554940, 59.318000000]: Shutdown request received.[0m
+[33m[WARN] [1790849779.988776517, 59.323000000]: Reason given for shutdown: [[/robot_state_publisher] Reason: new node registered with same name][0m
+[33m[WARN] [1790849780.008418296, 59.331000000]: Shutdown request received.[0m
+[33m[WARN] [1790849780.008473036, 59.331000000]: Reason given for shutdown: [[/move_base] Reason: new node registered with same name][0m
+[33m[WARN] [1790849780.009192005, 59.331000000]: Shutdown request received.[0m
+[33m[WARN] [1790849780.009255904, 59.331000000]: Reason given for shutdown: [[/amcl] Reason: new node registered with same name][0m
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+Error in XmlRpcClient::writeRequest: write error (Connection refused).
+[31m[ERROR] [1790849780.531974140, 59.758000000]: SpawnModel: Failure - model name turtlebot3_waffle already exist.[0m
+[33m[WARN] [1790849780.927716840, 60.134000000]: Shutdown request received.[0m
+[33m[WARN] [1790849780.927793797, 60.134000000]: Reason given for shutdown: [[/gazebo_gui] Reason: new node registered with same name][0m
+shutdown request: [/joint_state_publisher] Reason: new node registered with same name

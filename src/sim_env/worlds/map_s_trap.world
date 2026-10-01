@@ -128,20 +128,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.000000 5.620000 0 0 -0 0.000000</pose>
+        <pose>0.000000 6.313750 0 0 -0 0.000000</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Wall_left'>
         <collision name='Wall_left_Collision'>
-          <geometry><box><size>10.37 0.15 2.5</size></box></geometry>
+          <geometry><box><size>11.0638 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Wall_left_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>10.37 0.15 2.5</size></box></geometry>
+          <geometry><box><size>11.0638 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -150,20 +150,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-4.600000 0.510000 0 0 -0 1.570796</pose>
+        <pose>-4.600000 0.856875 0 0 -0 1.570796</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Wall_right'>
         <collision name='Wall_right_Collision'>
-          <geometry><box><size>10.37 0.15 2.5</size></box></geometry>
+          <geometry><box><size>11.0638 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Wall_right_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>10.37 0.15 2.5</size></box></geometry>
+          <geometry><box><size>11.0638 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -172,7 +172,7 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>4.600000 0.510000 0 0 -0 1.570796</pose>
+        <pose>4.600000 0.856875 0 0 -0 1.570796</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
@@ -1507,13 +1507,13 @@
       <pose>0 0 0 0 -0 0</pose>
       <link name='Goal_U_bottom_00'>
         <collision name='Goal_U_bottom_00_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_00_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1522,20 +1522,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.998630 3.422664 0 0 -0 4.764749</pose>
+        <pose>-3.310701 3.625059 0 0 -0 4.764749</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_01'>
         <collision name='Goal_U_bottom_01_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_01_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1544,20 +1544,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.987688 3.318566 0 0 -0 4.869469</pose>
+        <pose>-3.296341 3.488430 0 0 -0 4.869469</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_02'>
         <collision name='Goal_U_bottom_02_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_02_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1566,20 +1566,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.965926 3.216181 0 0 -0 4.974188</pose>
+        <pose>-3.267778 3.354050 0 0 -0 4.974188</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_03'>
         <collision name='Goal_U_bottom_03_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_03_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1588,20 +1588,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.933580 3.116632 0 0 -0 5.078908</pose>
+        <pose>-3.225324 3.223392 0 0 -0 5.078908</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_04'>
         <collision name='Goal_U_bottom_04_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_04_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1610,20 +1610,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.891007 3.021010 0 0 -0 5.183628</pose>
+        <pose>-3.169446 3.097887 0 0 -0 5.183628</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_05'>
         <collision name='Goal_U_bottom_05_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_05_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1632,20 +1632,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.838671 2.930361 0 0 -0 5.288348</pose>
+        <pose>-3.100755 2.978911 0 0 -0 5.288348</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_06'>
         <collision name='Goal_U_bottom_06_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_06_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1654,20 +1654,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.777146 2.845680 0 0 -0 5.393067</pose>
+        <pose>-3.020004 2.867767 0 0 -0 5.393067</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_07'>
         <collision name='Goal_U_bottom_07_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_07_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1676,20 +1676,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.707107 2.767893 0 0 -0 5.497787</pose>
+        <pose>-2.928078 2.765672 0 0 -0 5.497787</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_08'>
         <collision name='Goal_U_bottom_08_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_08_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1698,20 +1698,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.629320 2.697854 0 0 -0 5.602507</pose>
+        <pose>-2.825983 2.673746 0 0 -0 5.602507</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_09'>
         <collision name='Goal_U_bottom_09_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_09_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1720,20 +1720,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.544639 2.636329 0 0 -0 5.707227</pose>
+        <pose>-2.714839 2.592995 0 0 -0 5.707227</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_10'>
         <collision name='Goal_U_bottom_10_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_10_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1742,20 +1742,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.453990 2.583993 0 0 -0 5.811946</pose>
+        <pose>-2.595863 2.524304 0 0 -0 5.811946</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_11'>
         <collision name='Goal_U_bottom_11_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_11_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1764,20 +1764,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.358368 2.541420 0 0 -0 5.916666</pose>
+        <pose>-2.470358 2.468426 0 0 -0 5.916666</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_12'>
         <collision name='Goal_U_bottom_12_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_12_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1786,20 +1786,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.258819 2.509074 0 0 -0 6.021386</pose>
+        <pose>-2.339700 2.425972 0 0 -0 6.021386</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_13'>
         <collision name='Goal_U_bottom_13_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_13_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1808,20 +1808,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.156434 2.487312 0 0 -0 6.126106</pose>
+        <pose>-2.205320 2.397409 0 0 -0 6.126106</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_14'>
         <collision name='Goal_U_bottom_14_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_14_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1830,20 +1830,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-0.052336 2.476370 0 0 -0 6.230825</pose>
+        <pose>-2.068691 2.383049 0 0 -0 6.230825</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_15'>
         <collision name='Goal_U_bottom_15_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_15_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1852,20 +1852,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.052336 2.476370 0 0 -0 6.335545</pose>
+        <pose>-1.931309 2.383049 0 0 -0 6.335545</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_16'>
         <collision name='Goal_U_bottom_16_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_16_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1874,20 +1874,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.156434 2.487312 0 0 -0 6.440265</pose>
+        <pose>-1.794680 2.397409 0 0 -0 6.440265</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_17'>
         <collision name='Goal_U_bottom_17_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_17_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1896,20 +1896,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.258819 2.509074 0 0 -0 6.544985</pose>
+        <pose>-1.660300 2.425972 0 0 -0 6.544985</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_18'>
         <collision name='Goal_U_bottom_18_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_18_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1918,20 +1918,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.358368 2.541420 0 0 -0 6.649704</pose>
+        <pose>-1.529642 2.468426 0 0 -0 6.649704</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_19'>
         <collision name='Goal_U_bottom_19_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_19_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1940,20 +1940,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.453990 2.583993 0 0 -0 6.754424</pose>
+        <pose>-1.404137 2.524304 0 0 -0 6.754424</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_20'>
         <collision name='Goal_U_bottom_20_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_20_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1962,20 +1962,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.544639 2.636329 0 0 -0 6.859144</pose>
+        <pose>-1.285161 2.592995 0 0 -0 6.859144</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_21'>
         <collision name='Goal_U_bottom_21_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_21_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -1984,20 +1984,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.629320 2.697854 0 0 -0 6.963864</pose>
+        <pose>-1.174017 2.673746 0 0 -0 6.963864</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_22'>
         <collision name='Goal_U_bottom_22_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_22_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -2006,20 +2006,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.707107 2.767893 0 0 -0 7.068583</pose>
+        <pose>-1.071922 2.765672 0 0 -0 7.068583</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_23'>
         <collision name='Goal_U_bottom_23_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_23_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -2028,20 +2028,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.777146 2.845680 0 0 -0 7.173303</pose>
+        <pose>-0.979996 2.867767 0 0 -0 7.173303</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_24'>
         <collision name='Goal_U_bottom_24_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_24_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -2050,20 +2050,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.838671 2.930361 0 0 -0 7.278023</pose>
+        <pose>-0.899245 2.978911 0 0 -0 7.278023</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_25'>
         <collision name='Goal_U_bottom_25_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_25_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -2072,20 +2072,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.891007 3.021010 0 0 -0 7.382743</pose>
+        <pose>-0.830554 3.097887 0 0 -0 7.382743</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_26'>
         <collision name='Goal_U_bottom_26_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_26_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -2094,20 +2094,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.933580 3.116632 0 0 -0 7.487462</pose>
+        <pose>-0.774676 3.223392 0 0 -0 7.487462</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_27'>
         <collision name='Goal_U_bottom_27_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_27_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -2116,20 +2116,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.965926 3.216181 0 0 -0 7.592182</pose>
+        <pose>-0.732222 3.354050 0 0 -0 7.592182</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_28'>
         <collision name='Goal_U_bottom_28_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_28_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -2138,20 +2138,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.987688 3.318566 0 0 -0 7.696902</pose>
+        <pose>-0.703659 3.488430 0 0 -0 7.696902</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_bottom_29'>
         <collision name='Goal_U_bottom_29_Collision'>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_bottom_29_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.171727 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -2160,20 +2160,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>0.998630 3.422664 0 0 -0 7.801622</pose>
+        <pose>-0.689299 3.625059 0 0 -0 7.801622</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_left'>
         <collision name='Goal_U_left_Collision'>
-          <geometry><box><size>0.8 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.675 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_left_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.8 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.675 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -2182,20 +2182,20 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>-1.000000 3.875000 0 0 -0 1.570796</pose>
+        <pose>-3.312500 4.031250 0 0 -0 1.570796</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
       </link>
       <link name='Goal_U_right'>
         <collision name='Goal_U_right_Collision'>
-          <geometry><box><size>0.8 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.675 0.15 2.5</size></box></geometry>
           <pose>0 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
         </collision>
         <visual name='Goal_U_right_Visual'>
           <pose>0 0 1.25 0 -0 0</pose>
-          <geometry><box><size>0.8 0.15 2.5</size></box></geometry>
+          <geometry><box><size>0.675 0.15 2.5</size></box></geometry>
           <material>
             <script>
               <uri>file://media/materials/scripts/gazebo.material</uri>
@@ -2204,7 +2204,7 @@
             <ambient>1 1 1 1</ambient>
           </material>
         </visual>
-        <pose>1.000000 3.875000 0 0 -0 1.570796</pose>
+        <pose>-0.687500 4.031250 0 0 -0 1.570796</pose>
         <self_collide>0</self_collide>
         <enable_wind>0</enable_wind>
         <kinematic>0</kinematic>
@@ -2236,19 +2236,19 @@
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_top'>
-          <pose>0.000000 5.620000 0 0 -0 0.000000</pose>
+          <pose>0.000000 6.313750 0 0 -0 0.000000</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_left'>
-          <pose>-4.600000 0.510000 0 0 -0 1.570796</pose>
+          <pose>-4.600000 0.856875 0 0 -0 1.570796</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Wall_right'>
-          <pose>4.600000 0.510000 0 0 -0 1.570796</pose>
+          <pose>4.600000 0.856875 0 0 -0 1.570796</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
@@ -2622,193 +2622,193 @@
         <pose>0 0 0 0 -0 0</pose>
         <scale>1 1 1</scale>
         <link name='Goal_U_bottom_00'>
-          <pose>-0.998630 3.422664 0 0 -0 4.764749</pose>
+          <pose>-3.310701 3.625059 0 0 -0 4.764749</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_01'>
-          <pose>-0.987688 3.318566 0 0 -0 4.869469</pose>
+          <pose>-3.296341 3.488430 0 0 -0 4.869469</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_02'>
-          <pose>-0.965926 3.216181 0 0 -0 4.974188</pose>
+          <pose>-3.267778 3.354050 0 0 -0 4.974188</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_03'>
-          <pose>-0.933580 3.116632 0 0 -0 5.078908</pose>
+          <pose>-3.225324 3.223392 0 0 -0 5.078908</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_04'>
-          <pose>-0.891007 3.021010 0 0 -0 5.183628</pose>
+          <pose>-3.169446 3.097887 0 0 -0 5.183628</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_05'>
-          <pose>-0.838671 2.930361 0 0 -0 5.288348</pose>
+          <pose>-3.100755 2.978911 0 0 -0 5.288348</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_06'>
-          <pose>-0.777146 2.845680 0 0 -0 5.393067</pose>
+          <pose>-3.020004 2.867767 0 0 -0 5.393067</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_07'>
-          <pose>-0.707107 2.767893 0 0 -0 5.497787</pose>
+          <pose>-2.928078 2.765672 0 0 -0 5.497787</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_08'>
-          <pose>-0.629320 2.697854 0 0 -0 5.602507</pose>
+          <pose>-2.825983 2.673746 0 0 -0 5.602507</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_09'>
-          <pose>-0.544639 2.636329 0 0 -0 5.707227</pose>
+          <pose>-2.714839 2.592995 0 0 -0 5.707227</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_10'>
-          <pose>-0.453990 2.583993 0 0 -0 5.811946</pose>
+          <pose>-2.595863 2.524304 0 0 -0 5.811946</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_11'>
-          <pose>-0.358368 2.541420 0 0 -0 5.916666</pose>
+          <pose>-2.470358 2.468426 0 0 -0 5.916666</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_12'>
-          <pose>-0.258819 2.509074 0 0 -0 6.021386</pose>
+          <pose>-2.339700 2.425972 0 0 -0 6.021386</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_13'>
-          <pose>-0.156434 2.487312 0 0 -0 6.126106</pose>
+          <pose>-2.205320 2.397409 0 0 -0 6.126106</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_14'>
-          <pose>-0.052336 2.476370 0 0 -0 6.230825</pose>
+          <pose>-2.068691 2.383049 0 0 -0 6.230825</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_15'>
-          <pose>0.052336 2.476370 0 0 -0 6.335545</pose>
+          <pose>-1.931309 2.383049 0 0 -0 6.335545</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_16'>
-          <pose>0.156434 2.487312 0 0 -0 6.440265</pose>
+          <pose>-1.794680 2.397409 0 0 -0 6.440265</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_17'>
-          <pose>0.258819 2.509074 0 0 -0 6.544985</pose>
+          <pose>-1.660300 2.425972 0 0 -0 6.544985</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_18'>
-          <pose>0.358368 2.541420 0 0 -0 6.649704</pose>
+          <pose>-1.529642 2.468426 0 0 -0 6.649704</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_19'>
-          <pose>0.453990 2.583993 0 0 -0 6.754424</pose>
+          <pose>-1.404137 2.524304 0 0 -0 6.754424</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_20'>
-          <pose>0.544639 2.636329 0 0 -0 6.859144</pose>
+          <pose>-1.285161 2.592995 0 0 -0 6.859144</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_21'>
-          <pose>0.629320 2.697854 0 0 -0 6.963864</pose>
+          <pose>-1.174017 2.673746 0 0 -0 6.963864</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_22'>
-          <pose>0.707107 2.767893 0 0 -0 7.068583</pose>
+          <pose>-1.071922 2.765672 0 0 -0 7.068583</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_23'>
-          <pose>0.777146 2.845680 0 0 -0 7.173303</pose>
+          <pose>-0.979996 2.867767 0 0 -0 7.173303</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_24'>
-          <pose>0.838671 2.930361 0 0 -0 7.278023</pose>
+          <pose>-0.899245 2.978911 0 0 -0 7.278023</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_25'>
-          <pose>0.891007 3.021010 0 0 -0 7.382743</pose>
+          <pose>-0.830554 3.097887 0 0 -0 7.382743</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_26'>
-          <pose>0.933580 3.116632 0 0 -0 7.487462</pose>
+          <pose>-0.774676 3.223392 0 0 -0 7.487462</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_27'>
-          <pose>0.965926 3.216181 0 0 -0 7.592182</pose>
+          <pose>-0.732222 3.354050 0 0 -0 7.592182</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_28'>
-          <pose>0.987688 3.318566 0 0 -0 7.696902</pose>
+          <pose>-0.703659 3.488430 0 0 -0 7.696902</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_bottom_29'>
-          <pose>0.998630 3.422664 0 0 -0 7.801622</pose>
+          <pose>-0.689299 3.625059 0 0 -0 7.801622</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_left'>
-          <pose>-1.000000 3.875000 0 0 -0 1.570796</pose>
+          <pose>-3.312500 4.031250 0 0 -0 1.570796</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>
         </link>
         <link name='Goal_U_right'>
-          <pose>1.000000 3.875000 0 0 -0 1.570796</pose>
+          <pose>-0.687500 4.031250 0 0 -0 1.570796</pose>
           <velocity>0 0 0 0 -0 0</velocity>
           <acceleration>0 0 0 0 -0 0</acceleration>
           <wrench>0 0 0 0 -0 0</wrench>

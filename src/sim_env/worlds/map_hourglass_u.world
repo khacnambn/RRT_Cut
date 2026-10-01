@@ -1,0 +1,3461 @@
+<sdf version='1.7'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+      <spot>
+        <inner_angle>0</inner_angle>
+        <outer_angle>0</outer_angle>
+        <falloff>0</falloff>
+      </spot>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='map_hourglass_u_outer'>
+      <pose>0 0 0 0 -0 0</pose>
+      <link name='Wall_bottom'>
+        <collision name='Wall_bottom_Collision'>
+          <geometry><box><size>9.35 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Wall_bottom_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>9.35 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.000000 -4.600000 0 0 -0 0.000000</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_top'>
+        <collision name='Wall_top_Collision'>
+          <geometry><box><size>9.35 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Wall_top_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>9.35 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.000000 4.600000 0 0 -0 0.000000</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_left'>
+        <collision name='Wall_left_Collision'>
+          <geometry><box><size>9.35 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Wall_left_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>9.35 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-4.600000 0.000000 0 0 -0 1.570796</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Wall_right'>
+        <collision name='Wall_right_Collision'>
+          <geometry><box><size>9.35 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Wall_right_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>9.35 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>4.600000 0.000000 0 0 -0 1.570796</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+    </model>
+    <model name='map_hourglass_u_divider'>
+      <pose>0 0 0 0 -0 0</pose>
+      <link name='Divider_left'>
+        <collision name='Divider_left_Collision'>
+          <geometry><box><size>3.365 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Divider_left_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>3.365 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-2.862500 3.200000 0 0 -0 0.000000</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Divider_right'>
+        <collision name='Divider_right_Collision'>
+          <geometry><box><size>3.365 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Divider_right_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>3.365 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>2.862500 3.200000 0 0 -0 0.000000</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+    </model>
+    <model name='map_hourglass_u_hourglass'>
+      <pose>0 0 0 0 -0 0</pose>
+      <link name='Hourglass_left_upper_00'>
+        <collision name='Hourglass_left_upper_00_Collision'>
+          <geometry><box><size>0.124347 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_00_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.124347 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.197249 3.157916 0 0 -0 -1.505509</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_01'>
+        <collision name='Hourglass_left_upper_01_Collision'>
+          <geometry><box><size>0.115174 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_01_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.115174 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.186721 3.079059 0 0 -0 -1.362414</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_02'>
+        <collision name='Hourglass_left_upper_02_Collision'>
+          <geometry><box><size>0.108873 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_02_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.108873 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.166863 3.010038 0 0 -0 -1.212304</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_03'>
+        <collision name='Hourglass_left_upper_03_Collision'>
+          <geometry><box><size>0.105057 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_03_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.105057 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.139109 2.949286 0 0 -0 -1.068119</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_04'>
+        <collision name='Hourglass_left_upper_04_Collision'>
+          <geometry><box><size>0.103132 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_04_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.103132 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.104895 2.895236 0 0 -0 -0.942927</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_05'>
+        <collision name='Hourglass_left_upper_05_Collision'>
+          <geometry><box><size>0.102434 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_05_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.102434 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.065657 2.846320 0 0 -0 -0.846018</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_06'>
+        <collision name='Hourglass_left_upper_06_Collision'>
+          <geometry><box><size>0.102381 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_06_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.102381 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.022830 2.800970 0 0 -0 -0.781939</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_07'>
+        <collision name='Hourglass_left_upper_07_Collision'>
+          <geometry><box><size>0.102571 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_07_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.102571 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.977849 2.757621 0 0 -0 -0.751981</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_08'>
+        <collision name='Hourglass_left_upper_08_Collision'>
+          <geometry><box><size>0.102812 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_08_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.102812 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.932151 2.714703 0 0 -0 -0.756068</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_09'>
+        <collision name='Hourglass_left_upper_09_Collision'>
+          <geometry><box><size>0.103129 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_09_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.103129 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.887170 2.670651 0 0 -0 -0.793794</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_10'>
+        <collision name='Hourglass_left_upper_10_Collision'>
+          <geometry><box><size>0.10376 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_10_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.10376 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.844343 2.623895 0 0 -0 -0.864296</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_11'>
+        <collision name='Hourglass_left_upper_11_Collision'>
+          <geometry><box><size>0.105139 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_11_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.105139 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.805105 2.572870 0 0 -0 -0.965121</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_12'>
+        <collision name='Hourglass_left_upper_12_Collision'>
+          <geometry><box><size>0.107847 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_12_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.107847 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.770891 2.516007 0 0 -0 -1.090589</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_13'>
+        <collision name='Hourglass_left_upper_13_Collision'>
+          <geometry><box><size>0.112507 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_13_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.112507 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.743137 2.451740 0 0 -0 -1.231018</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_14'>
+        <collision name='Hourglass_left_upper_14_Collision'>
+          <geometry><box><size>0.119651 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_14_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.119651 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.723279 2.378500 0 0 -0 -1.374284</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_upper_15'>
+        <collision name='Hourglass_left_upper_15_Collision'>
+          <geometry><box><size>0.12961 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_upper_15_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.12961 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.712751 2.294720 0 0 -0 -1.509348</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_00'>
+        <collision name='Hourglass_left_lower_00_Collision'>
+          <geometry><box><size>0.115649 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_00_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.115649 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.712975 2.212293 0 0 -0 -1.649536</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_01'>
+        <collision name='Hourglass_left_lower_01_Collision'>
+          <geometry><box><size>0.113231 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_01_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.113231 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.724504 2.138983 0 0 -0 -1.806584</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_02'>
+        <collision name='Hourglass_left_lower_02_Collision'>
+          <geometry><box><size>0.112868 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_02_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.112868 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.746632 2.069570 0 0 -0 -1.952581</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_03'>
+        <collision name='Hourglass_left_lower_03_Collision'>
+          <geometry><box><size>0.114045 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_03_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.114045 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.778244 2.003428 0 0 -0 -2.079672</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_04'>
+        <collision name='Hourglass_left_lower_04_Collision'>
+          <geometry><box><size>0.116229 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_04_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.116229 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.818223 1.939932 0 0 -0 -2.184244</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_05'>
+        <collision name='Hourglass_left_lower_05_Collision'>
+          <geometry><box><size>0.118951 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_05_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.118951 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.865455 1.878456 0 0 -0 -2.266115</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_06'>
+        <collision name='Hourglass_left_lower_06_Collision'>
+          <geometry><box><size>0.121846 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_06_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.121846 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.918822 1.818374 0 0 -0 -2.326957</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_07'>
+        <collision name='Hourglass_left_lower_07_Collision'>
+          <geometry><box><size>0.124651 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_07_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.124651 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.977211 1.759061 0 0 -0 -2.369021</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_08'>
+        <collision name='Hourglass_left_lower_08_Collision'>
+          <geometry><box><size>0.127194 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_08_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.127194 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.039504 1.699892 0 0 -0 -2.394429</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_09'>
+        <collision name='Hourglass_left_lower_09_Collision'>
+          <geometry><box><size>0.129375 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_09_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.129375 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.104587 1.640242 0 0 -0 -2.404874</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_10'>
+        <collision name='Hourglass_left_lower_10_Collision'>
+          <geometry><box><size>0.131156 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_10_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.131156 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.171343 1.579484 0 0 -0 -2.401559</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_11'>
+        <collision name='Hourglass_left_lower_11_Collision'>
+          <geometry><box><size>0.132548 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_11_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.132548 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.238657 1.516993 0 0 -0 -2.385238</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_12'>
+        <collision name='Hourglass_left_lower_12_Collision'>
+          <geometry><box><size>0.133609 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_12_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.133609 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.305413 1.452145 0 0 -0 -2.356301</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_13'>
+        <collision name='Hourglass_left_lower_13_Collision'>
+          <geometry><box><size>0.134442 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_13_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.134442 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.370496 1.384312 0 0 -0 -2.314901</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_14'>
+        <collision name='Hourglass_left_lower_14_Collision'>
+          <geometry><box><size>0.135198 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_14_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.135198 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.432789 1.312870 0 0 -0 -2.261105</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_15'>
+        <collision name='Hourglass_left_lower_15_Collision'>
+          <geometry><box><size>0.136072 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_15_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.136072 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.491178 1.237194 0 0 -0 -2.195099</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_16'>
+        <collision name='Hourglass_left_lower_16_Collision'>
+          <geometry><box><size>0.137301 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_16_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.137301 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.544545 1.156658 0 0 -0 -2.117428</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_17'>
+        <collision name='Hourglass_left_lower_17_Collision'>
+          <geometry><box><size>0.13916 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_17_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13916 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.591777 1.070636 0 0 -0 -2.029247</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_18'>
+        <collision name='Hourglass_left_lower_18_Collision'>
+          <geometry><box><size>0.141941 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_18_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.141941 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.631756 0.978503 0 0 -0 -1.932507</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_19'>
+        <collision name='Hourglass_left_lower_19_Collision'>
+          <geometry><box><size>0.145932 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_19_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.145932 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.663368 0.879634 0 0 -0 -1.829973</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_20'>
+        <collision name='Hourglass_left_lower_20_Collision'>
+          <geometry><box><size>0.15139 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_20_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.15139 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.685496 0.773403 0 0 -0 -1.724988</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_lower_21'>
+        <collision name='Hourglass_left_lower_21_Collision'>
+          <geometry><box><size>0.158518 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_lower_21_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.158518 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.697025 0.659184 0 0 -0 -1.621024</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_left_arm'>
+        <collision name='Hourglass_left_arm_Collision'>
+          <geometry><box><size>2.44 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_left_arm_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>2.44 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-1.700000 -0.600000 0 0 -0 -1.570796</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_00'>
+        <collision name='Hourglass_right_upper_00_Collision'>
+          <geometry><box><size>0.124347 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_00_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.124347 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.197249 3.157916 0 0 -0 -1.636084</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_01'>
+        <collision name='Hourglass_right_upper_01_Collision'>
+          <geometry><box><size>0.115174 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_01_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.115174 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.186721 3.079059 0 0 -0 -1.779179</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_02'>
+        <collision name='Hourglass_right_upper_02_Collision'>
+          <geometry><box><size>0.108873 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_02_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.108873 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.166863 3.010038 0 0 -0 -1.929289</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_03'>
+        <collision name='Hourglass_right_upper_03_Collision'>
+          <geometry><box><size>0.105057 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_03_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.105057 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.139109 2.949286 0 0 -0 -2.073473</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_04'>
+        <collision name='Hourglass_right_upper_04_Collision'>
+          <geometry><box><size>0.103132 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_04_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.103132 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.104895 2.895236 0 0 -0 -2.198666</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_05'>
+        <collision name='Hourglass_right_upper_05_Collision'>
+          <geometry><box><size>0.102434 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_05_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.102434 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.065657 2.846320 0 0 -0 -2.295575</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_06'>
+        <collision name='Hourglass_right_upper_06_Collision'>
+          <geometry><box><size>0.102381 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_06_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.102381 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.022830 2.800970 0 0 -0 -2.359654</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_07'>
+        <collision name='Hourglass_right_upper_07_Collision'>
+          <geometry><box><size>0.102571 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_07_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.102571 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.977849 2.757621 0 0 -0 -2.389612</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_08'>
+        <collision name='Hourglass_right_upper_08_Collision'>
+          <geometry><box><size>0.102812 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_08_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.102812 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.932151 2.714703 0 0 -0 -2.385524</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_09'>
+        <collision name='Hourglass_right_upper_09_Collision'>
+          <geometry><box><size>0.103129 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_09_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.103129 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.887170 2.670651 0 0 -0 -2.347799</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_10'>
+        <collision name='Hourglass_right_upper_10_Collision'>
+          <geometry><box><size>0.10376 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_10_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.10376 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.844343 2.623895 0 0 -0 -2.277296</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_11'>
+        <collision name='Hourglass_right_upper_11_Collision'>
+          <geometry><box><size>0.105139 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_11_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.105139 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.805105 2.572870 0 0 -0 -2.176471</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_12'>
+        <collision name='Hourglass_right_upper_12_Collision'>
+          <geometry><box><size>0.107847 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_12_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.107847 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.770891 2.516007 0 0 -0 -2.051004</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_13'>
+        <collision name='Hourglass_right_upper_13_Collision'>
+          <geometry><box><size>0.112507 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_13_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.112507 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.743137 2.451740 0 0 -0 -1.910575</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_14'>
+        <collision name='Hourglass_right_upper_14_Collision'>
+          <geometry><box><size>0.119651 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_14_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.119651 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.723279 2.378500 0 0 -0 -1.767308</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_upper_15'>
+        <collision name='Hourglass_right_upper_15_Collision'>
+          <geometry><box><size>0.12961 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_upper_15_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.12961 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.712751 2.294720 0 0 -0 -1.632245</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_00'>
+        <collision name='Hourglass_right_lower_00_Collision'>
+          <geometry><box><size>0.115725 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_00_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.115725 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.713426 2.212293 0 0 -0 -1.480187</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_01'>
+        <collision name='Hourglass_right_lower_01_Collision'>
+          <geometry><box><size>0.11388 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_01_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.11388 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.726702 2.138983 0 0 -0 -1.300889</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_02'>
+        <collision name='Hourglass_right_lower_02_Collision'>
+          <geometry><box><size>0.114498 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_02_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.114498 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.752183 2.069570 0 0 -0 -1.137749</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_03'>
+        <collision name='Hourglass_right_lower_03_Collision'>
+          <geometry><box><size>0.116856 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_03_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.116856 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.788584 2.003428 0 0 -0 -0.999774</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_04'>
+        <collision name='Hourglass_right_lower_04_Collision'>
+          <geometry><box><size>0.120241 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_04_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.120241 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.834621 1.939932 0 0 -0 -0.889541</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_05'>
+        <collision name='Hourglass_right_lower_05_Collision'>
+          <geometry><box><size>0.124067 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_05_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.124067 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.889008 1.878456 0 0 -0 -0.805424</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_06'>
+        <collision name='Hourglass_right_lower_06_Collision'>
+          <geometry><box><size>0.127902 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_06_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.127902 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.950462 1.818374 0 0 -0 -0.744160</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_07'>
+        <collision name='Hourglass_right_lower_07_Collision'>
+          <geometry><box><size>0.131453 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_07_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.131453 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.017697 1.759061 0 0 -0 -0.702414</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_08'>
+        <collision name='Hourglass_right_lower_08_Collision'>
+          <geometry><box><size>0.134534 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_08_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.134534 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.089429 1.699892 0 0 -0 -0.677436</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_09'>
+        <collision name='Hourglass_right_lower_09_Collision'>
+          <geometry><box><size>0.137039 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_09_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.137039 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.164373 1.640242 0 0 -0 -0.667218</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_10'>
+        <collision name='Hourglass_right_lower_10_Collision'>
+          <geometry><box><size>0.138927 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_10_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.138927 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.241243 1.579484 0 0 -0 -0.670458</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_11'>
+        <collision name='Hourglass_right_lower_11_Collision'>
+          <geometry><box><size>0.140211 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_11_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.140211 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.318757 1.516993 0 0 -0 -0.686452</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_12'>
+        <collision name='Hourglass_right_lower_12_Collision'>
+          <geometry><box><size>0.140951 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_12_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.140951 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.395627 1.452145 0 0 -0 -0.714986</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_13'>
+        <collision name='Hourglass_right_lower_13_Collision'>
+          <geometry><box><size>0.141258 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_13_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.141258 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.470571 1.384312 0 0 -0 -0.756216</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_14'>
+        <collision name='Hourglass_right_lower_14_Collision'>
+          <geometry><box><size>0.141295 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_14_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.141295 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.542303 1.312870 0 0 -0 -0.810516</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_15'>
+        <collision name='Hourglass_right_lower_15_Collision'>
+          <geometry><box><size>0.141281 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_15_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.141281 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.609538 1.237194 0 0 -0 -0.878277</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_16'>
+        <collision name='Hourglass_right_lower_16_Collision'>
+          <geometry><box><size>0.141496 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_16_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.141496 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.670992 1.156658 0 0 -0 -0.959618</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_17'>
+        <collision name='Hourglass_right_lower_17_Collision'>
+          <geometry><box><size>0.142277 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_17_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.142277 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.725379 1.070636 0 0 -0 -1.054015</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_18'>
+        <collision name='Hourglass_right_lower_18_Collision'>
+          <geometry><box><size>0.144001 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_18_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.144001 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.771416 0.978503 0 0 -0 -1.159911</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_19'>
+        <collision name='Hourglass_right_lower_19_Collision'>
+          <geometry><box><size>0.14706 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_19_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.14706 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.807817 0.879634 0 0 -0 -1.274472</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_20'>
+        <collision name='Hourglass_right_lower_20_Collision'>
+          <geometry><box><size>0.151818 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_20_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.151818 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.833298 0.773403 0 0 -0 -1.393697</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_lower_21'>
+        <collision name='Hourglass_right_lower_21_Collision'>
+          <geometry><box><size>0.158567 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_lower_21_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.158567 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.846574 0.659184 0 0 -0 -1.512974</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Hourglass_right_arm'>
+        <collision name='Hourglass_right_arm_Collision'>
+          <geometry><box><size>0.64 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Hourglass_right_arm_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.64 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.850000 0.300000 0 0 -0 -1.570796</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+    </model>
+    <model name='map_hourglass_u_side_walls'>
+      <pose>0 0 0 0 -0 0</pose>
+      <link name='Side_wall_left'>
+        <collision name='Side_wall_left_Collision'>
+          <geometry><box><size>6.365 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Side_wall_left_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>6.365 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-3.120000 -1.362500 0 0 -0 1.570796</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Side_wall_right'>
+        <collision name='Side_wall_right_Collision'>
+          <geometry><box><size>6.365 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Side_wall_right_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>6.365 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>3.270000 -1.362500 0 0 -0 1.570796</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+    </model>
+    <model name='map_hourglass_u_goal_u'>
+      <pose>0 0 0 0 -0 0</pose>
+      <link name='Goal_U_top_00'>
+        <collision name='Goal_U_top_00_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_00_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.298630 -1.597664 0 0 -0 1.623156</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_01'>
+        <collision name='Goal_U_top_01_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_01_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.287688 -1.493566 0 0 -0 1.727876</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_02'>
+        <collision name='Goal_U_top_02_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_02_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.265926 -1.391181 0 0 -0 1.832596</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_03'>
+        <collision name='Goal_U_top_03_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_03_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.233580 -1.291632 0 0 -0 1.937315</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_04'>
+        <collision name='Goal_U_top_04_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_04_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.191007 -1.196010 0 0 -0 2.042035</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_05'>
+        <collision name='Goal_U_top_05_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_05_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.138671 -1.105361 0 0 -0 2.146755</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_06'>
+        <collision name='Goal_U_top_06_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_06_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.077146 -1.020680 0 0 -0 2.251475</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_07'>
+        <collision name='Goal_U_top_07_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_07_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.007107 -0.942893 0 0 -0 2.356194</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_08'>
+        <collision name='Goal_U_top_08_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_08_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.929320 -0.872854 0 0 -0 2.460914</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_09'>
+        <collision name='Goal_U_top_09_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_09_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.844639 -0.811329 0 0 -0 2.565634</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_10'>
+        <collision name='Goal_U_top_10_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_10_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.753990 -0.758993 0 0 -0 2.670354</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_11'>
+        <collision name='Goal_U_top_11_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_11_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.658368 -0.716420 0 0 -0 2.775074</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_12'>
+        <collision name='Goal_U_top_12_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_12_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.558819 -0.684074 0 0 -0 2.879793</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_13'>
+        <collision name='Goal_U_top_13_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_13_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.456434 -0.662312 0 0 -0 2.984513</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_14'>
+        <collision name='Goal_U_top_14_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_14_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.352336 -0.651370 0 0 -0 3.089233</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_15'>
+        <collision name='Goal_U_top_15_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_15_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.247664 -0.651370 0 0 -0 3.193953</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_16'>
+        <collision name='Goal_U_top_16_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_16_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.143566 -0.662312 0 0 -0 3.298672</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_17'>
+        <collision name='Goal_U_top_17_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_17_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>0.041181 -0.684074 0 0 -0 3.403392</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_18'>
+        <collision name='Goal_U_top_18_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_18_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.058368 -0.716420 0 0 -0 3.508112</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_19'>
+        <collision name='Goal_U_top_19_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_19_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.153990 -0.758993 0 0 -0 3.612832</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_20'>
+        <collision name='Goal_U_top_20_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_20_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.244639 -0.811329 0 0 -0 3.717551</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_21'>
+        <collision name='Goal_U_top_21_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_21_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.329320 -0.872854 0 0 -0 3.822271</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_22'>
+        <collision name='Goal_U_top_22_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_22_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.407107 -0.942893 0 0 -0 3.926991</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_23'>
+        <collision name='Goal_U_top_23_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_23_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.477146 -1.020680 0 0 -0 4.031711</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_24'>
+        <collision name='Goal_U_top_24_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_24_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.538671 -1.105361 0 0 -0 4.136430</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_25'>
+        <collision name='Goal_U_top_25_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_25_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.591007 -1.196010 0 0 -0 4.241150</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_26'>
+        <collision name='Goal_U_top_26_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_26_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.633580 -1.291632 0 0 -0 4.345870</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_27'>
+        <collision name='Goal_U_top_27_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_27_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.665926 -1.391181 0 0 -0 4.450590</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_28'>
+        <collision name='Goal_U_top_28_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_28_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.687688 -1.493566 0 0 -0 4.555309</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_top_29'>
+        <collision name='Goal_U_top_29_Collision'>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_top_29_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.13084 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.698630 -1.597664 0 0 -0 4.660029</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_left'>
+        <collision name='Goal_U_left_Collision'>
+          <geometry><box><size>0.9 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_left_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.9 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>-0.700000 -2.100000 0 0 -0 1.570796</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='Goal_U_right'>
+        <collision name='Goal_U_right_Collision'>
+          <geometry><box><size>0.9 0.15 2.5</size></box></geometry>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='Goal_U_right_Visual'>
+          <pose>0 0 1.25 0 -0 0</pose>
+          <geometry><box><size>0.9 0.15 2.5</size></box></geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+          </material>
+        </visual>
+        <pose>1.300000 -2.100000 0 0 -0 1.570796</pose>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <static>1</static>
+    </model>
+    <state world_name='default'>
+      <sim_time>0 0</sim_time>
+      <real_time>0 0</real_time>
+      <wall_time>0 0</wall_time>
+      <iterations>0</iterations>
+      <model name='ground_plane'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='map_hourglass_u_outer'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='Wall_bottom'>
+          <pose>0.000000 -4.600000 0 0 -0 0.000000</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_top'>
+          <pose>0.000000 4.600000 0 0 -0 0.000000</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_left'>
+          <pose>-4.600000 0.000000 0 0 -0 1.570796</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Wall_right'>
+          <pose>4.600000 0.000000 0 0 -0 1.570796</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='map_hourglass_u_divider'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='Divider_left'>
+          <pose>-2.862500 3.200000 0 0 -0 0.000000</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Divider_right'>
+          <pose>2.862500 3.200000 0 0 -0 0.000000</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='map_hourglass_u_hourglass'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='Hourglass_left_upper_00'>
+          <pose>-1.197249 3.157916 0 0 -0 -1.505509</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_01'>
+          <pose>-1.186721 3.079059 0 0 -0 -1.362414</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_02'>
+          <pose>-1.166863 3.010038 0 0 -0 -1.212304</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_03'>
+          <pose>-1.139109 2.949286 0 0 -0 -1.068119</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_04'>
+          <pose>-1.104895 2.895236 0 0 -0 -0.942927</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_05'>
+          <pose>-1.065657 2.846320 0 0 -0 -0.846018</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_06'>
+          <pose>-1.022830 2.800970 0 0 -0 -0.781939</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_07'>
+          <pose>-0.977849 2.757621 0 0 -0 -0.751981</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_08'>
+          <pose>-0.932151 2.714703 0 0 -0 -0.756068</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_09'>
+          <pose>-0.887170 2.670651 0 0 -0 -0.793794</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_10'>
+          <pose>-0.844343 2.623895 0 0 -0 -0.864296</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_11'>
+          <pose>-0.805105 2.572870 0 0 -0 -0.965121</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_12'>
+          <pose>-0.770891 2.516007 0 0 -0 -1.090589</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_13'>
+          <pose>-0.743137 2.451740 0 0 -0 -1.231018</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_14'>
+          <pose>-0.723279 2.378500 0 0 -0 -1.374284</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_upper_15'>
+          <pose>-0.712751 2.294720 0 0 -0 -1.509348</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_00'>
+          <pose>-0.712975 2.212293 0 0 -0 -1.649536</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_01'>
+          <pose>-0.724504 2.138983 0 0 -0 -1.806584</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_02'>
+          <pose>-0.746632 2.069570 0 0 -0 -1.952581</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_03'>
+          <pose>-0.778244 2.003428 0 0 -0 -2.079672</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_04'>
+          <pose>-0.818223 1.939932 0 0 -0 -2.184244</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_05'>
+          <pose>-0.865455 1.878456 0 0 -0 -2.266115</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_06'>
+          <pose>-0.918822 1.818374 0 0 -0 -2.326957</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_07'>
+          <pose>-0.977211 1.759061 0 0 -0 -2.369021</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_08'>
+          <pose>-1.039504 1.699892 0 0 -0 -2.394429</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_09'>
+          <pose>-1.104587 1.640242 0 0 -0 -2.404874</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_10'>
+          <pose>-1.171343 1.579484 0 0 -0 -2.401559</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_11'>
+          <pose>-1.238657 1.516993 0 0 -0 -2.385238</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_12'>
+          <pose>-1.305413 1.452145 0 0 -0 -2.356301</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_13'>
+          <pose>-1.370496 1.384312 0 0 -0 -2.314901</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_14'>
+          <pose>-1.432789 1.312870 0 0 -0 -2.261105</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_15'>
+          <pose>-1.491178 1.237194 0 0 -0 -2.195099</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_16'>
+          <pose>-1.544545 1.156658 0 0 -0 -2.117428</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_17'>
+          <pose>-1.591777 1.070636 0 0 -0 -2.029247</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_18'>
+          <pose>-1.631756 0.978503 0 0 -0 -1.932507</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_19'>
+          <pose>-1.663368 0.879634 0 0 -0 -1.829973</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_20'>
+          <pose>-1.685496 0.773403 0 0 -0 -1.724988</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_lower_21'>
+          <pose>-1.697025 0.659184 0 0 -0 -1.621024</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_left_arm'>
+          <pose>-1.700000 -0.600000 0 0 -0 -1.570796</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_00'>
+          <pose>1.197249 3.157916 0 0 -0 -1.636084</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_01'>
+          <pose>1.186721 3.079059 0 0 -0 -1.779179</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_02'>
+          <pose>1.166863 3.010038 0 0 -0 -1.929289</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_03'>
+          <pose>1.139109 2.949286 0 0 -0 -2.073473</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_04'>
+          <pose>1.104895 2.895236 0 0 -0 -2.198666</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_05'>
+          <pose>1.065657 2.846320 0 0 -0 -2.295575</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_06'>
+          <pose>1.022830 2.800970 0 0 -0 -2.359654</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_07'>
+          <pose>0.977849 2.757621 0 0 -0 -2.389612</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_08'>
+          <pose>0.932151 2.714703 0 0 -0 -2.385524</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_09'>
+          <pose>0.887170 2.670651 0 0 -0 -2.347799</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_10'>
+          <pose>0.844343 2.623895 0 0 -0 -2.277296</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_11'>
+          <pose>0.805105 2.572870 0 0 -0 -2.176471</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_12'>
+          <pose>0.770891 2.516007 0 0 -0 -2.051004</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_13'>
+          <pose>0.743137 2.451740 0 0 -0 -1.910575</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_14'>
+          <pose>0.723279 2.378500 0 0 -0 -1.767308</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_upper_15'>
+          <pose>0.712751 2.294720 0 0 -0 -1.632245</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_00'>
+          <pose>0.713426 2.212293 0 0 -0 -1.480187</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_01'>
+          <pose>0.726702 2.138983 0 0 -0 -1.300889</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_02'>
+          <pose>0.752183 2.069570 0 0 -0 -1.137749</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_03'>
+          <pose>0.788584 2.003428 0 0 -0 -0.999774</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_04'>
+          <pose>0.834621 1.939932 0 0 -0 -0.889541</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_05'>
+          <pose>0.889008 1.878456 0 0 -0 -0.805424</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_06'>
+          <pose>0.950462 1.818374 0 0 -0 -0.744160</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_07'>
+          <pose>1.017697 1.759061 0 0 -0 -0.702414</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_08'>
+          <pose>1.089429 1.699892 0 0 -0 -0.677436</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_09'>
+          <pose>1.164373 1.640242 0 0 -0 -0.667218</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_10'>
+          <pose>1.241243 1.579484 0 0 -0 -0.670458</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_11'>
+          <pose>1.318757 1.516993 0 0 -0 -0.686452</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_12'>
+          <pose>1.395627 1.452145 0 0 -0 -0.714986</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_13'>
+          <pose>1.470571 1.384312 0 0 -0 -0.756216</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_14'>
+          <pose>1.542303 1.312870 0 0 -0 -0.810516</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_15'>
+          <pose>1.609538 1.237194 0 0 -0 -0.878277</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_16'>
+          <pose>1.670992 1.156658 0 0 -0 -0.959618</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_17'>
+          <pose>1.725379 1.070636 0 0 -0 -1.054015</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_18'>
+          <pose>1.771416 0.978503 0 0 -0 -1.159911</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_19'>
+          <pose>1.807817 0.879634 0 0 -0 -1.274472</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_20'>
+          <pose>1.833298 0.773403 0 0 -0 -1.393697</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_lower_21'>
+          <pose>1.846574 0.659184 0 0 -0 -1.512974</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Hourglass_right_arm'>
+          <pose>1.850000 0.300000 0 0 -0 -1.570796</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='map_hourglass_u_side_walls'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='Side_wall_left'>
+          <pose>-3.120000 -1.362500 0 0 -0 1.570796</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Side_wall_right'>
+          <pose>3.270000 -1.362500 0 0 -0 1.570796</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='map_hourglass_u_goal_u'>
+        <pose>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='Goal_U_top_00'>
+          <pose>1.298630 -1.597664 0 0 -0 1.623156</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_01'>
+          <pose>1.287688 -1.493566 0 0 -0 1.727876</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_02'>
+          <pose>1.265926 -1.391181 0 0 -0 1.832596</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_03'>
+          <pose>1.233580 -1.291632 0 0 -0 1.937315</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_04'>
+          <pose>1.191007 -1.196010 0 0 -0 2.042035</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_05'>
+          <pose>1.138671 -1.105361 0 0 -0 2.146755</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_06'>
+          <pose>1.077146 -1.020680 0 0 -0 2.251475</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_07'>
+          <pose>1.007107 -0.942893 0 0 -0 2.356194</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_08'>
+          <pose>0.929320 -0.872854 0 0 -0 2.460914</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_09'>
+          <pose>0.844639 -0.811329 0 0 -0 2.565634</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_10'>
+          <pose>0.753990 -0.758993 0 0 -0 2.670354</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_11'>
+          <pose>0.658368 -0.716420 0 0 -0 2.775074</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_12'>
+          <pose>0.558819 -0.684074 0 0 -0 2.879793</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_13'>
+          <pose>0.456434 -0.662312 0 0 -0 2.984513</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_14'>
+          <pose>0.352336 -0.651370 0 0 -0 3.089233</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_15'>
+          <pose>0.247664 -0.651370 0 0 -0 3.193953</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_16'>
+          <pose>0.143566 -0.662312 0 0 -0 3.298672</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_17'>
+          <pose>0.041181 -0.684074 0 0 -0 3.403392</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_18'>
+          <pose>-0.058368 -0.716420 0 0 -0 3.508112</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_19'>
+          <pose>-0.153990 -0.758993 0 0 -0 3.612832</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_20'>
+          <pose>-0.244639 -0.811329 0 0 -0 3.717551</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_21'>
+          <pose>-0.329320 -0.872854 0 0 -0 3.822271</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_22'>
+          <pose>-0.407107 -0.942893 0 0 -0 3.926991</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_23'>
+          <pose>-0.477146 -1.020680 0 0 -0 4.031711</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_24'>
+          <pose>-0.538671 -1.105361 0 0 -0 4.136430</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_25'>
+          <pose>-0.591007 -1.196010 0 0 -0 4.241150</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_26'>
+          <pose>-0.633580 -1.291632 0 0 -0 4.345870</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_27'>
+          <pose>-0.665926 -1.391181 0 0 -0 4.450590</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_28'>
+          <pose>-0.687688 -1.493566 0 0 -0 4.555309</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_top_29'>
+          <pose>-0.698630 -1.597664 0 0 -0 4.660029</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_left'>
+          <pose>-0.700000 -2.100000 0 0 -0 1.570796</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='Goal_U_right'>
+          <pose>1.300000 -2.100000 0 0 -0 1.570796</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose>0 -1.5 24 -1e-06 1.5356 1.5602</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>

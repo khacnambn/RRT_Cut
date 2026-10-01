@@ -111,6 +111,14 @@ protected:
   bool _getPlanFromPath(std::vector<Node> path, std::vector<geometry_msgs::PoseStamped>& plan);
 
   /**
+   * @brief  calculate plan by interpolating key nodes in world coordinates
+   * @param  key_nodes key nodes ordered start -> goal
+   * @param  plan      plan sampled at the costmap resolution
+   * @return bool true if successful else false
+   */
+  bool _getPlanFromKeyNodes(const std::vector<Node>& key_nodes, std::vector<geometry_msgs::PoseStamped>& plan);
+
+  /**
    *  @brief Publishes a Marker msg with two points in Rviz
    *  @param line_msg Pointer to existing marker object.
    *  @param line_pub Pointer to existing marker Publisher.
@@ -122,6 +130,7 @@ protected:
   void localPlanCallback(const rosgraph_msgs::Log::ConstPtr& msg);
   void publishSubGoal(const geometry_msgs::PoseStamped& sub_goal);
   void clearSubGoal();
+  void releaseSubGoal(const char* reason);
 
   /**
    * @brief  Check whether the straight segment between two plan poses crosses
@@ -156,10 +165,12 @@ protected:
   ros::Subscriber local_sub_;                                 // local planner subscriber
   int stuck_count = 0;                                       // control escape trap
   ros::Publisher sub_goal_pub_;
-
-//cg_rrt_paper
-  unsigned int cg_history_phase_ = 0;  // phase the stored route was built for
-  bool cg_has_history_ = false;        // false until a route has been stored
+  // CG-RRT Algorithm 1, lines 6-10: a sub-goal is generated once and kept
+  // across replanning cycles until the robot reaches it.
+  bool has_sub_goal_ = false;                                // a sub-goal is being followed
+  Node sub_goal_node_;                                       // kept sub-goal, costmap cells
+  geometry_msgs::PoseStamped sub_goal_owner_;                // goal the kept sub-goal belongs to
+  double sub_goal_tolerance_cells_ = 10.0;                   // "reached" radius, cells
 
 //parameter
   int sample_points, k_nodes;

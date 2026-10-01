@@ -775,10 +775,10 @@
       </link>
     </model>
     <state world_name="default">
-      <sim_time>181 63000000</sim_time>
-      <real_time>182 164748007</real_time>
+      <sim_time>0 0</sim_time>
+      <real_time>0 0</real_time>
       <wall_time>1730088194 214052849</wall_time>
-      <iterations>181063</iterations>
+      <iterations>0</iterations>
       <model name="U2.5">
         <pose>0.002421 -0.124293 0 0 -0 0</pose>
         <scale>1 1 1</scale>
@@ -917,7 +917,7 @@
       </camera>
     </gui>
   <actor name="human_1">
-	<pose>3 2.5 0 0 0 0</pose>
+	<pose>3 1.5 0 0 0 0</pose>
 	<skin>
 		<filename>walk.dae</filename>
 		<scale>1.0</scale>
@@ -962,10 +962,15 @@
 		<ignore_obstacles>
 			<model>ground_plane</model>
 			<model>turtlebot3_waffle</model>
+			<!-- The plugin approximates each model by its bounding box; the room
+			     and the U would push the pedestrian away from this line. -->
+			<model>maze_19</model>
+			<model>U2.5</model>
 		</ignore_obstacles>
 		<trajectory>
-			<goalpoint>3 2.5 0 0 0 0</goalpoint>
-			<goalpoint>-3 2.5 0 0 0 0</goalpoint>
+			<!-- Straight walk just above the tops of the U arms (y = 1.126) -->
+			<goalpoint>3 1.5 0 0 0 0</goalpoint>
+			<goalpoint>-3 1.5 0 0 0 0</goalpoint>
 		</trajectory>
 	</plugin>
 	<plugin name="pedestrian_visual" filename="libPedestrianVisualPlugin.so">
