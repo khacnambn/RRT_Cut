@@ -1,4 +1,0 @@
-RRT_CUT
-
-1,  FAILED: startup_failed
-

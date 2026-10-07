@@ -73,7 +73,8 @@ bool InformedRRTStar::plan(const Node& start, const Node& goal, std::vector<Node
   {
     _advanceSubGoal(start);
     path = cached_path_;
-    expand = cached_expand_;
+    // Reusing a path creates no new tree edges; leave expand empty so the
+    // benchmark does not count the cached tree again on every replan.
     return true;
   }
 

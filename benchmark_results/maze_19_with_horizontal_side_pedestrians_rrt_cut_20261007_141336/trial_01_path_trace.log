@@ -1,0 +1,24 @@
+[INFO] [1791357228.404310511]: path_trace_node: lang nghe plan tren '/move_base/SamplePlanner/plan', ghi log ra '/tmp/ros_motion_planning_20261007_141336_01/result.yaml'
+[INFO] [1791357228.405676461]: NavGoal set at (x: 0.000000, y: 0.000000)
+[INFO] [1791357230.148589000, 5.451000000]: NavGoal set at (x: 0.017558, y: 0.359899)
+[INFO] [1791357230.148725427, 5.451000000]: New goal received!
+[INFO] [1791357230.148750425, 5.451000000]: Path and total distance reset for new goal.
+[INFO] [1791357230.149063652, 5.451000000]: New goal received!
+[INFO] [1791357230.149095777, 5.451000000]: Path and total distance reset for new goal.
+[INFO] [1791357230.164035686, 5.458000000]: path_trace_node: bat plan #1 (8 raw, 31 resampled, frame 'map')
+[INFO] [1791357230.937552032, 5.955000000]: path_trace_node: bat plan #2 (8 raw, 29 resampled, frame 'map')
+[INFO] [1791357231.729889557, 6.459000000]: path_trace_node: bat plan #3 (2 raw, 5 resampled, frame 'map')
+[INFO] [1791357232.497384291, 6.961000000]: path_trace_node: bat plan #4 (7 raw, 26 resampled, frame 'map')
+[INFO] [1791357233.277794320, 7.461000000]: path_trace_node: bat plan #5 (6 raw, 22 resampled, frame 'map')
+[INFO] [1791357234.048625597, 7.958000000]: path_trace_node: bat plan #6 (5 raw, 19 resampled, frame 'map')
+[INFO] [1791357234.835999060, 8.452000000]: path_trace_node: bat plan #7 (6 raw, 22 resampled, frame 'map')
+[INFO] [1791357235.604904351, 8.955000000]: path_trace_node: bat plan #8 (3 raw, 9 resampled, frame 'map')
+[INFO] [1791357236.366185120, 9.453000000]: path_trace_node: bat plan #9 (4 raw, 14 resampled, frame 'map')
+[INFO] [1791357237.159368214, 9.955000000]: path_trace_node: bat plan #10 (2 raw, 5 resampled, frame 'map')
+[INFO] [1791357237.925858463, 10.453000000]: path_trace_node: bat plan #11 (3 raw, 10 resampled, frame 'map')
+[INFO] [1791357238.735347186, 10.960000000]: path_trace_node: bat plan #12 (2 raw, 5 resampled, frame 'map')
+[INFO] [1791357239.534781497, 11.460000000]: path_trace_node: bat plan #13 (3 raw, 9 resampled, frame 'map')
+[INFO] [1791357240.357445454, 11.955000000]: path_trace_node: bat plan #14 (2 raw, 5 resampled, frame 'map')
+[INFO] [1791357241.131451570, 12.460000000]: path_trace_node: bat plan #15 (2 raw, 5 resampled, frame 'map')
+[INFO] [1791357241.923875977, 12.954000000]: path_trace_node: bat plan #16 (2 raw, 5 resampled, frame 'map')
+[INFO] [1791357242.752520565, 13.456000000]: path_trace_node: bat plan #17 (2 raw, 5 resampled, frame 'map')

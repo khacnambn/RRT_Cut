@@ -1,0 +1,4 @@
+[INFO] [1791359451.424548, 0.000000]: watching pedestrians: human_1,human_2 (threshold 0.50 m)
+[INFO] [1791359453.788380, 4.970000]: collision monitor armed after 0.05 m (t=2.4s)
+COLLISION actor=human_2 dist=0.4972 t=23.24
+[WARN] [1791359474.661910, 20.051000]: COLLISION with human_2 at 0.497 m (t=23.2s)

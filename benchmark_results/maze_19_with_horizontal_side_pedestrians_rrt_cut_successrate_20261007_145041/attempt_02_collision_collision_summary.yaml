@@ -1,0 +1,16 @@
+threshold_m: 0.5000
+arm_move_m: 0.0500
+actors: human_1,human_2
+robot_pose_source: gazebo
+armed: 1
+arm_time_s: 2.36
+samples: 527
+duration_s: 26.65
+min_distance_m: 0.4069
+min_distance_actor: human_2
+collision_events: 1
+min_distance_human_1_m: 3.6404
+min_distance_human_2_m: 0.4069
+first_collision_actor: human_2
+first_collision_time_s: 23.24
+first_collision_distance_m: 0.4947

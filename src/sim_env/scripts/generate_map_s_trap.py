@@ -1,46 +1,22 @@
-#!/usr/bin/env python3
-"""Generate a benchmark map shaped like the supplied S-corridor/U-trap sketch.
-
-The map keeps the same resolution and origin convention as maze_19/map_extra:
-  - a closed rectangular room;
-  - two offset quarter-circle walls forming an S-shaped central passage;
-  - an upward-open U-shaped dead-end around the goal.
-
-Generated files:
-  sim_env/worlds/map_s_trap.world
-  sim_env/maps/map_s_trap/map_s_trap.pgm
-  sim_env/maps/map_s_trap/map_s_trap.yaml
-"""
-
 import math
 import os
 import sys
 
-# Reuse the tested Gazebo/PGM helpers and map conventions from map_extra.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import generate_map_extra as base  # noqa: E402
+import generate_map_extra as base  
 
 
 MAP_NAME = "map_s_trap"
 WALL_THICK = 0.15
 WALL_HEIGHT = 2.5
-# Passage sizing for the TurtleBot3 Waffle.  Every corridor the robot actually
-# drives through -- the central S passage, the mouth of the goal trap, and the
-# band between the trap arms and the top wall -- is built from one rule: the
-# robot footprint keeps ROBOT_TO_COSTMAP_CLEARANCE free of the 0.40 m global
-# costmap inflation on *both* sides.
 ROBOT_WIDTH = 0.31
 COSTMAP_INFLATION = 0.40
 ROBOT_TO_COSTMAP_CLEARANCE = 0.05
-# Segmented curved walls protrude slightly farther inward after rasterization.
-# This calibrated allowance preserves a full 0.05 m map cell at the tightest
-# point of the curve, not only in the continuous-geometry calculation.
 CURVE_RASTER_ALLOWANCE = 0.03
 # wall centreline -> path centreline
 PASSAGE_HALF_GAP = (0.5 * WALL_THICK + 0.5 * ROBOT_WIDTH +
                     COSTMAP_INFLATION + ROBOT_TO_COSTMAP_CLEARANCE)
-# wall *surface* -> path centreline: the clearance a distance transform of the
-# generated .pgm has to report everywhere along a driveable corridor.
+# wall  -> path centreline
 PASSAGE_HALF_FREE = PASSAGE_HALF_GAP - 0.5 * WALL_THICK + CURVE_RASTER_ALLOWANCE
 S_PASSAGE_HALF_GAP = PASSAGE_HALF_GAP + CURVE_RASTER_ALLOWANCE
 
@@ -51,47 +27,29 @@ RESOLUTION = 0.05
 ORIGIN = (-10.0, -10.0)
 
 ROOM_FLOOR_SURFACE = ROOM_BOTTOM_Y + 0.5 * WALL_THICK
-# Height of the pocket the robot spawns in, from the bottom wall surface up to
-# the lower S wall surface.  Lowering it pulls the whole S structure -- and
-# with it the goal trap -- further down towards the robot.  The floor is
-# 2 * PASSAGE_HALF_FREE, at which point the robot's 0.05 m margin to the
-# inflation on each side is all that is left.
+# Height of the pocket the robot spawns in.
 SPAWN_POCKET_H = 1.96
-# The robot starts balanced at the centre of that pocket, the same distance
-# from the inflated bottom wall below as from the inflated S wall above.
 FLOOD_SEED = (0.0, ROOM_FLOOR_SURFACE + 0.5 * SPAWN_POCKET_H)
 
-# Centreline of the S passage, as a cubic Bezier with horizontal end tangents.
+# Centreline of the S passage.
 S_BEZIER = ((-1.55, 0.60), (-0.45, 0.60), (-0.35, -1.00), (0.85, -1.00))
-# Lowest S wall surface before shifting: at t=1 the curve normal is vertical,
-# so the lower offset wall sits one half-gap below the last control point.
 _S_LOWEST = S_BEZIER[3][1] - S_PASSAGE_HALF_GAP - 0.5 * WALL_THICK
-# Drop the whole S structure until it closes the spawn pocket to
-# SPAWN_POCKET_H.  Pulling the two hooks down towards the robot is what leaves
-# the goal trap standing clear of them, with a full-width corridor under the
-# bowl, so the robot can circle right around the trap and enter its mouth.
 S_SHIFT_Y = (ROOM_FLOOR_SURFACE + SPAWN_POCKET_H) - _S_LOWEST
-# Top surface of the upper S wall, which the goal trap has to stand clear of.
+# Top surface of the upper S wall.
 S_TOP_SURFACE = (S_BEZIER[0][1] + S_SHIFT_Y + S_PASSAGE_HALF_GAP +
                  0.5 * WALL_THICK)
 
-# Goal trap: the curved U from map_extra -- a true semicircular bowl closed at
-# the bottom, with two straight vertical arms rising from its widest points.
-# Scale the complete U around its existing geometric centre so changing size
-# does not move the trap away from the intended location.
+# Goal trap.
 U_BASE_RADIUS = 1.25
 U_BASE_ARM_LEN = 1.00
-U_SCALE = 1.05  # 150% of the previous 0.70
+U_SCALE = 1.05  # 0.70
 U_RADIUS = U_BASE_RADIUS * U_SCALE
-U_ARM_LEN = 0.675  # independently shortened vertical arms; 150% of the previous 0.45 m
+U_ARM_LEN = 0.675  # 0.45 m
 U_ARC_SEGMENTS = 30
 # Additional free space between the bottom of the U and the upper S wall.
 U_EXTRA_LOWER_CLEARANCE = 0.30
 # Extra band above the U mouth so DWA can turn and align with the opening.
 U_TOP_TURN_CLEARANCE = 0.60
-# Preserve the pre-scale bounding-box centre of the U. The old placement was
-# derived from the S-wall clearance, so compute that reference centre first and
-# then recover the arc centre after scaling the radius and arms.
 _U_REFERENCE_BOTTOM_Y = (S_TOP_SURFACE + 2.0 * PASSAGE_HALF_FREE +
                          0.5 * WALL_THICK + U_EXTRA_LOWER_CLEARANCE)
 U_CENTER_X = -2.00
@@ -99,14 +57,9 @@ U_CENTER_Y = (_U_REFERENCE_BOTTOM_Y + U_BASE_RADIUS +
               0.5 * (U_BASE_ARM_LEN - U_BASE_RADIUS))
 U_ARC_Y = U_CENTER_Y + 0.5 * (U_RADIUS - U_ARM_LEN)
 U_MOUTH_Y = U_ARC_Y + U_ARM_LEN
-# Vertical arms, so the trap's highest point is simply the top of the arm box.
+# Vertical arms.
 U_APEX_Y = U_MOUTH_Y
-# Keep the benchmark goal inside the bowl but close enough to the mouth for
-# DWA to enter without having to turn again in the tight lower arc.
 GOAL = (U_CENTER_X, U_CENTER_Y + 0.225)
-
-# Keep the standard passage width above the trap arms, then add a turning
-# band so DWA can round an arm and align with the downward-facing entrance.
 ROOM_TOP_Y = (U_APEX_Y + 2.0 * PASSAGE_HALF_FREE + 0.5 * WALL_THICK +
               U_TOP_TURN_CLEARANCE)
 ROOM_CENTER_Y = 0.5 * (ROOM_TOP_Y + ROOM_BOTTOM_Y)
@@ -184,9 +137,7 @@ def build_boxes():
          math.pi / 2.0, "Wall_right"),
     ]
 
-    # Two opposing hooks, matching the reference image.  The left hook has two
-    # arms attached to the left wall; the right hook has two arms attached to
-    # the right wall.  Their inner Bezier curves are constant normal offsets.
+    # Two opposing hooks.
     bezier = tuple((px, py + S_SHIFT_Y) for px, py in S_BEZIER)
     upper_pts, lower_pts, upper_curve, lower_curve = bezier_parallel_walls(
         bezier, half_gap=S_PASSAGE_HALF_GAP, count=28)
@@ -208,9 +159,7 @@ def build_boxes():
                 ROOM_HALF_X - WALL_THICK / 2.0, upper_end[1], "Right_hook_lower_arm"),
     ]
 
-    # Goal trap: map_extra's curved U -- a semicircular bowl closed at the
-    # bottom, with two straight vertical arms continuing tangentially from its
-    # widest points up to the mouth.
+    # Goal trap.
     arm_cy = U_ARC_Y + U_ARM_LEN / 2.0
     u_walls = [
         *arc_segments(U_CENTER_X, U_ARC_Y, U_RADIUS, 180.0, 360.0, U_ARC_SEGMENTS,
@@ -277,7 +226,7 @@ def main():
     outer, s_walls, u_walls = build_boxes()
     all_boxes = outer + s_walls + u_walls
 
-    # Configure the reused rasterizer with this map's geometry and origin.
+    # Configure the reused rasterizer.
     base.MAP_W = base.MAP_H = MAP_W
     base.RESOLUTION = RESOLUTION
     base.ORIGIN = ORIGIN

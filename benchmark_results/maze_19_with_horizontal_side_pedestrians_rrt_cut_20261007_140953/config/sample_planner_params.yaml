@@ -1,0 +1,54 @@
+SamplePlanner:
+  # random sample points
+  sample_points: 10000 # RRT-Cut nmax from the paper/GitHub implementation
+  # max distance between sample points                
+  sample_max_d: 5.0 #30.0 #5.0
+  # optimization radius
+  optimization_r: 10.0
+  # offset of transform from world(x,y) to grid map(x,y)
+  convert_offset: 0.0
+  # error tolerance
+  default_tolerance: 0.0
+  # whether outline the map or not
+  outline_map: true
+  # obstacle inflation factor
+  obstacle_factor: 0.5 #0.5
+  # whether publish expand zone or not
+  expand_zone: true
+  # astar-rrt:
+  number_node_k: 5
+  # RRT-Cut wrapper progress detector (independent of the local planner).
+  rrt_cut_progress_distance: 0.08
+  rrt_cut_stuck_timeout: 3.0
+  # kept sub-goal counts as reached within this radius (cells; 10 x 0.05 m = eps 0.5 m of Table 1)
+  rrt_cut_sub_goal_tolerance_cells: 10.0
+  # Maximum partial cuts chained into one collision-free escape route.
+  rrt_cut_max_segments: 60
+  # qi-rrt*:
+  # radius of priority circles set
+  prior_circle_set_r: 15.0
+  # increased distance of adaptive extend step size
+  step_extend_d: 30.0 # suggest between half and one times sample_max_d
+  # parallel rewire process
+  rewire_threads_num: 4
+  # aggressive or gradual optimizing strategy
+  t_distr_freedom: 1.0 # suggest from 0.2 to 3
+  # informed-rrt*:
+  # phase-1
+  informed_sample_points: 1000
+  # rewire / goal-connection radius
+  search_radius: 10.0
+  # phase-2 refinement iterations
+  informed_iterations: 3000
+  informed_threshold_cost: 0.0
+  # improved informed-RRT*
+  goal_bias_probability: 0.2
+  # APF adaptive-step parameters; step values are grid cells, distances are metres
+  adaptive_min_step: 1.0
+  danger_distance: 1.5
+  near_distance: 3.5
+  attractive_gain: 1.0
+  repulsive_gain: 1.0
+  obstacle_influence_distance: 3.5
+  # NOTE: neighbor search/rewiring scans the active tree after each accepted
+  # sample; keep sample_points near 1000 initially when tuning this planner.

@@ -1,0 +1,1005 @@
+xacro: in-order processing became default in ROS Melodic. You can drop the option.
+... logging to /tmp/ros_motion_planning_20261007_140953_01/18fa7292-c21e-11f1-9b16-213322e463ee/roslaunch-roablab-3450-57281.log
+Checking log directory for disk usage. This may take a while.
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is <1GB.
+]2;/home/roab_lab/ros_motion_planning-master/src/sim_env/launch/main.launch
+[1mstarted roslaunch server http://localhost:33695/[0m
+
+SUMMARY
+========
+
+PARAMETERS
+ * /amcl/gui_publish_rate: 50.0
+ * /amcl/initial_pose_a: 0
+ * /amcl/initial_pose_x: 0
+ * /amcl/initial_pose_y: -3
+ * /amcl/initial_pose_z: 0.0
+ * /amcl/kld_err: 0.02
+ * /amcl/laser_lambda_short: 0.1
+ * /amcl/laser_likelihood_max_dist: 2.0
+ * /amcl/laser_max_beams: 180
+ * /amcl/laser_max_range: 3.5
+ * /amcl/laser_model_type: likelihood_field
+ * /amcl/laser_sigma_hit: 0.2
+ * /amcl/laser_z_hit: 0.5
+ * /amcl/laser_z_max: 0.05
+ * /amcl/laser_z_rand: 0.5
+ * /amcl/laser_z_short: 0.05
+ * /amcl/max_particles: 3000
+ * /amcl/min_particles: 500
+ * /amcl/odom_alpha1: 0.1
+ * /amcl/odom_alpha2: 0.1
+ * /amcl/odom_alpha3: 0.1
+ * /amcl/odom_alpha4: 0.1
+ * /amcl/odom_model_type: diff
+ * /amcl/recovery_alpha_fast: 0.0
+ * /amcl/recovery_alpha_slow: 0.0
+ * /amcl/resample_interval: 1
+ * /amcl/transform_tolerance: 0.5
+ * /amcl/update_min_a: 0.2
+ * /amcl/update_min_d: 0.2
+ * /gazebo/enable_ros_network: True
+ * /move_base/DWAPlanner/acc_lim_theta: 3.2
+ * /move_base/DWAPlanner/acc_lim_x: 2.5
+ * /move_base/DWAPlanner/acc_lim_y: 0.0
+ * /move_base/DWAPlanner/controller_frequency: 10.0
+ * /move_base/DWAPlanner/forward_point_distance: 0.2
+ * /move_base/DWAPlanner/goal_distance_bias: 16.0
+ * /move_base/DWAPlanner/latch_xy_goal_tolerance: False
+ * /move_base/DWAPlanner/max_scaling_factor: 0.2
+ * /move_base/DWAPlanner/max_vel_theta: 1.2
+ * /move_base/DWAPlanner/max_vel_trans: 0.22
+ * /move_base/DWAPlanner/max_vel_x: 0.22
+ * /move_base/DWAPlanner/max_vel_y: 0.0
+ * /move_base/DWAPlanner/min_vel_theta: 0.15
+ * /move_base/DWAPlanner/min_vel_trans: 0.05
+ * /move_base/DWAPlanner/min_vel_x: 0.0
+ * /move_base/DWAPlanner/min_vel_y: 0.0
+ * /move_base/DWAPlanner/occdist_scale: 0.3
+ * /move_base/DWAPlanner/oscillation_reset_dist: 0.05
+ * /move_base/DWAPlanner/path_distance_bias: 24.0
+ * /move_base/DWAPlanner/publish_cost_grid_pc: True
+ * /move_base/DWAPlanner/publish_traj_pc: True
+ * /move_base/DWAPlanner/scaling_speed: 0.15
+ * /move_base/DWAPlanner/sim_time: 1.7
+ * /move_base/DWAPlanner/stop_time_buffer: 0.2
+ * /move_base/DWAPlanner/vth_samples: 40
+ * /move_base/DWAPlanner/vx_samples: 20
+ * /move_base/DWAPlanner/vy_samples: 1
+ * /move_base/DWAPlanner/xy_goal_tolerance: 0.2
+ * /move_base/DWAPlanner/yaw_goal_tolerance: 0.5
+ * /move_base/SamplePlanner/adaptive_min_step: 1.0
+ * /move_base/SamplePlanner/attractive_gain: 1.0
+ * /move_base/SamplePlanner/convert_offset: 0.0
+ * /move_base/SamplePlanner/danger_distance: 1.5
+ * /move_base/SamplePlanner/default_tolerance: 0.0
+ * /move_base/SamplePlanner/expand_zone: True
+ * /move_base/SamplePlanner/goal_bias_probability: 0.2
+ * /move_base/SamplePlanner/informed_iterations: 3000
+ * /move_base/SamplePlanner/informed_sample_points: 1000
+ * /move_base/SamplePlanner/informed_threshold_cost: 0.0
+ * /move_base/SamplePlanner/near_distance: 3.5
+ * /move_base/SamplePlanner/number_node_k: 5
+ * /move_base/SamplePlanner/obstacle_factor: 0.5
+ * /move_base/SamplePlanner/obstacle_influence_distance: 3.5
+ * /move_base/SamplePlanner/optimization_r: 10.0
+ * /move_base/SamplePlanner/outline_map: True
+ * /move_base/SamplePlanner/planner_name: rrt_cut
+ * /move_base/SamplePlanner/prior_circle_set_r: 15.0
+ * /move_base/SamplePlanner/repulsive_gain: 1.0
+ * /move_base/SamplePlanner/rewire_threads_num: 4
+ * /move_base/SamplePlanner/rrt_cut_max_segments: 60
+ * /move_base/SamplePlanner/rrt_cut_progress_distance: 0.08
+ * /move_base/SamplePlanner/rrt_cut_stuck_timeout: 3.0
+ * /move_base/SamplePlanner/rrt_cut_sub_goal_tolerance_cells: 10.0
+ * /move_base/SamplePlanner/sample_max_d: 5.0
+ * /move_base/SamplePlanner/sample_points: 10000
+ * /move_base/SamplePlanner/search_radius: 10.0
+ * /move_base/SamplePlanner/step_extend_d: 30.0
+ * /move_base/SamplePlanner/t_distr_freedom: 1.0
+ * /move_base/base_global_planner: sample_planner/Sa...
+ * /move_base/base_local_planner: dwa_planner/DWAPl...
+ * /move_base/conservative_reset_dist: 3.0
+ * /move_base/controller_frequency: 10.0
+ * /move_base/controller_patience: 20.0
+ * /move_base/global_costmap/cost_scaling_factor: 2.0
+ * /move_base/global_costmap/footprint: [[-0.205, -0.155]...
+ * /move_base/global_costmap/global_frame: map
+ * /move_base/global_costmap/inflation_layer/cost_scaling_factor: 2.0
+ * /move_base/global_costmap/inflation_layer/enabled: True
+ * /move_base/global_costmap/inflation_layer/inflation_radius: 0.5
+ * /move_base/global_costmap/inflation_radius: 0.5
+ * /move_base/global_costmap/map_type: costmap
+ * /move_base/global_costmap/observation_sources: scan
+ * /move_base/global_costmap/obstacle_layer/observation_sources: scan
+ * /move_base/global_costmap/obstacle_layer/scan/clearing: True
+ * /move_base/global_costmap/obstacle_layer/scan/data_type: LaserScan
+ * /move_base/global_costmap/obstacle_layer/scan/expected_update_rate: 0.5
+ * /move_base/global_costmap/obstacle_layer/scan/inf_is_valid: True
+ * /move_base/global_costmap/obstacle_layer/scan/marking: True
+ * /move_base/global_costmap/obstacle_layer/scan/max_obstacle_height: 0.8
+ * /move_base/global_costmap/obstacle_layer/scan/min_obstacle_height: 0.0
+ * /move_base/global_costmap/obstacle_layer/scan/observation_persistence: 0.0
+ * /move_base/global_costmap/obstacle_layer/scan/obstacle_range: 3.0
+ * /move_base/global_costmap/obstacle_layer/scan/raytrace_range: 3.5
+ * /move_base/global_costmap/obstacle_layer/scan/sensor_frame: base_scan
+ * /move_base/global_costmap/obstacle_layer/scan/topic: scan
+ * /move_base/global_costmap/obstacle_range: 3.0
+ * /move_base/global_costmap/plugins: [{'name': 'static...
+ * /move_base/global_costmap/publish_frequency: 2.0
+ * /move_base/global_costmap/raytrace_range: 3.5
+ * /move_base/global_costmap/robot_base_frame: base_footprint
+ * /move_base/global_costmap/scan/clearing: True
+ * /move_base/global_costmap/scan/data_type: LaserScan
+ * /move_base/global_costmap/scan/inf_is_valid: True
+ * /move_base/global_costmap/scan/marking: True
+ * /move_base/global_costmap/scan/sensor_frame: base_scan
+ * /move_base/global_costmap/scan/topic: scan
+ * /move_base/global_costmap/static_map/clear_time: 20
+ * /move_base/global_costmap/static_map/enabled: True
+ * /move_base/global_costmap/static_map/publish_static_map: True
+ * /move_base/global_costmap/transform_tolerance: 0.5
+ * /move_base/global_costmap/update_frequency: 5.0
+ * /move_base/local_costmap/cost_scaling_factor: 3.0
+ * /move_base/local_costmap/footprint: [[-0.205, -0.155]...
+ * /move_base/local_costmap/global_frame: odom
+ * /move_base/local_costmap/height: 4
+ * /move_base/local_costmap/inflation_radius: 0.6
+ * /move_base/local_costmap/map_type: costmap
+ * /move_base/local_costmap/observation_sources: scan
+ * /move_base/local_costmap/obstacle_range: 3.0
+ * /move_base/local_costmap/publish_frequency: 10.0
+ * /move_base/local_costmap/raytrace_range: 3.5
+ * /move_base/local_costmap/resolution: 0.05
+ * /move_base/local_costmap/robot_base_frame: base_footprint
+ * /move_base/local_costmap/rolling_window: True
+ * /move_base/local_costmap/scan/clearing: True
+ * /move_base/local_costmap/scan/data_type: LaserScan
+ * /move_base/local_costmap/scan/inf_is_valid: True
+ * /move_base/local_costmap/scan/marking: True
+ * /move_base/local_costmap/scan/sensor_frame: base_scan
+ * /move_base/local_costmap/scan/topic: scan
+ * /move_base/local_costmap/static_map: False
+ * /move_base/local_costmap/transform_tolerance: 0.7
+ * /move_base/local_costmap/update_frequency: 10.0
+ * /move_base/local_costmap/width: 4
+ * /move_base/oscillation_distance: 0.2
+ * /move_base/oscillation_timeout: 20.0
+ * /move_base/planner_frequency: 2.0
+ * /move_base/planner_patience: 10.0
+ * /move_base/shutdown_costmaps: False
+ * /robot_description: <?xml version="1....
+ * /rosdistro: noetic
+ * /rosversion: 1.17.4
+ * /use_sim_time: True
+
+NODES
+  /
+    amcl (amcl/amcl)
+    gazebo (gazebo_ros/gzserver)
+    gazebo_gui (gazebo_ros/gzclient)
+    joint_state_publisher (joint_state_publisher/joint_state_publisher)
+    map_server (map_server/map_server)
+    move_base (move_base/move_base)
+    robot_state_publisher (robot_state_publisher/robot_state_publisher)
+    rviz (rviz/rviz)
+    urdf_spawner (gazebo_ros/spawn_model)
+
+auto-starting new master
+[1mprocess[master]: started with pid [57330][0m
+[INFO] [1791356996.196481687]: Finished loading Gazebo ROS API Plugin.
+[INFO] [1791356996.197176035]: waitForService: Service [/gazebo/set_physics_properties] has not been advertised, waiting...
+[INFO] [1791356996.281095718]: Finished loading Gazebo ROS API Plugin.
+[INFO] [1791356996.281846978]: waitForService: Service [/gazebo_gui/set_physics_properties] has not been advertised, waiting...
+[INFO] [1791356996.731023854]: waitForService: Service [/gazebo/set_physics_properties] is now available.
+[INFO] [1791356996.783689860]: Physics dynamic reconfigure ready.
+../src/intel/isl/isl.c:2105: FINISHME: ../src/intel/isl/isl.c:isl_surf_supports_ccs: CCS for 3D textures is disabled, but a workaround is available.
+../src/intel/isl/isl.c:2105: FINISHME: ../src/intel/isl/isl.c:isl_surf_supports_ccs: CCS for 3D textures is disabled, but a workaround is available.
+[INFO] [1791356998.436902089, 0.155000000]: Camera Plugin: Using the 'robotNamespace' param: '/'
+[INFO] [1791356998.438563816, 0.155000000]: Camera Plugin (ns = /)  <tf_prefix_>, set to ""
+[INFO] [1791356996.063342, 0.000000]: Loading model XML from ros parameter robot_description
+[INFO] [1791356996.068516, 0.000000]: Waiting for service /gazebo/spawn_urdf_model
+[INFO] [1791356996.972668, 0.000000]: Calling service /gazebo/spawn_urdf_model
+[INFO] [1791356998.525377, 0.000000]: Spawn status: SpawnModel: Successfully spawned entity
+[INFO] [1791356998.730361588, 0.155000000]: Laser Plugin: Using the 'robotNamespace' param: '/'
+[INFO] [1791356998.730423452, 0.155000000]: Starting Laser Plugin (ns = /)
+[INFO] [1791356998.731360232, 0.155000000]: Laser Plugin (ns = /)  <tf_prefix_>, set to ""
+[INFO] [1791356998.834152703, 0.155000000]: Starting plugin DiffDrive(ns = //)
+[INFO] [1791356998.834235836, 0.155000000]: DiffDrive(ns = //): <rosDebugLevel> = na
+[INFO] [1791356998.834767044, 0.155000000]: DiffDrive(ns = //): <tf_prefix> = 
+[INFO] [1791356998.835429146, 0.155000000]: DiffDrive(ns = //): Try to subscribe to cmd_vel
+[INFO] [1791356998.836662472, 0.155000000]: DiffDrive(ns = //): Subscribe to cmd_vel
+[INFO] [1791356998.836964211, 0.155000000]: DiffDrive(ns = //): Advertise odom on odom 
+[WARN] [1791356998.908646951, 0.204000000]: WARNING: package://spencer_tracking_rviz_plugin/media/animated_walking_man.mesh is an older format ([MeshSerializer_v1.41]); you should upgrade it as soon as possible using the OgreMeshUpgrade tool.
+[WARN] [1791356998.908855157, 0.205000000]: Can't assign material male_base_lambert1 to SubEntity of mesh_person_visual0 because this Material does not exist. Have you forgotten to define it in a .material script?
+[WARN] [1791356998.930113844, 0.221000000]: Can't assign material male_base_lambert1 to SubEntity of mesh_person_visual1 because this Material does not exist. Have you forgotten to define it in a .material script?
+[WARN] [1791356999.927484042, 0.858000000]: global_costmap: Pre-Hydro parameter "static_map" unused since "plugins" is provided
+[WARN] [1791356999.928544009, 0.859000000]: global_costmap: Pre-Hydro parameter "map_type" unused since "plugins" is provided
+[INFO] [1791356999.929111533, 0.860000000]: global_costmap: Using plugin "static_map"
+[INFO] [1791356999.938578716, 0.862000000]: Requesting the map...
+[INFO] [1791357000.099220446, 0.963000000]: Resizing costmap to 384 X 384 at 0.050000 m/pix
+[INFO] [1791357000.256833449, 1.063000000]: Received a 384 X 384 map at 0.050000 m/pix
+[INFO] [1791357000.258757816, 1.064000000]: global_costmap: Using plugin "obstacle_layer"
+[INFO] [1791357000.262012403, 1.068000000]:     Subscribed to Topics: scan
+[INFO] [1791357000.273290484, 1.074000000]: global_costmap: Using plugin "voronoi_layer"
+[INFO] [1791357000.275063555, 1.075000000]: global_costmap: Using plugin "inflation_layer"
+[WARN] [1791357000.304022108, 1.091000000]: Planner name initial: rrt_cut
+[INFO] [1791357000.304053784, 1.091000000]: Using global sample planner: rrt_cut
+[WARN] [1791357000.308107227, 1.095000000]: local_costmap: Parameter "plugins" not provided, loading pre-Hydro parameters
+[INFO] [1791357000.321072140, 1.101000000]: local_costmap: Using plugin "obstacle_layer"
+[INFO] [1791357000.322406424, 1.102000000]:     Subscribed to Topics: scan
+[INFO] [1791357000.335398630, 1.111000000]: local_costmap: Using plugin "inflation_layer"
+[INFO] [1791357000.356982849, 1.125000000]: Created local_planner dwa_planner/DWAPlanner
+[INFO] [1791357000.358365375, 1.126000000]: Sim period is set to 0.10
+[INFO] [1791357000.365107606, 1.131000000]: Using local planner: DWAPlanner
+[INFO] [1791357000.517834910, 1.226000000]: Recovery behavior will clear layer 'obstacles'
+[INFO] [1791357000.522399435, 1.229000000]: Recovery behavior will clear layer 'obstacles'
+[INFO] [1791357000.547390635, 1.242000000]: odom received!
+Start Node: (200, 141)
+Jump Node: (200, 153)
+Goal Node: (200, 207)
+[INFO] [1791357007.682717751, 5.943000000]: Got new plan
+Start Node: (201, 141)
+Jump Node: (204, 151)
+Goal Node: (200, 207)
+[INFO] [1791357008.469348973, 6.443000000]: Got new plan
+Start Node: (203, 141)
+Jump Node: (199, 161)
+Goal Node: (200, 207)
+[INFO] [1791357009.255470839, 6.943000000]: Got new plan
+Start Node: (204, 142)
+Jump Node: (201, 148)
+Goal Node: (200, 207)
+[INFO] [1791357010.017640390, 7.443000000]: Got new plan
+Start Node: (206, 143)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357010.776810879, 7.943000000]: Got new plan
+Start Node: (206, 144)
+Jump Node: (205, 156)
+Goal Node: (200, 207)
+[INFO] [1791357011.535110915, 8.443000000]: Got new plan
+Start Node: (206, 146)
+Jump Node: (202, 147)
+Goal Node: (200, 207)
+[INFO] [1791357012.292101418, 8.943000000]: Got new plan
+Start Node: (206, 148)
+Jump Node: (199, 163)
+Goal Node: (200, 207)
+[INFO] [1791357013.073642014, 9.444000000]: Got new plan
+Start Node: (206, 150)
+Jump Node: (201, 163)
+Goal Node: (200, 207)
+[INFO] [1791357013.858036615, 9.944000000]: Got new plan
+Start Node: (206, 152)
+Jump Node: (201, 152)
+Goal Node: (200, 207)
+[INFO] [1791357014.606853180, 10.443000000]: Got new plan
+Start Node: (205, 154)
+Jump Node: (204, 164)
+Goal Node: (200, 207)
+[INFO] [1791357015.373944675, 10.943000000]: Got new plan
+Start Node: (205, 155)
+Jump Node: (203, 163)
+Goal Node: (200, 207)
+[INFO] [1791357016.132836237, 11.444000000]: Got new plan
+Start Node: (205, 156)
+Jump Node: (201, 161)
+Goal Node: (200, 207)
+[INFO] [1791357016.916157329, 11.943000000]: Got new plan
+Start Node: (204, 156)
+Jump Node: (200, 158)
+Goal Node: (200, 207)
+[INFO] [1791357017.679869115, 12.443000000]: Got new plan
+Start Node: (204, 157)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357018.435382076, 12.943000000]: Got new plan
+Start Node: (204, 157)
+Jump Node: (200, 155)
+Goal Node: (200, 207)
+[INFO] [1791357019.184247384, 13.443000000]: Got new plan
+Start Node: (204, 157)
+Jump Node: (200, 158)
+Goal Node: (200, 207)
+[INFO] [1791357019.938834279, 13.943000000]: Got new plan
+Start Node: (204, 157)
+Jump Node: (201, 164)
+Goal Node: (200, 207)
+[INFO] [1791357020.738141305, 14.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (199, 163)
+Goal Node: (200, 207)
+[INFO] [1791357021.515497606, 14.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (205, 162)
+Goal Node: (200, 207)
+[INFO] [1791357022.292739722, 15.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357023.057255945, 15.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357023.839259165, 16.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (201, 161)
+Goal Node: (200, 207)
+[INFO] [1791357024.612623382, 16.944000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (202, 162)
+Goal Node: (200, 207)
+[INFO] [1791357025.380904617, 17.444000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (201, 155)
+Goal Node: (200, 207)
+[INFO] [1791357026.150225916, 17.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (204, 162)
+Goal Node: (200, 207)
+[INFO] [1791357026.910902254, 18.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (201, 161)
+Goal Node: (200, 207)
+[INFO] [1791357027.699565921, 18.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (206, 162)
+Goal Node: (200, 207)
+[INFO] [1791357028.491300632, 19.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357029.283563441, 19.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (202, 162)
+Goal Node: (200, 207)
+[INFO] [1791357030.051881412, 20.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (206, 162)
+Goal Node: (200, 207)
+[INFO] [1791357030.853099058, 20.944000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (201, 161)
+Goal Node: (200, 207)
+[INFO] [1791357031.635447334, 21.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357032.532122867, 21.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (201, 163)
+Goal Node: (200, 207)
+[INFO] [1791357033.314861429, 22.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (201, 161)
+Goal Node: (200, 207)
+[INFO] [1791357034.115407710, 22.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 158)
+Goal Node: (200, 207)
+[INFO] [1791357034.854147114, 23.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (205, 162)
+Goal Node: (200, 207)
+[INFO] [1791357035.596267159, 23.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357036.337877968, 24.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 159)
+Goal Node: (200, 207)
+[INFO] [1791357037.104468899, 24.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357037.884683509, 25.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (202, 162)
+Goal Node: (200, 207)
+[INFO] [1791357038.630219570, 25.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357039.393238756, 26.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (199, 164)
+Goal Node: (200, 207)
+[INFO] [1791357040.136646228, 26.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (199, 162)
+Goal Node: (200, 207)
+[INFO] [1791357040.901884868, 27.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357041.651055140, 27.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357042.406395734, 28.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (203, 164)
+Goal Node: (200, 207)
+[INFO] [1791357043.155356606, 28.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357043.955975101, 29.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (204, 162)
+Goal Node: (200, 207)
+[INFO] [1791357044.854889727, 29.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 158)
+Goal Node: (200, 207)
+[INFO] [1791357045.667739951, 30.443000000]: Got new plan
+Start Node: (205, 158)
+Jump Node: (201, 158)
+Goal Node: (200, 207)
+[INFO] [1791357046.467177424, 30.943000000]: Got new plan
+Start Node: (205, 158)
+Jump Node: (205, 162)
+Goal Node: (200, 207)
+[INFO] [1791357047.284050702, 31.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (206, 162)
+Goal Node: (200, 207)
+[INFO] [1791357048.051259596, 31.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (204, 162)
+Goal Node: (200, 207)
+[INFO] [1791357048.834729618, 32.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (203, 162)
+Goal Node: (200, 207)
+[INFO] [1791357049.621219976, 32.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 158)
+Goal Node: (200, 207)
+[INFO] [1791357050.370232373, 33.443000000]: Got new plan
+[WARN] [1791357050.830852805, 33.743000000]: Clearing both costmaps outside a square (3.00m) large centered on the robot.
+Start Node: (204, 158)
+Jump Node: (200, 158)
+Goal Node: (200, 207)
+[INFO] [1791357051.131567526, 33.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357051.883782567, 34.443000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (201, 161)
+Goal Node: (200, 207)
+[INFO] [1791357052.647210622, 34.943000000]: Got new plan
+Start Node: (204, 158)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357053.432035175, 35.443000000]: Got new plan
+Start Node: (204, 159)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357054.193147632, 35.943000000]: Got new plan
+Start Node: (204, 159)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357054.979502018, 36.443000000]: Got new plan
+Start Node: (204, 159)
+Jump Node: (200, 159)
+Goal Node: (200, 207)
+[INFO] [1791357055.731142328, 36.943000000]: Got new plan
+Start Node: (204, 159)
+Jump Node: (202, 163)
+Goal Node: (200, 207)
+[INFO] [1791357056.485109276, 37.443000000]: Got new plan
+Start Node: (204, 159)
+Jump Node: (204, 163)
+Goal Node: (200, 207)
+[INFO] [1791357057.260785389, 37.943000000]: Got new plan
+Start Node: (204, 159)
+Jump Node: (201, 162)
+Goal Node: (200, 207)
+[INFO] [1791357058.017801720, 38.443000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (202, 164)
+Goal Node: (200, 207)
+[INFO] [1791357058.787739329, 38.943000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357059.541775323, 39.443000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (206, 164)
+Goal Node: (200, 207)
+[INFO] [1791357060.324563937, 39.943000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (202, 164)
+Goal Node: (200, 207)
+[INFO] [1791357061.104020725, 40.443000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357061.864372654, 40.943000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (203, 164)
+Goal Node: (200, 207)
+[INFO] [1791357062.650608806, 41.443000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357063.415348424, 41.943000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357064.166770662, 42.443000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (202, 164)
+Goal Node: (200, 207)
+[INFO] [1791357064.945293176, 42.943000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357065.700166500, 43.443000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357066.483935964, 43.943000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (200, 159)
+Goal Node: (200, 207)
+[INFO] [1791357067.278631290, 44.443000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (204, 164)
+Goal Node: (200, 207)
+[INFO] [1791357068.032292170, 44.944000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (203, 164)
+Goal Node: (200, 207)
+[INFO] [1791357068.806494087, 45.443000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (204, 164)
+Goal Node: (200, 207)
+[INFO] [1791357069.592838527, 45.943000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (201, 163)
+Goal Node: (200, 207)
+[INFO] [1791357070.398862394, 46.444000000]: Got new plan
+Start Node: (204, 160)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357071.172298748, 46.943000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (201, 164)
+Goal Node: (200, 207)
+[INFO] [1791357071.924118452, 47.443000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357072.710160621, 47.944000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357073.485801190, 48.443000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357074.289465095, 48.943000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357075.061994878, 49.443000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 159)
+Goal Node: (200, 207)
+[INFO] [1791357075.840797993, 49.943000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (201, 164)
+Goal Node: (200, 207)
+[INFO] [1791357076.615514205, 50.443000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 159)
+Goal Node: (200, 207)
+[INFO] [1791357077.429134940, 50.943000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357078.211898636, 51.443000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357079.008168813, 51.943000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357079.764845907, 52.443000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357080.582881602, 52.943000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357081.367394694, 53.443000000]: Got new plan
+Start Node: (203, 161)
+Jump Node: (199, 162)
+Goal Node: (200, 207)
+[INFO] [1791357082.148423935, 53.943000000]: Got new plan
+[WARN] [1791357082.307266996, 54.043000000]: Rotate recovery behavior started.
+Start Node: (203, 161)
+Jump Node: (199, 163)
+Goal Node: (200, 207)
+Start Node: (203, 161)
+Jump Node: (199, 160)
+Goal Node: (200, 207)
+Start Node: (203, 161)
+Jump Node: (199, 163)
+Goal Node: (200, 207)
+Start Node: (203, 161)
+Jump Node: (199, 159)
+Goal Node: (200, 207)
+Start Node: (203, 161)
+Jump Node: (200, 158)
+Goal Node: (200, 207)
+Start Node: (203, 161)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+Start Node: (203, 161)
+Jump Node: (199, 163)
+Goal Node: (200, 207)
+Start Node: (204, 161)
+Jump Node: (200, 159)
+Goal Node: (200, 207)
+Start Node: (204, 161)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+Start Node: (204, 161)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+Start Node: (204, 161)
+Jump Node: (200, 159)
+Goal Node: (200, 207)
+Start Node: (204, 161)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+Start Node: (204, 161)
+Jump Node: (200, 159)
+Goal Node: (200, 207)
+[INFO] [1791357092.726168023, 60.443000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357092.884320110, 60.544000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357093.695350193, 61.043000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357094.484300610, 61.543000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (201, 164)
+Goal Node: (200, 207)
+[INFO] [1791357095.366840229, 62.043000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 157)
+Goal Node: (200, 207)
+[INFO] [1791357096.183842550, 62.543000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 159)
+Goal Node: (200, 207)
+[INFO] [1791357097.002889833, 63.043000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357097.794835982, 63.543000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (201, 164)
+Goal Node: (200, 207)
+[INFO] [1791357098.596263697, 64.044000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357099.396882713, 64.544000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (201, 164)
+Goal Node: (200, 207)
+[INFO] [1791357100.180221391, 65.043000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357100.983086891, 65.543000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357101.778770406, 66.044000000]: Got new plan
+Start Node: (204, 161)
+Jump Node: (201, 164)
+Goal Node: (200, 207)
+[INFO] [1791357102.573233189, 66.543000000]: Got new plan
+Start Node: (204, 162)
+Jump Node: (200, 160)
+Goal Node: (200, 207)
+[INFO] [1791357103.425576640, 67.043000000]: Got new plan
+Start Node: (204, 162)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357104.251686363, 67.543000000]: Got new plan
+Start Node: (204, 162)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357105.090356860, 68.043000000]: Got new plan
+Start Node: (204, 162)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357105.908010523, 68.544000000]: Got new plan
+Start Node: (204, 162)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357106.776152173, 69.043000000]: Got new plan
+Start Node: (204, 162)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357107.592182263, 69.543000000]: Got new plan
+Start Node: (204, 162)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357108.401496984, 70.043000000]: Got new plan
+Start Node: (204, 162)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357109.230749948, 70.543000000]: Got new plan
+Start Node: (204, 163)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357110.034792883, 71.043000000]: Got new plan
+Start Node: (204, 163)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357110.839412879, 71.543000000]: Got new plan
+Start Node: (204, 163)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357111.656570104, 72.043000000]: Got new plan
+Start Node: (204, 163)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357112.473818869, 72.543000000]: Got new plan
+Start Node: (204, 163)
+Jump Node: (203, 164)
+Goal Node: (200, 207)
+[INFO] [1791357113.290802321, 73.043000000]: Got new plan
+Start Node: (204, 163)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357114.120475959, 73.543000000]: Got new plan
+Start Node: (204, 163)
+Jump Node: (200, 161)
+Goal Node: (200, 207)
+[INFO] [1791357114.935242891, 74.043000000]: Got new plan
+Start Node: (204, 163)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357115.743740600, 74.543000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357116.536908011, 75.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357117.415880373, 75.543000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (202, 160)
+Goal Node: (200, 207)
+[INFO] [1791357118.257710256, 76.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (199, 161)
+Goal Node: (200, 207)
+[INFO] [1791357119.111931937, 76.543000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (201, 161)
+Goal Node: (200, 207)
+[INFO] [1791357119.950540234, 77.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357120.806307600, 77.543000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357121.605975152, 78.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357122.424443195, 78.543000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357123.249800353, 79.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (203, 160)
+Goal Node: (200, 207)
+[INFO] [1791357124.051532394, 79.543000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357124.849846285, 80.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357125.654444864, 80.543000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357126.471210464, 81.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357127.273569029, 81.543000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357128.140583213, 82.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (199, 161)
+Goal Node: (200, 207)
+[INFO] [1791357128.967878583, 82.543000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357129.847662288, 83.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (199, 164)
+Goal Node: (200, 207)
+[INFO] [1791357130.661461338, 83.544000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (202, 160)
+Goal Node: (200, 207)
+[INFO] [1791357131.474977630, 84.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (201, 162)
+Goal Node: (200, 207)
+[INFO] [1791357132.275155507, 84.543000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357133.076015481, 85.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (201, 161)
+Goal Node: (200, 207)
+[INFO] [1791357133.924396641, 85.543000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (201, 161)
+Goal Node: (200, 207)
+[INFO] [1791357134.854151938, 86.043000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357135.687519458, 86.543000000]: Got new plan
+[WARN] [1791357136.009327715, 86.743000000]: Clearing both costmaps outside a square (3.00m) large centered on the robot.
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357136.325469267, 86.943000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357137.108693028, 87.443000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (201, 161)
+Goal Node: (200, 207)
+[INFO] [1791357137.908479189, 87.943000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (202, 160)
+Goal Node: (200, 207)
+[INFO] [1791357138.742740022, 88.444000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357139.557766452, 88.943000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357140.368696126, 89.443000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (199, 164)
+Goal Node: (200, 207)
+[INFO] [1791357141.176457445, 89.943000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (199, 164)
+Goal Node: (200, 207)
+[INFO] [1791357141.976120497, 90.443000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (202, 160)
+Goal Node: (200, 207)
+[INFO] [1791357142.821018256, 90.943000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357143.643290674, 91.443000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357144.466523387, 91.943000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357145.272206246, 92.443000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 162)
+Goal Node: (200, 207)
+[INFO] [1791357146.086735342, 92.943000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (202, 160)
+Goal Node: (200, 207)
+[INFO] [1791357146.885384736, 93.443000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357147.732970655, 93.944000000]: Got new plan
+Start Node: (204, 164)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357148.566954681, 94.443000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (204, 161)
+Goal Node: (200, 207)
+[INFO] [1791357149.430261102, 94.943000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357150.230681644, 95.443000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (204, 161)
+Goal Node: (200, 207)
+[INFO] [1791357151.042705924, 95.943000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (201, 162)
+Goal Node: (200, 207)
+[INFO] [1791357151.900535601, 96.443000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (202, 161)
+Goal Node: (200, 207)
+[INFO] [1791357152.729315414, 96.943000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (201, 162)
+Goal Node: (200, 207)
+[INFO] [1791357153.541778566, 97.443000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (204, 161)
+Goal Node: (200, 207)
+[INFO] [1791357154.345094310, 97.944000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357155.185350723, 98.443000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (201, 162)
+Goal Node: (200, 207)
+[INFO] [1791357155.999767489, 98.943000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357156.850604417, 99.443000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (201, 164)
+Goal Node: (200, 207)
+[INFO] [1791357157.651955620, 99.943000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357158.455030506, 100.443000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (200, 163)
+Goal Node: (200, 207)
+[INFO] [1791357159.258983210, 100.943000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (200, 164)
+Goal Node: (200, 207)
+[INFO] [1791357160.129786743, 101.443000000]: Got new plan
+Start Node: (204, 165)
+Jump Node: (201, 162)
+Goal Node: (200, 207)
+[INFO] [1791357160.974041938, 101.943000000]: Got new plan

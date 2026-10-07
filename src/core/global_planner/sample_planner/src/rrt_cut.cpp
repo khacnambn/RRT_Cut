@@ -18,7 +18,6 @@
 #include <random>
 #include <iostream>
 #include <chrono>
-
 #include "rrt_cut.h"
 
 

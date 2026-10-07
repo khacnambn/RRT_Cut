@@ -1,0 +1,9 @@
+requested_trials: 10
+completed_trials: 1
+successful_trials: 0
+failed_trials: 1
+success_rate_percent: 0.00
+batch_complete: false
+collision_check_enabled: true
+collision_trials: 0
+success_definition: goal_reached_without_Gazebo_contact_except_ground

@@ -1,0 +1,3 @@
+attempt,trial,status,counted,min_dist_m,collision_events,duration_s,arm_time_s,first_collision_actor
+1,1,collision,1,0.3698,1,24,2.36,human_2
+2,2,collision,1,0.4069,1,24,2.36,human_2

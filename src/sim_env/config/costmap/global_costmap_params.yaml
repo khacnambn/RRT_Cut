@@ -6,7 +6,7 @@ global_costmap:
   publish_frequency: 1.0 #1.0
   transform_tolerance: 0.5
   cost_scaling_factor: 2.0 #2.0
-  inflation_radius: 0.4 #0.8 #0.4
+  inflation_radius: 0.4 #0.8 #0.4: maze19_pedestrians
 
   ### Sensor management parameters ###
   obstacle_layer:

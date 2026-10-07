@@ -1,0 +1,13 @@
+RRT_CUT - SUCCESS RATE (canh dong)
+
+scene                maze_19_with_horizontal_side_pedestrians
+map                  maze_19
+planner              rrt_cut
+robot                turtlebot3_waffle
+pedestrians          human_1,human_2
+collision threshold  0.5000 m (robot 0.2570 m + nguoi ~0.25 m)
+navigation timeout   180 s (timeout bi loai hoan toan)
+target valid trials  10 (toi da 30 lan chay)
+move_base abort      tinh la FAIL
+
+lan   attempt  ket qua                 min_dist(m)  collide       t(s)
