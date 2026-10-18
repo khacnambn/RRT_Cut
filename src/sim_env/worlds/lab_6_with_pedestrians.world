@@ -2508,8 +2508,8 @@
       </link>
     </model>
     <state world_name="default">
-      <sim_time>205 703000000</sim_time>
-      <real_time>207 43606800</real_time>
+      <sim_time>0 0</sim_time>
+      <real_time>0 0</real_time>
       <wall_time>1729519925 598031278</wall_time>
       <iterations>205703</iterations>
       <model name="Office">
@@ -2702,7 +2702,7 @@
       </camera>
     </gui>
   <actor name="human_1">
-	<pose>4.5 1 0 0 0 0</pose>
+	<pose>0.900 3.000 0 0 0 0</pose>
 	<skin>
 		<filename>walk.dae</filename>
 		<scale>1.0</scale>
@@ -2714,26 +2714,26 @@
 	</animation>
 	<plugin name="human_1_plugin" filename="libPedestrianSFMPlugin.so">
 		<collision scale="0.01 0.001 0.001">LHipJoint_LeftUpLeg_collision</collision>
-		<collision scale="8.0 8.0 1.0">LeftUpLeg_LeftLeg_collision</collision>
-		<collision scale="10.0 10.0 1.5">LeftLeg_LeftFoot_collision</collision>
-		<collision scale="4.0 4.0 1.5">LeftFoot_LeftToeBase_collision</collision>
+		<collision scale="4.4 4.4 1.0">LeftUpLeg_LeftLeg_collision</collision>
+		<collision scale="5.5 5.5 1.5">LeftLeg_LeftFoot_collision</collision>
+		<collision scale="2.2 2.2 1.5">LeftFoot_LeftToeBase_collision</collision>
 		<collision scale="0.01 0.001 0.001">RHipJoint_RightUpLeg_collision</collision>
-		<collision scale="8.0 8.0 1.0">RightUpLeg_RightLeg_collision</collision>
-		<collision scale="10.0 10.0 1.5">RightLeg_RightFoot_collision</collision>
-		<collision scale="4.0 4.0 1.5">RightFoot_RightToeBase_collision</collision>
+		<collision scale="4.4 4.4 1.0">RightUpLeg_RightLeg_collision</collision>
+		<collision scale="5.5 5.5 1.5">RightLeg_RightFoot_collision</collision>
+		<collision scale="2.2 2.2 1.5">RightFoot_RightToeBase_collision</collision>
 		<collision scale="0.01 0.001 0.001">Spine_Spine1_collision</collision>
 		<collision scale="0.01 0.001 0.001">Neck_Neck1_collision</collision>
-		<collision scale="5.0 5.0 3.0">Neck1_Head_collision</collision>
+		<collision scale="2.8 2.8 3.0">Neck1_Head_collision</collision>
 		<collision scale="0.01 0.001 0.001">LeftShoulder_LeftArm_collision</collision>
-		<collision scale="5.0 5.0 1.0">LeftArm_LeftForeArm_collision</collision>
-		<collision scale="5.0 5.0 1.0">LeftForeArm_LeftHand_collision</collision>
-		<collision scale="4.0 4.0 3.0">LeftFingerBase_LeftHandIndex1_collision</collision>
+		<collision scale="2.8 2.8 1.0">LeftArm_LeftForeArm_collision</collision>
+		<collision scale="2.8 2.8 1.0">LeftForeArm_LeftHand_collision</collision>
+		<collision scale="2.2 2.2 3.0">LeftFingerBase_LeftHandIndex1_collision</collision>
 		<collision scale="0.01 0.001 0.001">RightShoulder_RightArm_collision</collision>
-		<collision scale="5.0 5.0 1.0">RightArm_RightForeArm_collision</collision>
-		<collision scale="5.0 5.0 1.0">RightForeArm_RightHand_collision</collision>
-		<collision scale="4.0 4.0 3.0">RightFingerBase_RightHandIndex1_collision</collision>
-		<collision scale="12.0 20.0 5.0" pose="0.05 0 0 0 -0.2 0">LowerBack_Spine_collision</collision>
-		<velocity>0.6</velocity>
+		<collision scale="2.8 2.8 1.0">RightArm_RightForeArm_collision</collision>
+		<collision scale="2.8 2.8 1.0">RightForeArm_RightHand_collision</collision>
+		<collision scale="2.2 2.2 3.0">RightFingerBase_RightHandIndex1_collision</collision>
+		<collision scale="6.6 11.0 5.0" pose="0.05 0 0 0 -0.2 0">LowerBack_Spine_collision</collision>
+		<velocity>0.2</velocity>
 		<radius>0.5</radius>
 		<cycle>True</cycle>
 		<animation_factor>5.1</animation_factor>
@@ -2747,10 +2747,24 @@
 		<ignore_obstacles>
 			<model>ground_plane</model>
 			<model>turtlebot3_waffle</model>
+			<!-- Plugin xap xi moi model bang bounding box va chi xet model gan nhat;
+			     phong va chu L se day nguoi lech khoi duong di ngang. -->
+			<model>Office</model>
+			<model>table_7</model>
+			<model>table_1</model>
+			<model>table_1_0</model>
+			<model>table_1_1</model>
+			<model>table_1_2</model>
+			<model>unit_box</model>
 		</ignore_obstacles>
 		<trajectory>
-			<goalpoint>4.5 1 0 0 0 0</goalpoint>
-			<goalpoint>6 -1 0 0 0 0</goalpoint>
+			<!-- Di ngang hanh lang giua chan chu L va tuong ngoai cung.
+			     Hanh lang rong 2.595 m (x 0.370 -> 2.965), y tu 1.76 den 4.16.
+			     Actor quay dau som 0.3 m (goal.radius hardcode), nen diem quay
+			     dau thuc te la x = 0.90 va x = 2.45; voi ban kinh nguoi 0.35 m
+			     con cach chan L 0.18 m va cach tuong ngoai 0.17 m. -->
+			<goalpoint>0.600 3.000 0 0 0 0</goalpoint>
+			<goalpoint>2.750 3.000 0 0 0 0</goalpoint>
 		</trajectory>
 	</plugin>
 	<plugin name="pedestrian_visual" filename="libPedestrianVisualPlugin.so">

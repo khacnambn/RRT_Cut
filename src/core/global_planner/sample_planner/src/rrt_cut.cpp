@@ -157,7 +157,7 @@ bool RRTCut::plan(const Node& start, const Node& goal, std::vector<Node>& path, 
           }
 
       // limited node 
-      if( n % 50 == 0){
+      if( n % 1000 == 0){
         double min_f_value = std::numeric_limits<double>::infinity();
 
         // check sample_list_

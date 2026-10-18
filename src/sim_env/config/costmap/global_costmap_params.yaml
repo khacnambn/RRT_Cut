@@ -5,8 +5,11 @@ global_costmap:
   update_frequency: 1.0 #1.0
   publish_frequency: 1.0 #1.0
   transform_tolerance: 0.5
+  # Hai khoa nay VO HIEU vi global_costmap da khai bao `plugins`
+  # (log: 'Pre-Hydro parameter ... unused since "plugins" is provided').
+  # Khoi inflation_layer ben duoi moi la cai co tac dung.
   cost_scaling_factor: 2.0 #2.0
-  inflation_radius: 0.4 #0.8 #0.4: maze19_pedestrians
+  inflation_radius: 0.4 #0.4 #0.8
 
   ### Sensor management parameters ###
   obstacle_layer:
@@ -30,7 +33,9 @@ global_costmap:
   inflation_layer:
     enabled: true
     cost_scaling_factor: 2.0 # exponential rate at which the obstacle cost drops off (default: 10)
-    inflation_radius: 0.4 # max. distance from an obstacle at which costs are incurred for planning paths.
+    # 0.3 m: vua tren ban kinh ngoai tiep robot (0.257 m). Thap hon nua thi
+    # planner sinh duong ma footprint khong bam duoc.
+    inflation_radius: 0.3 #0.4 # max. distance from an obstacle at which costs are incurred for planning paths.
 
   static_map:
     enabled: true

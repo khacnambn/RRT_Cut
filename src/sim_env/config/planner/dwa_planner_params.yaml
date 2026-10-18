@@ -7,7 +7,7 @@ DWAPlanner:
   min_vel_y: 0.0
 
   # The velocity when robot is moving in a straight line
-  max_vel_trans: 0.33 #0.26 #0.33: maze19_pedestrians
+  max_vel_trans: 0.26 #0.26 #0.33: maze19_pedestrians
   min_vel_trans: 0.13
 
   max_vel_theta: 1.82

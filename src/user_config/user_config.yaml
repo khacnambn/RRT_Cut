@@ -1,5 +1,5 @@
-map: "maze_19" # pedestrians are not in the static map; only maps/maze_19 exists
-world: "maze_19_with_horizontal_side_pedestrians"
+map: "maze_19"
+world: "maze_19"
 rviz_file: "path_trace.rviz" #sim_env.rviz
 
 robots_config:
@@ -9,7 +9,7 @@ robots_config:
     robot1_x_pos: "0.0"
     robot1_y_pos: "-3.0"
     robot1_z_pos: "0.0"
-    robot1_yaw: "0"
+    robot1_yaw: "0.0"
 
 # * global planner
 #   * graph_planner

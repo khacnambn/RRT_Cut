@@ -12,4 +12,6 @@ local_costmap:
   height: 3
   resolution: 0.05 #0.05
 
-  inflation_radius: 15.0 #3.0 #10
+  # 15 m la vo nghia tren cua so 3x3 m; voi cost_scaling_factor 3.0 (thua ke tu
+  # costmap_common) gradient da tat gan het sau 0.3 m.
+  inflation_radius: 0.5 #15.0 #3.0 #10
